@@ -1,0 +1,44 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Patient Registrations Options</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <select class="form-control" id="registration_options" placeholder="" name="registration_options" style="margin:0px 5px 5px 0px" required>
+          <option value="" disabled selected>Select Registration Method</option><option>Registration Form</option><option>File Upload</option>
+          <option>Biometric</option><option>UHID</option><option>Adhaar & Mobile</option><option>Aadhar & Biometric</option>
+      </select>
+      <button type="submit" class="btn btn-secondary btn-block" name='register_with' id='register_with' value="Submit">
+      Submit
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'register_facility/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>30 Days Free Trails</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register_facility' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+
+      {{form}}
+
+
+      <button type="submit" class="btn btn-secondary btn-block" name='new_facility' id='new_facility' value="Submit">
+
+      Try for Free
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

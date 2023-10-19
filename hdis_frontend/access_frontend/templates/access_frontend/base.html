@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenHDIS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'access_frontend/style.css' %}?version=4"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'access_frontend/dash.css' %}?version=4"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.11.3/dist/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/round-slider@1.3/dist/roundslider.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/round-slider@1.3/dist/roundslider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+  <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"/>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
+  integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
+  <script src="{% static 'access_frontend/ld.js' %}?version=16"></script>
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+   <!-- Brand -->
+   <a class="navbar-brand" href="{% url 'home' %}" style="text-decoration:none">
+    <img src= "{% static "access_frontend/images/transparent logo.png" %}" alt="Logo" style="width:150px" >
+
+  </a>
+
+
+   <!-- Toggler/collapsibe Button -->
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <!-- Navbar links -->
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'home' %}">Schedule a Demo</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'home' %}">About OpenHDIS</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="{% url 'home' %}">About the Team</a>
+       </li>
+
+       {% if user.is_authenticated %}
+             <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="/login">Login/Register</a>
+              </li>
+                {% endif %}
+
+     </ul>
+   </div>
+ </nav>
+ {% block content %}
+             {% endblock %}
+<!-- Spacer bottom -->
+<div class="row" style="margin-top:20px; padding-bottom:10px; padding-top:10px; border-top:1px solid #cccc">
+<div class="col-sm text-center">Contact : support@openHDIS.in</div>
+<div class="col-sm text-center">  <a href="{% url 'register'%}"><font style="color:black">Privacy Policy & TnCs</font></a></div>
+<div class="col-sm text-center">2022 openHDIS . Open Source.</div>
+</div>
+
+
+</body>
+</html>

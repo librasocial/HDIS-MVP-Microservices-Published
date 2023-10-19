@@ -1,0 +1,88 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Search Patient</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'search_patient_visit' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Search by UHID</h5>
+      <input type="text" class="form-control" id="uhid" name="uhid" value="" placeholder="Enter UHID" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='speciality_selected' id='speciality_selected' value="Submit">
+      Select
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+  <div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'book_appointment' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Search by Phone Number</h5>
+      <input type="text" class="form-control" id="uhpn" name="uhpn" value="" placeholder="Enter Phone number" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='doctor_selected' id='doctor_selected' value="Submit">
+      Select
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'search_patient_visit' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Search by Patient ID</h5>
+      <input type="text" class="form-control" id="patient_id" name="patient_id" value="" placeholder="Enter Patient ID" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='search_patient' id='search_patient' value="Submit">
+      Search Patient
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+  <div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}
