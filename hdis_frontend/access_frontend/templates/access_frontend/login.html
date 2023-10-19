@@ -1,0 +1,49 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Login</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'login' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Login</h5>
+      <input type="text" class="form-control" id="email" name="email" value="" placeholder="email ID" style="margin:0px 10px 10px 0px" required>
+        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='login' id='login' value="">
+      Login
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

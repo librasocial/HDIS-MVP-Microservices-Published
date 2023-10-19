@@ -1,0 +1,20 @@
+familyMemberRelationshipCode,familyMemberRelationshipName
+1,Self
+2,Spouse
+3, Father
+4,Mother
+5, Son
+6,Daughter
+7,Brother
+8,Sister
+9,Father- In- Law
+10, Mother- In- Law
+11, Brother-In-Law
+12, Sister-In-Law
+13, Nephew
+14, Niece
+15, Grandson
+16, Granddaughter
+17, Grandfather
+18, Grandmother
+19,"Other (Including any other blood relation and non-blood relations like visitor, guardians)"

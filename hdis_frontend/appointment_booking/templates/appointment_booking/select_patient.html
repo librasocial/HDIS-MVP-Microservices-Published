@@ -1,0 +1,80 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Select Patient</h2></div>
+<div class="col-sm"></div>
+</div>
+  <div class="row align-middle" style="margin-top:20px">
+    {%for patients in patient_list%}
+<div class="col-sm-4" id="profile_column">
+      <div id="inner_column" class="alert-info">
+        <i class="fa fa-user-md" aria-hidden="true">&nbsp;&nbsp;</i>{{patients.PatientName}}
+      </div>
+      <div id="inner_column">
+        <table class="table table-hover">
+
+          <tr>
+            <td>UHID</td>
+            <td>{{patients.personId.UniqueHealthIdentificationID}}</td>
+          </tr>
+          <tr>
+            <td>UHID Number</td>
+            <td>{{patients.personId.UniqueHealthIdentificationNumber}}</td>
+          </tr>
+          <tr>
+            <td>Alternate ID Type</td>
+            <td>{{patients.patient_alternateIDType}}</td>
+          </tr>
+          <tr>
+            <td>Alternate ID</td>
+            <td>{{patients.patient_alternateID}}</td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>{{patients.PatientGender}}</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>{{patients.PatientAge}}</td>
+          </tr>
+          <tr>
+            <td>Date of Birth</td>
+            <td>{{patients.PatientDOB}}</td>
+          </tr>
+
+        </table>
+
+     </div>
+  <div id="inner_column" class="alert-info">
+    <form method="post" action="{% url 'book_appointment' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <input type="hidden" class="form-control" id="PatientName" name="PatientName" value="{{patients.PatientName}}" style="margin:0px 10px 10px 0px" required>
+      <input type="hidden" class="form-control" id="PatientAge" name="PatientAge" value="{{patients.PatientAge}}" style="margin:0px 10px 10px 0px" required>
+      <input type="hidden" class="form-control" id="PatientGender" name="PatientGender" value="{{patients.PatientGender}}" style="margin:0px 10px 10px 0px" required>
+      <input type="hidden" class="form-control" id="PatientId" name="PatientId" value="{{patients.PrimaryKey}}" style="margin:0px 10px 10px 0px" required>
+      <input type="hidden" class="form-control" id="PatientUHId" name="PatientUHId" value="{{patients.personId.UniqueHealthIdentificationID}}" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='select_patient' id='select_patient' value="Submit">
+      Select Patient
+      </button>
+    </form>
+  </div>
+   </div>
+    {%endfor%}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+  check-db-started:
+    image: jwilder/dockerize:0.6.1
+    depends_on:
+      - db
+    command: 'dockerize -wait=tcp://db:3306'
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 8081:8000
+    volumes:
+      - .:/app
+    depends_on:
+      check-db-started:
+        condition: service_completed_successfully
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: facility_management_admin_password
+      MYSQL_DATABASE: facility_management
+      MYSQL_USER: facility_management_admin
+      MYSQL_PASSWORD: facility_management_admin_password
+      
+    volumes:
+      - ./init-script.sql:/docker-entrypoint-initdb.d/init-script.sql
+      - ./init_data:/docker-entrypoint-initdb.d/init_data
+      - db1:/var/lib/mysql
+    ports:
+      - 33001:3306
+    command:
+      --secure-file-priv=docker-entrypoint-initdb.d
+
+
+volumes:
+  db1:

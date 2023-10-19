@@ -1,0 +1,23 @@
+﻿Service_Type_Code,Service_Type_Name
+1,Room Rent
+2,Nursing
+3,Consultation
+4,Surgery
+5,Pharmacy
+6,Consumables and Disposables
+7,OT
+8,Diet
+9,Food & Beverages
+10,Housekeeping(Laundry)
+11,Ambulance
+12,Telephone Expenses
+13,Administration
+14,First-Aids
+15,Lab Orders
+16,Radiology Orders
+17,Blood Bank
+18,Immunization Orders
+19,Package
+20,CSSD
+21,Procedures
+22,Others

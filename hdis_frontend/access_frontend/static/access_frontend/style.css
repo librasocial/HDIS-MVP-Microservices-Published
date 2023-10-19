@@ -1,0 +1,121 @@
+* {
+  border-radius: 0; !important
+  border-collapse: separate;
+}
+
+#top{
+  margin-top:100px;
+  margin-left:20px;
+  color:white;
+
+}
+#top_row1{
+background-image: url("images/logged_out/background_homepage1.jpg");
+background-repeat: no-repeat;
+height: 200px;
+}
+
+
+
+#top_row2{
+background-image: url("images/logged_out/background_homepage2.jpg");
+background-repeat: no-repeat;
+
+}
+
+#top_row1_landing{
+background-image: url("/static/images/logged_out/image1.png");
+background-repeat: no-repeat;
+height: 200px;
+}
+
+
+
+#top_row2_landing{
+background-image: url("/static/images/logged_out/image2.png");
+background-repeat: no-repeat;
+
+}
+
+#img1{
+  width: 100px;
+  margin-top: 40px;
+
+}
+
+
+#columns{
+  margin-bottom: 20px;
+}
+
+#cards{
+
+  align-items: center;
+}
+
+#body{
+  align-items: center;
+}
+
+#row_list{
+  margin-top: 10px;
+  padding: 1px;
+}
+
+#package_card{
+  padding: 5px;
+  margin:5px;
+
+}
+
+#profile_column{
+  padding:5px;
+
+  background-color: white;
+
+}
+
+#inner_column{
+  border: solid 1px;
+  border-color: #f1f1f1;
+  padding: 5px;
+}
+
+.card-title{
+  color: #6a96b3;
+}
+.rs-control .rs-range-color {
+    background-color: #ed5730;
+}
+.rs-control .rs-path-color {
+    background-color: #ffffff;
+}
+.rs-control .rs-handle {
+    background-color: #b05a4a;
+}
+.rs-control .rs-bg-color {
+    background-color: #ffffff;
+}
+
+
+.spinner {
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  -webkit-transition: opacity 0.25s, max-width 0.45s;
+  -moz-transition: opacity 0.25s, max-width 0.45s;
+  -o-transition: opacity 0.25s, max-width 0.45s;
+  transition: opacity 0.25s, max-width 0.45s;
+  /* Duration fixed since we animate additional hidden width */
+}
+
+.has-spinner.active {
+  cursor: progress;
+}
+
+.has-spinner.active .spinner {
+  opacity: 1;
+  max-width: 50px;
+  /* More than it will ever come, notice that this affects on animation duration */
+}
+
