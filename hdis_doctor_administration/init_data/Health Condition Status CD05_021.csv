@@ -1,6 +1,0 @@
-healthConditionStatusCode,healthConditionStatusDescription
-01,Active
-02,Inactive
-03,Resolved
-04,Relapsed
-05,Remitted

@@ -1,8 +1,0 @@
-addressTypeCode,addressTypeName
-P,Permanent Address
-C,Current Address
-D,Domicile Address
-T,Temporary Address
-V,Previous Address
-O,Other Address
-U,Address Unknown
