@@ -1,0 +1,8 @@
+severityCode,severityDescription
+01,Mild
+02,Moderate
+03,Severe
+04,Potentially Life Threatening
+05,Anaphylaxis
+06,Fatal
+07,Toxicosis

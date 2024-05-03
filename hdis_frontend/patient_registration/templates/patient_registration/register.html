@@ -1,0 +1,167 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Patient Registrations</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+  {% if register_with == "UHID" %}
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Register with UHID</h5>
+      <input type="text" class="form-control" id="uhid" name="uhid" value="" placeholder="Enter UHID" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='uhid_register' id='uhid_register' value="Submit">
+      Register with UHID
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+{% elif register_with == "Aadhar & Mobile" %}
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Register with Aadhaar Mobile</h5>
+      <input type="text" class="form-control" id="patient_name" placeholder="Patient Name" name="patient_name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
+      <select class="form-control" id="patient_gender" placeholder="Select Gender" name="patient_gender" style="margin:0px 5px 5px 0px" required><option value="" disabled selected>Gender</option><option>M</option><option>F</option><option>O</option></select>
+      <div class="row form-inline">
+            <div class="col-sm input-group date" id ="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-container="#dpk">
+
+                <input type="text" class="form-control" name="patient_dob" placeholder="Date of Birth" required>
+
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                </div>
+            </div>
+            </div>
+      <input type="text" class="form-control" id="address" placeholder="Address (with city & state)" name="address" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 ,.-]{2,150}" title="Certain special characters like / are not allowed">
+      <input type="text" class="form-control" id="location" name="location" value="" placeholder="Location (Eg: Indiranagar)" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z ]{3,50}">
+      <input type="text" class="form-control" id="city" name="city" value="" placeholder="City (Eg: Delhi)" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z ]{3,50}">
+      <input type="text" class="form-control" id="pin" name="pin" value="" placeholder="Pincode (Eg: 110012)" style="margin:0px 10px 10px 0px" required pattern="[0-9]{6}" oninvalid="this.setCustomValidity('Pincode can only have numbers and a length of 6 digits.')" oninput="setCustomValidity('')">
+      <input type="email" class="form-control" id="email" name="email" value="" placeholder="Email (Eg: test@test.com)" style="margin:0px 10px 10px 0px" required>
+      <input type="text" class="form-control" id="aadhaar" name="aadhaar" value="" placeholder="Aadhaar No"  style="margin:0px 10px 10px 0px" required pattern="[0-9]{10}" oninvalid="this.setCustomValidity('Please enter a valid mobile number')" oninput="setCustomValidity('')">
+      <button type="submit" class="btn btn-secondary btn-block" name='adhaar_mobile_register' id='adhaar_mobile_register' value="Submit">
+      Register
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+{% elif register_with == "Aadhar & Biometric" %}
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form name="bioform" method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Register with Aadhar Biometric</h5>
+      <input type="text" class="form-control" id="adhaar" name="adhaar" value="" placeholder="Enter ADHAAR" style="margin:0px 10px 10px 0px" required>
+      <input type="text" hidden class="form-control" id="pid" name="pid" value="" placeholder="Finger Print" style="margin:0px 10px 10px 0px" required>
+      <button type="button" value="button"
+     onclick="Capture( );" >Capture Fingerprint</button>
+      <input type="hidden" class="form-control" id="bioType" name="bioType" value="FMR" placeholder="" style="margin:0px 10px 10px 0px" required>
+      <button type="submit" class="btn btn-secondary btn-block" name='bio_register' id='bio_register' value="Submit">
+      Register with Finger Prints
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+  {% elif register_with == "File Upload" %}
+  <div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Bulk Register</h5>
+      Mandatory Fields : patientName, patientGender, patientAge<br/>
+      Optional Fileds : patientMobile, patientAddress<br/>
+      <b>Download file format</b> : <a href="{% static "patient_registration/bulk_patient_registration.csv" %}">file.csv</a><br/><br/>
+
+      <input id="bulk_upload" name="bulk_upload" style="margin:0px 10px 10px 0px" type="file" class="file" data-show-upload="true" data-show-caption="true" data-msg-placeholder="Select file for upload..." accept="image/jpeg,image/gif,image/png,application/pdf" >
+
+      <button type="submit" class="btn btn-secondary btn-block" name='bulk_register' id='bulk_register' value="Submit">
+      Upload File
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+  {% elif register_with == "Biometric" %}
+  <div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Finger Print Registration</h5>
+     
+      <button type="submit" class="btn btn-secondary btn-block" name='biometric_register' id='biometric_register' value="Submit">
+      Upload Finger Print
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+{% elif register_with == "Registration Form" %}
+
+  <div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'get_or_create_patient' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Direct Registration</h5>
+      <input type="text" class="form-control" id="patient_name" placeholder="Patient Name" name="patient_name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
+      <select class="form-control" id="patient_gender" placeholder="Select Gender" name="patient_gender" style="margin:0px 5px 5px 0px" required><option value="" disabled selected>Gender</option><option>M</option><option>F</option><option>O</option></select>
+      <div class="row form-inline">
+            <div class="col-sm input-group date" id ="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-container="#dpk">
+
+                <input type="text" class="form-control" name="patient_dob" placeholder="Date of Birth" required>
+
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                </div>
+            </div>
+            </div>
+      <input type="text" class="form-control" id="address" placeholder="Address (with city & state)" name="address" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 ,.-]{2,150}" title="Certain special characters like / are not allowed">
+      <input type="text" class="form-control" id="location" name="location" value="" placeholder="Location (Eg: Indiranagar)" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z ]{3,50}">
+      <input type="text" class="form-control" id="city" name="city" value="" placeholder="City (Eg: Delhi)" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z ]{3,50}">
+      <input type="text" class="form-control" id="pin" name="pin" value="" placeholder="Pincode (Eg: 110012)" style="margin:0px 10px 10px 0px" required pattern="[0-9]{6}" oninvalid="this.setCustomValidity('Pincode can only have numbers and a length of 6 digits.')" oninput="setCustomValidity('')">
+      <input type="email" class="form-control" id="email" name="email" value="" placeholder="Email (Eg: test@test.com)" style="margin:0px 10px 10px 0px" required>
+      <input type="text" class="form-control" id="mobile" name="mobile" value="" placeholder="Mobile (10 digits only)"  style="margin:0px 10px 10px 0px" required pattern="[0-9]{10}" oninvalid="this.setCustomValidity('Please enter a valid mobile number')" oninput="setCustomValidity('')">
+      <select class="form-control" id="carrying_mobile" placeholder="" name="carrying_mobile" style="margin:0px 5px 5px 0px" required><option value="" disabled selected>Do you have the given mobile number with you now?</option><option>Yes</option><option>No</option></select>
+      <button type="submit" class="btn btn-secondary btn-block" name='patient_registration' id='patient_registration' value="Submit">
+      Register
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+{%endif%}
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

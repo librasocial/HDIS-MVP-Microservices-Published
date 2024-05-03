@@ -1,0 +1,139 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Details required for Doctor Onboarding</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <div id="inner_column">
+    <form method="post" action="{% url 'facility_field_check_update' fId=doctor_fields.facility_id %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="" required checked="checked"> Doctor Type
+      </label>
+        <br/>
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="" required checked="checked"> Doctor Registration
+      </label>
+        <br/>
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="" required checked="checked"> Doctor Registration Certificate Copy
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorLanguage == True %}
+        <input type="checkbox" class="form-check-input" name="language" checked="checked"> Doctor Languages
+          {% else %}
+          <input type="checkbox" class="form-check-input" name="language"> Doctor Languages
+          {% endif %}
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorCity == True %}
+              <input type="checkbox" class="form-check-input" name="city" checked="checked"> Doctor City
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="city"> Doctor City
+          {% endif %}
+      </label>
+        <br/>
+        <label class="form-check-label">
+          {% if doctor_fields.doctorSpeciality == True %}
+              <input type="checkbox" class="form-check-input" name="speciality" checked="checked"> Doctor Speciality
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="speciality"> Doctor Speciality
+          {% endif %}
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorQualification == True %}
+              <input type="checkbox" class="form-check-input" name="qualification" checked="checked"> Doctor Qualification
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="qualification"> Doctor Qualification
+          {% endif %}
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorDescription == True %}
+              <input type="checkbox" class="form-check-input" name="description" checked="checked"> Doctor Description
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="description"> Doctor Description
+          {% endif %}
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorImage == True %}
+              <input type="checkbox" class="form-check-input" name="image" checked="checked"> Doctor Image
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="image"> Doctor Image
+          {% endif %}
+      </label>
+        <br/>
+      <label class="form-check-label">
+          {% if doctor_fields.doctorSignatures == True %}
+              <input type="checkbox" class="form-check-input" name="sign" checked="checked"> Doctor Signatures
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="sign"> Doctor Signatures
+          {% endif %}
+      </label>
+        <br/>
+     <label class="form-check-label">
+          {% if doctor_fields.doctorSchedule == True %}
+              <input type="checkbox" class="form-check-input" name="schedule" checked="checked"> Doctor Schedule
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="sign"> Doctor Schedule
+          {% endif %}
+      </label>
+        <br/>
+     <label class="form-check-label">
+          {% if doctor_fields.doctorBankDetails == True %}
+              <input type="checkbox" class="form-check-input" name="bankDetails" checked="checked"> Bank Details
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="bankDetails"> Bank Details
+          {% endif %}
+      </label>
+        <br/>
+     <label class="form-check-label">
+          {% if doctor_fields.doctorLeaves == True %}
+              <input type="checkbox" class="form-check-input" name="leaves" checked="checked"> Leaves
+          {% else %}
+        <input type="checkbox" class="form-check-input" name="leaves"> Leaves
+          {% endif %}
+      </label>
+        <br/>
+      <button type="submit" class="btn btn-secondary btn-block" name='doctor_fields' id='doctor_fields' value="Submit">
+      Update Required Fields
+      </button>
+      </form>
+    </div>
+</div>
+<div class="col-sm"></div>
+</div>
+
+
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

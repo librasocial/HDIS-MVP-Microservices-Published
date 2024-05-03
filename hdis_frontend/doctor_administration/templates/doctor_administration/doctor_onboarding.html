@@ -1,0 +1,142 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>Doctor Onboarding</h2></div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'doctor_details_update' dId=doctor_details.DoctorId %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Register with UHID</h5>
+      <input type="text" class="form-control" id="uhid" name="uhid" value="" placeholder="Enter UHID" style="margin:0px 10px 10px 0px" required>
+
+      <button type="submit" class="btn btn-secondary btn-block" name='uhid_search' id='uhid_search' value="Submit">
+      Search UHID
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+  <div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm-6">
+    <form method="post" action="{% url 'doctor_details_update' dId=doctor_details.DoctorId %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+      {% csrf_token %}
+      <h5>Add doctor details</h5>
+    {% if a.field_info.doctorLanguage == True %}
+        <input type="text" class="form-control" id="doctor_languages" name="doctor_languages" placeholder="Languages spoken" pattern="[A-Za-z ,]{3,70}" required>
+    {% endif %}
+    {% if a.field_info.doctorCity == True %}
+        <input type="text" class="form-control" id="doctor_city" name="doctor_city" placeholder="City" pattern="[A-Za-z .]{3,50}" required>
+    {% endif %}
+    {% if a.field_info.doctorQualification == True %}
+        <input type="text" class="form-control" id="doctor_degree" name="doctor_degree" placeholder="Degree Name" pattern="[A-Za-z -.]{2,50}" required title="Certain special characters like / are not allowed">
+        <input type="text" class="form-control" id="doctor_institute" name="doctor_institute" placeholder="Institute Name" pattern="[A-Za-z ,-.]{3,120}" required title="Certain special characters like / are not allowed">
+        <input type="text" class="form-control" id="doctor_qualification_year" name="doctor_qualification_year" placeholder="Year of completion" pattern="[0-9]{4}" required>
+        <div id="doc_quali">
+            <div class="input-group-btn" style="margin-bottom:10px">
+                <button class="btn btn-secondary" type="button"  onclick="doctor_qualifications();"> <span aria-hidden="true">Add More Qualifications</span> </button>
+            </div>
+        </div>
+    {% endif %}
+        <input type="text" class="form-control" id="doctor_registration_number" name="doctor_registration_number" placeholder="Medical Council Registration Number" pattern="[A-Za-z 0-9-]{3,25}" title="Certain special characters like / are not allowed" required>
+        <input type="text" class="form-control" id="doctor_council" name="doctor_council" placeholder="Medical Council Name" pattern="[A-Za-z -,]{10,70}" required>
+    {% if a.field_info.doctorSpeciality == True %}
+        <input type="text" class="form-control" id="doctor_speciality" name="doctor_speciality" placeholder="Speciality" pattern="[A-Za-z ,.]{2,50}" required>
+    {% endif %}
+    {% if  a.field_info.doctorImage == True or a.field_info.doctorSignatures == True %}
+    <select class="form-control" id="file_type" placeholder="File Type" name="file_type" style="margin:0px 10px 10px 0px" required>
+   <option>Registration certificate</option>
+        {% if  a.field_info.doctorImage == True %}
+   <option>Doctor Image</option>
+        {% endif %}
+    {% if  a.field_info.doctorSignatures == True %}
+   <option>Doctor Signatures</option>
+        {% endif %}
+   </select>
+ <input id="doctor_file" name="doctor_file" type="file" class="file" data-show-upload="true" data-show-caption="true" data-msg-placeholder="Select file for upload..." accept="image/jpeg,image/gif,image/png,application/pdf" >
+    <div id="doc_file">
+            <div class="input-group-btn" style="margin-bottom:10px">
+                <button class="btn btn-secondary" type="button"  onclick="doctor_files();"> <span aria-hidden="true">Add More Files</span> </button>
+            </div>
+        </div>
+    {% endif %}
+    {% if  a.field_info.doctorDescription == True %}
+    <textarea id="doctor_description" name='doctor_description' rows="4" cols="90"></textarea>
+    {% endif %}
+    {% if  a.field_info.doctorSchedule == True %}
+        <h5>Doctor Schedule</h5>
+        Default doctor schedule will be fetched from the doctor_slot service and can be edited
+        {% for slots in doctor_slots %}
+            <br/><br/>
+            Day : {{ slots.weekday }}<br/>
+            Working : <input type="text" class="form-control" id="doctor_languages" name="doctor_languages" value="{{slots.weekday_status}}" required><br/>
+            {% for daily_list in slots.daily_slot_list %}
+                Start time : <input type="text" class="form-control" id="doctor_languages" name="doctor_languages" value="{{ daily_list.dayOfTheWeekSlotStartTime }}" required><br/>
+                End time : <input type="text" class="form-control" id="doctor_languages" name="doctor_languages" value="{{ daily_list.dayOfTheWeekSlotEndTime }}" required><br/>
+                Slot length (minutes) : <input type="text" class="form-control" id="doctor_languages" name="doctor_languages" value="{{ daily_list.dayOfTheWeekSlotDuration }}" required><br/>
+                Slot Status (Active) :  <select class="form-control" id="file_type" placeholder="File Type" name="file_type" style="margin:0px 10px 10px 0px" required>
+                <option>{{ daily_list.dayOfTheWeekSlotStatus }}</option></option><option>True</option><option>False</option></select>
+                {% endfor %}
+            <div id="doc_slots">
+            <div class="input-group-btn" style="margin-bottom:10px">
+                <button class="btn btn-secondary" type="button"  onclick="doctor_slots();"> <span aria-hidden="true">Add More Slots</span> </button>
+            </div>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+
+    {% if  a.field_info.doctorLeaves == True %}
+        <h5>Doctor Leaves</h5>
+        {% for slots in doctor_slots %}
+            {% for leaves in slots.ProviderLeaveMaster_set.all %}
+
+                {{ leaves.leaveSlotId.dayOfTheWeekSlotStartTime }} | {{ leaves.leaveSlotId.dayOfTheWeekSlotEndTime }} | {{ leaves.leaveSlotId.dayOfTheWeekSlotDuration }}<br/>
+                {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    {% if  a.field_info.doctorBankDetails == True %}
+        <h5>Doctor Bank Account Details</h5>
+    {% endif %}
+
+      <button type="submit" class="btn btn-secondary btn-block" name='doctor_onboarding' id='doctor_onboarding' value="Submit">
+      Activate Doctor
+      </button>
+      </form>
+</div>
+<div class="col-sm"></div>
+</div>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

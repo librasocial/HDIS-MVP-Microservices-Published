@@ -1,0 +1,110 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+<div class="row" >
+
+   <div class='col-sm-6' style="margin-bottom:20px"><h4>
+
+     Welcome {{doctor_details.careProviderName}},</h4>
+   </div>
+   </div>
+  <div class="row" >
+      {% if encounter_details %}
+        {% for encounters in encounter_details %}
+    <div class="col-sm-4" id="profile_column">
+      <div id="inner_column" class="alert-info">
+        <i class="fa fa-user-md" aria-hidden="true">&nbsp;&nbsp;</i>Patient : {{ encounters.patient.PatientName }}
+      </div>
+      <div id="inner_column">
+      <table class="table table-hover">
+          <tr>
+            <td>Encounter ID</td>
+            <td>{{encounters.encounter.encounterID}}</td>
+          </tr>
+          <tr>
+            <td>Encounter Start Date</td>
+            <td>{{encounters.encounter.encounterTime}}</td>
+          </tr>
+        </table>
+
+     </div>
+    <div id="inner_column" class="alert-info">
+        <form class="form" action="{% url 'opd_consultation' %}" method='post'>
+        {% csrf_token %}
+            <input type="hidden" name='eId' value="{{encounters.encounter.PrimaryKey}}" readonly>
+            <input type="hidden" name='prId' value="{{doctor_details.PrimaryKey}}" readonly>
+            <button type="submit" class="btn btn-success btn-block" name='start_consultation' value="start_consultation">
+            Consult Now</button>
+        </form>
+    </div>
+   </div>
+      {% endfor %}
+      {% endif %}
+
+
+
+  <div class="col-sm-4" id="profile_column">
+    <div id="inner_column" class="alert-success">
+      <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Other doctor options
+    </div>
+    <div id="inner_column">
+
+    </div>
+
+  </div>
+
+
+
+<div class="col-sm-4" id="profile_column">
+  <div id="inner_column" class="alert-success">
+    <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Other doctor options
+  </div>
+  <div id="inner_column">
+
+  </div>
+
+</div>
+
+<div class="col-sm-4" id="profile_column">
+    <div id="inner_column" class="alert-warning">
+      <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Other doctor options
+    </div>
+    <div id="inner_column">
+
+    </div>
+
+</div>
+
+<div class="col-sm-4" id="profile_column">
+    <div id="inner_column" class="alert-warning">
+      <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Reports & Analytics
+    </div>
+    <div id="inner_column">
+
+    </div>
+
+</div>
+
+</div>
+
+
+  <!--<h2>Process for consult</h2>-->
+
+
+
+<!--patient links-->
+
+
+
+
+</div>
+{% endblock %}

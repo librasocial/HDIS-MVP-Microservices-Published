@@ -1,0 +1,1808 @@
+healthConditionCode,healthConditionName,healthConditionDescription,health_condition_type_id
+A00,Cholera,NULL,1
+A01,"Typhoid and paratyphoid fevers",NULL,1
+A02,"Other salmonella infections",NULL,1
+A03,Shigellosis,NULL,1
+A04,"Other bacterial intestinal infections",NULL,1
+A05,"Other bacterial foodborne intoxications, not elsewhere classified",NULL,1
+A06,Amoebiasis,NULL,1
+A07,"Other protozoal intestinal diseases",NULL,1
+A08,"Viral and other specified intestinal infections",NULL,1
+A09,"Other gastroenteritis and colitis of infectious and unspecified origin",NULL,1
+A15,"Respiratory tuberculosis, bacteriologically and histologically confirmed",NULL,1
+A16,"Respiratory tuberculosis, not confirmed bacteriologically or histologically",NULL,1
+A17,"Tuberculosis of nervous system",NULL,1
+A18,"Tuberculosis of other organs",NULL,1
+A19,"Miliary tuberculosis",NULL,1
+A20,Plague,NULL,1
+A21,Tularaemia,NULL,1
+A22,Anthrax,NULL,1
+A23,Brucellosis,NULL,1
+A24,"Glanders and melioidosis",NULL,1
+A25,"Rat-bite fevers",NULL,1
+A26,Erysipeloid,NULL,1
+A27,Leptospirosis,NULL,1
+A28,"Other zoonotic bacterial diseases, not elsewhere classified",NULL,1
+A30,"Leprosy [Hansen disease]",NULL,1
+A31,"Infection due to other mycobacteria",NULL,1
+A32,Listeriosis,NULL,1
+A33,"Tetanus neonatorum",NULL,1
+A34,"Obstetrical tetanus",NULL,1
+A35,"Other tetanus",NULL,1
+A36,Diphtheria,NULL,1
+A37,"Whooping cough",NULL,1
+A38,"Scarlet fever",NULL,1
+A39,"Meningococcal infection",NULL,1
+A40,"Streptococcal sepsis",NULL,1
+A41,"Other sepsis",NULL,1
+A42,Actinomycosis,NULL,1
+A43,Nocardiosis,NULL,1
+A44,Bartonellosis,NULL,1
+A46,Erysipelas,NULL,1
+A48,"Other bacterial diseases, not elsewhere classified",NULL,1
+A49,"Bacterial infection of unspecified site",NULL,1
+A50,"Congenital syphilis",NULL,1
+A51,"Early syphilis",NULL,1
+A52,"Late syphilis",NULL,1
+A53,"Other and unspecified syphilis",NULL,1
+A54,"Gonococcal infection",NULL,1
+A55,"Chlamydial lymphogranuloma (venereum)",NULL,1
+A56,"Other sexually transmitted chlamydial diseases",NULL,1
+A57,Chancroid,NULL,1
+A58,"Granuloma inguinale",NULL,1
+A59,Trichomoniasis,NULL,1
+A60,"Anogenital herpesviral [herpes simplex] infection",NULL,1
+A63,"Other predominantly sexually transmitted diseases, not elsewhere classified",NULL,1
+A64,"Unspecified sexually transmitted disease",NULL,1
+A65,"Nonvenereal syphilis",NULL,1
+A66,Yaws,NULL,1
+A67,"Pinta [carate]",NULL,1
+A68,"Relapsing fevers",NULL,1
+A69,"Other spirochaetal infections",NULL,1
+A70,"Chlamydia psittaci infection",NULL,1
+A71,Trachoma,NULL,1
+A74,"Other diseases caused by chlamydiae",NULL,1
+A75,"Typhus fever",NULL,1
+A77,"Spotted fever [tick-borne rickettsioses]",NULL,1
+A78,"Q fever",NULL,1
+A79,"Other rickettsioses",NULL,1
+A80,"Acute poliomyelitis",NULL,1
+A81,"Atypical virus infections of central nervous system",NULL,1
+A82,Rabies,NULL,1
+A83,"Mosquito-borne viral encephalitis",NULL,1
+A84,"Tick-borne viral encephalitis",NULL,1
+A85,"Other viral encephalitis, not elsewhere classified",NULL,1
+A86,"Unspecified viral encephalitis",NULL,1
+A87,"Viral meningitis",NULL,1
+A88,"Other viral infections of central nervous system, not elsewhere classified",NULL,1
+A89,"Unspecified viral infection of central nervous system",NULL,1
+A92,"Other mosquito-borne viral fevers",NULL,1
+A93,"Other arthropod-borne viral fevers, not elsewhere classified",NULL,1
+A94,"Unspecified arthropod-borne viral fever",NULL,1
+A95,"Yellow fever",NULL,1
+A96,"Arenaviral haemorrhagic fever",NULL,1
+A97,Dengue,NULL,1
+A98,"Other viral haemorrhagic fevers, not elsewhere classified",NULL,1
+A99,"Unspecified viral haemorrhagic fever",NULL,1
+B00,"Herpesviral [herpes simplex] infections",NULL,1
+B01,"Varicella [chickenpox]",NULL,1
+B02,"Zoster [herpes zoster]",NULL,1
+B03,Smallpox,NULL,1
+B04,Monkeypox,NULL,1
+B05,Measles,NULL,1
+B06,"Rubella [German measles]",NULL,1
+B07,"Viral warts",NULL,1
+B08,"Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified",NULL,1
+B09,"Unspecified viral infection characterized by skin and mucous membrane lesions",NULL,1
+B15,"Acute hepatitis A",NULL,1
+B16,"Acute hepatitis B",NULL,1
+B17,"Other acute viral hepatitis",NULL,1
+B18,"Chronic viral hepatitis",NULL,1
+B19,"Unspecified viral hepatitis",NULL,1
+B20,"Human immunodeficiency virus [HIV] disease resulting in infectious and parasitic diseases",NULL,1
+B21,"Human immunodeficiency virus [HIV] disease resulting in malignant neoplasms",NULL,1
+B22,"Human immunodeficiency virus [HIV] disease resulting in other specified diseases",NULL,1
+B23,"Human immunodeficiency virus [HIV] disease resulting in other conditions",NULL,1
+B24,"Unspecified human immunodeficiency virus [HIV] disease",NULL,1
+B25,"Cytomegaloviral disease",NULL,1
+B26,Mumps,NULL,1
+B27,"Infectious mononucleosis",NULL,1
+B30,"Viral conjunctivitis",NULL,1
+B33,"Other viral diseases, not elsewhere classified",NULL,1
+B34,"Viral infection of unspecified site",NULL,1
+B35,Dermatophytosis,NULL,1
+B36,"Other superficial mycoses",NULL,1
+B37,Candidiasis,NULL,1
+B38,Coccidioidomycosis,NULL,1
+B39,Histoplasmosis,NULL,1
+B40,Blastomycosis,NULL,1
+B41,Paracoccidioidomycosis,NULL,1
+B42,Sporotrichosis,NULL,1
+B43,"Chromomycosis and phaeomycotic abscess",NULL,1
+B44,Aspergillosis,NULL,1
+B45,Cryptococcosis,NULL,1
+B46,Zygomycosis,NULL,1
+B47,Mycetoma,NULL,1
+B48,"Other mycoses, not elsewhere classified",NULL,1
+B49,"Unspecified mycosis",NULL,1
+B50,"Plasmodium falciparum malaria",NULL,1
+B51,"Plasmodium vivax malaria",NULL,1
+B52,"Plasmodium malariae malaria",NULL,1
+B53,"Other parasitologically confirmed malaria",NULL,1
+B54,"Unspecified malaria",NULL,1
+B55,Leishmaniasis,NULL,1
+B56,"African trypanosomiasis",NULL,1
+B57,"Chagas disease",NULL,1
+B58,Toxoplasmosis,NULL,1
+B60,"Other protozoal diseases, not elsewhere classified",NULL,1
+B64,"Unspecified protozoal disease",NULL,1
+B65,"Schistosomiasis [bilharziasis]",NULL,1
+B66,"Other fluke infections",NULL,1
+B67,Echinococcosis,NULL,1
+B68,Taeniasis,NULL,1
+B69,Cysticercosis,NULL,1
+B70,"Diphyllobothriasis and sparganosis",NULL,1
+B71,"Other cestode infections",NULL,1
+B72,Dracunculiasis,NULL,1
+B73,Onchocerciasis,NULL,1
+B74,Filariasis,NULL,1
+B75,Trichinellosis,NULL,1
+B76,"Hookworm diseases",NULL,1
+B77,Ascariasis,NULL,1
+B78,Strongyloidiasis,NULL,1
+B79,Trichuriasis,NULL,1
+B80,Enterobiasis,NULL,1
+B81,"Other intestinal helminthiases, not elsewhere classified",NULL,1
+B82,"Unspecified intestinal parasitism",NULL,1
+B83,"Other helminthiases",NULL,1
+B85,"Pediculosis and phthiriasis",NULL,1
+B86,Scabies,NULL,1
+B87,Myiasis,NULL,1
+B88,"Other infestations",NULL,1
+B89,"Unspecified parasitic disease",NULL,1
+B90,"Sequelae of tuberculosis",NULL,1
+B91,"Sequelae of poliomyelitis",NULL,1
+B92,"Sequelae of leprosy",NULL,1
+B94,"Sequelae of other and unspecified infectious and parasitic diseases",NULL,1
+B95,"Streptococcus and staphylococcus as the cause of diseases classified to other chapters",NULL,1
+B96,"Other specified bacterial agents as the cause of diseases classified to other chapters",NULL,1
+B97,"Viral agents as the cause of diseases classified to other chapters",NULL,1
+B98,"Other specified infectious agents as the cause of diseases classified to other chapters",NULL,1
+B99,"Other and unspecified infectious diseases",NULL,1
+C00,"Malignant neoplasm of lip",NULL,2
+C01,"Malignant neoplasm of base of tongue",NULL,2
+C02,"Malignant neoplasm of other and unspecified parts of tongue",NULL,2
+C03,"Malignant neoplasm of gum",NULL,2
+C04,"Malignant neoplasm of floor of mouth",NULL,2
+C05,"Malignant neoplasm of palate",NULL,2
+C06,"Malignant neoplasm of other and unspecified parts of mouth",NULL,2
+C07,"Malignant neoplasm of parotid gland",NULL,2
+C08,"Malignant neoplasm of other and unspecified major salivary glands",NULL,2
+C09,"Malignant neoplasm of tonsil",NULL,2
+C10,"Malignant neoplasm of oropharynx",NULL,2
+C11,"Malignant neoplasm of nasopharynx",NULL,2
+C12,"Malignant neoplasm of piriform sinus",NULL,2
+C13,"Malignant neoplasm of hypopharynx",NULL,2
+C14,"Malignant neoplasm of other and ill-defined sites in the lip, oral cavity and pharynx",NULL,2
+C15,"Malignant neoplasm of oesophagus",NULL,2
+C16,"Malignant neoplasm of stomach",NULL,2
+C17,"Malignant neoplasm of small intestine",NULL,2
+C18,"Malignant neoplasm of colon",NULL,2
+C19,"Malignant neoplasm of rectosigmoid junction",NULL,2
+C20,"Malignant neoplasm of rectum",NULL,2
+C21,"Malignant neoplasm of anus and anal canal",NULL,2
+C22,"Malignant neoplasm of liver and intrahepatic bile ducts",NULL,2
+C23,"Malignant neoplasm of gallbladder",NULL,2
+C24,"Malignant neoplasm of other and unspecified parts of biliary tract",NULL,2
+C25,"Malignant neoplasm of pancreas",NULL,2
+C26,"Malignant neoplasm of other and ill-defined digestive organs",NULL,2
+C30,"Malignant neoplasm of nasal cavity and middle ear",NULL,2
+C31,"Malignant neoplasm of accessory sinuses",NULL,2
+C32,"Malignant neoplasm of larynx",NULL,2
+C33,"Malignant neoplasm of trachea",NULL,2
+C34,"Malignant neoplasm of bronchus and lung",NULL,2
+C37,"Malignant neoplasm of thymus",NULL,2
+C38,"Malignant neoplasm of heart, mediastinum and pleura",NULL,2
+C39,"Malignant neoplasm of other and ill-defined sites in the respiratory system and intrathoracic organs",NULL,2
+C40,"Malignant neoplasm of bone and articular cartilage of limbs",NULL,2
+C41,"Malignant neoplasm of bone and articular cartilage of other and unspecified sites",NULL,2
+C43,"Malignant melanoma of skin",NULL,2
+C44,"Other malignant neoplasms of skin",NULL,2
+C45,Mesothelioma,NULL,2
+C46,"Kaposi sarcoma",NULL,2
+C47,"Malignant neoplasm of peripheral nerves and autonomic nervous system",NULL,2
+C48,"Malignant neoplasm of retroperitoneum and peritoneum",NULL,2
+C49,"Malignant neoplasm of other connective and soft tissue",NULL,2
+C50,"Malignant neoplasm of breast",NULL,2
+C51,"Malignant neoplasm of vulva",NULL,2
+C52,"Malignant neoplasm of vagina",NULL,2
+C53,"Malignant neoplasm of cervix uteri",NULL,2
+C54,"Malignant neoplasm of corpus uteri",NULL,2
+C55,"Malignant neoplasm of uterus, part unspecified",NULL,2
+C56,"Malignant neoplasm of ovary",NULL,2
+C57,"Malignant neoplasm of other and unspecified female genital organs",NULL,2
+C58,"Malignant neoplasm of placenta",NULL,2
+C60,"Malignant neoplasm of penis",NULL,2
+C61,"Malignant neoplasm of prostate",NULL,2
+C62,"Malignant neoplasm of testis",NULL,2
+C63,"Malignant neoplasm of other and unspecified male genital organs",NULL,2
+C64,"Malignant neoplasm of kidney, except renal pelvis",NULL,2
+C65,"Malignant neoplasm of renal pelvis",NULL,2
+C66,"Malignant neoplasm of ureter",NULL,2
+C67,"Malignant neoplasm of bladder",NULL,2
+C68,"Malignant neoplasm of other and unspecified urinary organs",NULL,2
+C69,"Malignant neoplasm of eye and adnexa",NULL,2
+C70,"Malignant neoplasm of meninges",NULL,2
+C71,"Malignant neoplasm of brain",NULL,2
+C72,"Malignant neoplasm of spinal cord, cranial nerves and other parts of central nervous system",NULL,2
+C73,"Malignant neoplasm of thyroid gland",NULL,2
+C74,"Malignant neoplasm of adrenal gland",NULL,2
+C75,"Malignant neoplasm of other endocrine glands and related structures",NULL,2
+C76,"Malignant neoplasm of other and ill-defined sites",NULL,2
+C77,"Secondary and unspecified malignant neoplasm of lymph nodes",NULL,2
+C78,"Secondary malignant neoplasm of respiratory and digestive organs",NULL,2
+C79,"Secondary malignant neoplasm of other and unspecified sites",NULL,2
+C80,"Malignant neoplasm, without specification of site",NULL,2
+C81,"Hodgkin lymphoma",NULL,2
+C82,"Follicular lymphoma",NULL,2
+C83,"Non-follicular lymphoma",NULL,2
+C84,"Mature T/NK-cell lymphomas",NULL,2
+C85,"Other and unspecified types of non-Hodgkin lymphoma",NULL,2
+C86,"Other specified types of T/NK-cell lymphoma",NULL,2
+C88,"Malignant immunoproliferative diseases",NULL,2
+C90,"Multiple myeloma and malignant plasma cell neoplasms",NULL,2
+C91,"Lymphoid leukaemia",NULL,2
+C92,"Myeloid leukaemia",NULL,2
+C93,"Monocytic leukaemia",NULL,2
+C94,"Other leukaemias of specified cell type",NULL,2
+C95,"Leukaemia of unspecified cell type",NULL,2
+C96,"Other and unspecified malignant neoplasms of lymphoid, haematopoietic and related tissue",NULL,2
+C97,"Malignant neoplasms of independent (primary) multiple sites",NULL,2
+D00,"Carcinoma in situ of oral cavity, oesophagus and stomach",NULL,2
+D01,"Carcinoma in situ of other and unspecified digestive organs",NULL,2
+D02,"Carcinoma in situ of middle ear and respiratory system",NULL,2
+D03,"Melanoma in situ",NULL,2
+D04,"Carcinoma in situ of skin",NULL,2
+D05,"Carcinoma in situ of breast",NULL,2
+D06,"Carcinoma in situ of cervix uteri",NULL,2
+D07,"Carcinoma in situ of other and unspecified genital organs",NULL,2
+D09,"Carcinoma in situ of other and unspecified sites",NULL,2
+D10,"Benign neoplasm of mouth and pharynx",NULL,2
+D11,"Benign neoplasm of major salivary glands",NULL,2
+D12,"Benign neoplasm of colon, rectum, anus and anal canal",NULL,2
+D13,"Benign neoplasm of other and ill-defined parts of digestive system",NULL,2
+D14,"Benign neoplasm of middle ear and respiratory system",NULL,2
+D15,"Benign neoplasm of other and unspecified intrathoracic organs",NULL,2
+D16,"Benign neoplasm of bone and articular cartilage",NULL,2
+D17,"Benign lipomatous neoplasm",NULL,2
+D18,"Haemangioma and lymphangioma, any site",NULL,2
+D19,"Benign neoplasm of mesothelial tissue",NULL,2
+D20,"Benign neoplasm of soft tissue of retroperitoneum and peritoneum",NULL,2
+D21,"Other benign neoplasms of connective and other soft tissue",NULL,2
+D22,"Melanocytic naevi",NULL,2
+D23,"Other benign neoplasms of skin",NULL,2
+D24,"Benign neoplasm of breast",NULL,2
+D25,"Leiomyoma of uterus",NULL,2
+D26,"Other benign neoplasms of uterus",NULL,2
+D27,"Benign neoplasm of ovary",NULL,2
+D28,"Benign neoplasm of other and unspecified female genital organs",NULL,2
+D29,"Benign neoplasm of male genital organs",NULL,2
+D30,"Benign neoplasm of urinary organs",NULL,2
+D31,"Benign neoplasm of eye and adnexa",NULL,2
+D32,"Benign neoplasm of meninges",NULL,2
+D33,"Benign neoplasm of brain and other parts of central nervous system",NULL,2
+D34,"Benign neoplasm of thyroid gland",NULL,2
+D35,"Benign neoplasm of other and unspecified endocrine glands",NULL,2
+D36,"Benign neoplasm of other and unspecified sites",NULL,2
+D37,"Neoplasm of uncertain or unknown behaviour of oral cavity and digestive organs",NULL,2
+D38,"Neoplasm of uncertain or unknown behaviour of middle ear and respiratory and intrathoracic organs",NULL,2
+D39,"Neoplasm of uncertain or unknown behaviour of female genital organs",NULL,2
+D40,"Neoplasm of uncertain or unknown behaviour of male genital organs",NULL,2
+D41,"Neoplasm of uncertain or unknown behaviour of urinary organs",NULL,2
+D42,"Neoplasm of uncertain or unknown behaviour of meninges",NULL,2
+D43,"Neoplasm of uncertain or unknown behaviour of brain and central nervous system",NULL,2
+D44,"Neoplasm of uncertain or unknown behaviour of endocrine glands",NULL,2
+D45,"Polycythaemia vera",NULL,2
+D46,"Myelodysplastic syndromes",NULL,2
+D47,"Other neoplasms of uncertain or unknown behaviour of lymphoid, haematopoietic and related tissue",NULL,2
+D48,"Neoplasm of uncertain or unknown behaviour of other and unspecified sites",NULL,2
+D50,"Iron deficiency anaemia",NULL,3
+D51,"Vitamin B 12 deficiency anaemia",NULL,3
+D52,"Folate deficiency anaemia",NULL,3
+D53,"Other nutritional anaemias",NULL,3
+D55,"Anaemia due to enzyme disorders",NULL,3
+D56,Thalassaemia,NULL,3
+D57,"Sickle-cell disorders",NULL,3
+D58,"Other hereditary haemolytic anaemias",NULL,3
+D59,"Acquired haemolytic anaemia",NULL,3
+D60,"Acquired pure red cell aplasia [erythroblastopenia]",NULL,3
+D61,"Other aplastic anaemias",NULL,3
+D62,"Acute posthaemorrhagic anaemia",NULL,3
+D63,"Anaemia in chronic diseases classified elsewhere",NULL,3
+D64,"Other anaemias",NULL,3
+D65,"Disseminated intravascular coagulation [defibrination syndrome]",NULL,3
+D66,"Hereditary factor VIII deficiency",NULL,3
+D67,"Hereditary factor IX deficiency",NULL,3
+D68,"Other coagulation defects",NULL,3
+D69,"Purpura and other haemorrhagic conditions",NULL,3
+D70,Agranulocytosis,NULL,3
+D71,"Functional disorders of polymorphonuclear neutrophils",NULL,3
+D72,"Other disorders of white blood cells",NULL,3
+D73,"Diseases of spleen",NULL,3
+D74,Methaemoglobinaemia,NULL,3
+D75,"Other diseases of blood and blood-forming organs",NULL,3
+D76,"Other specified diseases with participation of lymphoreticular and reticulohistiocytic tissue",NULL,3
+D77,"Other disorders of blood and blood-forming organs in diseases classified elsewhere",NULL,3
+D80,"Immunodeficiency with predominantly antibody defects",NULL,3
+D81,"Combined immunodeficiencies",NULL,3
+D82,"Immunodeficiency associated with other major defects",NULL,3
+D83,"Common variable immunodeficiency",NULL,3
+D84,"Other immunodeficiencies",NULL,3
+D86,Sarcoidosis,NULL,3
+D89,"Other disorders involving the immune mechanism, not elsewhere classified",NULL,3
+E00,"Congenital iodine-deficiency syndrome",NULL,4
+E01,"Iodine-deficiency-related thyroid disorders and allied conditions",NULL,4
+E02,"Subclinical iodine-deficiency hypothyroidism",NULL,4
+E03,"Other hypothyroidism",NULL,4
+E04,"Other nontoxic goitre",NULL,4
+E05,"Thyrotoxicosis [hyperthyroidism]",NULL,4
+E06,Thyroiditis,NULL,4
+E07,"Other disorders of thyroid",NULL,4
+E10,"Type 1 diabetes mellitus",NULL,4
+E11,"Type 2 diabetes mellitus",NULL,4
+E12,"Malnutrition-related diabetes mellitus",NULL,4
+E13,"Other specified diabetes mellitus",NULL,4
+E14,"Unspecified diabetes mellitus",NULL,4
+E15,"Nondiabetic hypoglycaemic coma",NULL,4
+E16,"Other disorders of pancreatic internal secretion",NULL,4
+E20,Hypoparathyroidism,NULL,4
+E21,"Hyperparathyroidism and other disorders of parathyroid gland",NULL,4
+E22,"Hyperfunction of pituitary gland",NULL,4
+E23,"Hypofunction and other disorders of pituitary gland",NULL,4
+E24,"Cushing syndrome",NULL,4
+E25,"Adrenogenital disorders",NULL,4
+E26,Hyperaldosteronism,NULL,4
+E27,"Other disorders of adrenal gland",NULL,4
+E28,"Ovarian dysfunction",NULL,4
+E29,"Testicular dysfunction",NULL,4
+E30,"Disorders of puberty, not elsewhere classified",NULL,4
+E31,"Polyglandular dysfunction",NULL,4
+E32,"Diseases of thymus",NULL,4
+E34,"Other endocrine disorders",NULL,4
+E35,"Disorders of endocrine glands in diseases classified elsewhere",NULL,4
+E40,Kwashiorkor,NULL,4
+E41,"Nutritional marasmus",NULL,4
+E42,"Marasmic kwashiorkor",NULL,4
+E43,"Unspecified severe protein-energy malnutrition",NULL,4
+E44,"Protein-energy malnutrition of moderate and mild degree",NULL,4
+E45,"Retarded development following protein-energy malnutrition",NULL,4
+E46,"Unspecified protein-energy malnutrition",NULL,4
+E50,"Vitamin A deficiency",NULL,4
+E51,"Thiamine deficiency",NULL,4
+E52,"Niacin deficiency [pellagra]",NULL,4
+E53,"Deficiency of other B group vitamins",NULL,4
+E54,"Ascorbic acid deficiency",NULL,4
+E55,"Vitamin D deficiency",NULL,4
+E56,"Other vitamin deficiencies",NULL,4
+E58,"Dietary calcium deficiency",NULL,4
+E59,"Dietary selenium deficiency",NULL,4
+E60,"Dietary zinc deficiency",NULL,4
+E61,"Deficiency of other nutrient elements",NULL,4
+E63,"Other nutritional deficiencies",NULL,4
+E64,"Sequelae of malnutrition and other nutritional deficiencies",NULL,4
+E65,"Localized adiposity",NULL,4
+E66,Obesity,NULL,4
+E67,"Other hyperalimentation",NULL,4
+E68,"Sequelae of hyperalimentation",NULL,4
+E70,"Disorders of aromatic amino-acid metabolism",NULL,4
+E71,"Disorders of branched-chain amino-acid metabolism and fatty-acid metabolism",NULL,4
+E72,"Other disorders of amino-acid metabolism",NULL,4
+E73,"Lactose intolerance",NULL,4
+E74,"Other disorders of carbohydrate metabolism",NULL,4
+E75,"Disorders of sphingolipid metabolism and other lipid storage disorders",NULL,4
+E76,"Disorders of glycosaminoglycan metabolism",NULL,4
+E77,"Disorders of glycoprotein metabolism",NULL,4
+E78,"Disorders of lipoprotein metabolism and other lipidaemias",NULL,4
+E79,"Disorders of purine and pyrimidine metabolism",NULL,4
+E80,"Disorders of porphyrin and bilirubin metabolism",NULL,4
+E83,"Disorders of mineral metabolism",NULL,4
+E84,"Cystic fibrosis",NULL,4
+E85,Amyloidosis,NULL,4
+E86,"Volume depletion",NULL,4
+E87,"Other disorders of fluid, electrolyte and acid-base balance",NULL,4
+E88,"Other metabolic disorders",NULL,4
+E89,"Postprocedural endocrine and metabolic disorders, not elsewhere classified",NULL,4
+E90,"Nutritional and metabolic disorders in diseases classified elsewhere",NULL,4
+F00,"Dementia in Alzheimer disease",NULL,5
+F01,"Vascular dementia",NULL,5
+F02,"Dementia in other diseases classified elsewhere",NULL,5
+F03,"Unspecified dementia",NULL,5
+F04,"Organic amnesic syndrome, not induced by alcohol and other psychoactive substances",NULL,5
+F05,"Delirium, not induced by alcohol and other psychoactive substances",NULL,5
+F06,"Other mental disorders due to brain damage and dysfunction and to physical disease",NULL,5
+F07,"Personality and behavioural disorders due to brain disease, damage and dysfunction",NULL,5
+F09,"Unspecified organic or symptomatic mental disorder",NULL,5
+F10,"Mental and behavioural disorders due to use of alcohol",NULL,5
+F11,"Mental and behavioural disorders due to use of opioids",NULL,5
+F12,"Mental and behavioural disorders due to use of cannabinoids",NULL,5
+F13,"Mental and behavioural disorders due to use of sedatives or hypnotics",NULL,5
+F14,"Mental and behavioural disorders due to use of cocaine",NULL,5
+F15,"Mental and behavioural disorders due to use of other stimulants, including caffeine",NULL,5
+F16,"Mental and behavioural disorders due to use of hallucinogens",NULL,5
+F17,"Mental and behavioural disorders due to use of tobacco",NULL,5
+F18,"Mental and behavioural disorders due to use of volatile solvents",NULL,5
+F19,"Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances",NULL,5
+F20,Schizophrenia,NULL,5
+F21,"Schizotypal disorder",NULL,5
+F22,"Persistent delusional disorders",NULL,5
+F23,"Acute and transient psychotic disorders",NULL,5
+F24,"Induced delusional disorder",NULL,5
+F25,"Schizoaffective disorders",NULL,5
+F28,"Other nonorganic psychotic disorders",NULL,5
+F29,"Unspecified nonorganic psychosis",NULL,5
+F30,"Manic episode",NULL,5
+F31,"Bipolar affective disorder",NULL,5
+F32,"Depressive episode",NULL,5
+F33,"Recurrent depressive disorder",NULL,5
+F34,"Persistent mood [affective] disorders",NULL,5
+F38,"Other mood [affective] disorders",NULL,5
+F39,"Unspecified mood [affective] disorder",NULL,5
+F40,"Phobic anxiety disorders",NULL,5
+F41,"Other anxiety disorders",NULL,5
+F42,"Obsessive-compulsive disorder",NULL,5
+F43,"Reaction to severe stress, and adjustment disorders",NULL,5
+F44,"Dissociative [conversion] disorders",NULL,5
+F45,"Somatoform disorders",NULL,5
+F48,"Other neurotic disorders",NULL,5
+F50,"Eating disorders",NULL,5
+F51,"Nonorganic sleep disorders",NULL,5
+F52,"Sexual dysfunction, not caused by organic disorder or disease",NULL,5
+F53,"Mental and behavioural disorders associated with the puerperium, not elsewhere classified",NULL,5
+F54,"Psychological and behavioural factors associated with disorders or diseases classified elsewhere",NULL,5
+F55,"Abuse of non-dependence-producing substances",NULL,5
+F59,"Unspecified behavioural syndromes associated with physiological disturbances and physical factors",NULL,5
+F60,"Specific personality disorders",NULL,5
+F61,"Mixed and other personality disorders",NULL,5
+F62,"Enduring personality changes, not attributable to brain damage and disease",NULL,5
+F63,"Habit and impulse disorders",NULL,5
+F64,"Gender identity disorders",NULL,5
+F65,"Disorders of sexual preference",NULL,5
+F66,"Psychological and behavioural disorders associated with sexual development and orientation",NULL,5
+F68,"Other disorders of adult personality and behaviour",NULL,5
+F69,"Unspecified disorder of adult personality and behaviour",NULL,5
+F70,"Mild mental retardation",NULL,5
+F71,"Moderate mental retardation",NULL,5
+F72,"Severe mental retardation",NULL,5
+F73,"Profound mental retardation",NULL,5
+F78,"Other mental retardation",NULL,5
+F79,"Unspecified mental retardation",NULL,5
+F80,"Specific developmental disorders of speech and language",NULL,5
+F81,"Specific developmental disorders of scholastic skills",NULL,5
+F82,"Specific developmental disorder of motor function",NULL,5
+F83,"Mixed specific developmental disorders",NULL,5
+F84,"Pervasive developmental disorders",NULL,5
+F88,"Other disorders of psychological development",NULL,5
+F89,"Unspecified disorder of psychological development",NULL,5
+F90,"Hyperkinetic disorders",NULL,5
+F91,"Conduct disorders",NULL,5
+F92,"Mixed disorders of conduct and emotions",NULL,5
+F93,"Emotional disorders with onset specific to childhood",NULL,5
+F94,"Disorders of social functioning with onset specific to childhood and adolescence",NULL,5
+F95,"Tic disorders",NULL,5
+F98,"Other behavioural and emotional disorders with onset usually occurring in childhood and adolescence",NULL,5
+F99,"Mental disorder, not otherwise specified",NULL,5
+G00,"Bacterial meningitis, not elsewhere classified",NULL,6
+G01,"Meningitis in bacterial diseases classified elsewhere",NULL,6
+G02,"Meningitis in other infectious and parasitic diseases classified elsewhere",NULL,6
+G03,"Meningitis due to other and unspecified causes",NULL,6
+G04,"Encephalitis, myelitis and encephalomyelitis",NULL,6
+G05,"Encephalitis, myelitis and encephalomyelitis in diseases classified elsewhere",NULL,6
+G06,"Intracranial and intraspinal abscess and granuloma",NULL,6
+G07,"Intracranial and intraspinal abscess and granuloma in diseases classified elsewhere",NULL,6
+G08,"Intracranial and intraspinal phlebitis and thrombophlebitis",NULL,6
+G09,"Sequelae of inflammatory diseases of central nervous system",NULL,6
+G10,"Huntington disease",NULL,6
+G11,"Hereditary ataxia",NULL,6
+G12,"Spinal muscular atrophy and related syndromes",NULL,6
+G13,"Systemic atrophies primarily affecting central nervous system in diseases classified elsewhere",NULL,6
+G14,"Postpolio syndrome",NULL,6
+G20,"Parkinson disease",NULL,6
+G21,"Secondary parkinsonism",NULL,6
+G22,"Parkinsonism in diseases classified elsewhere",NULL,6
+G23,"Other degenerative diseases of basal ganglia",NULL,6
+G24,Dystonia,NULL,6
+G25,"Other extrapyramidal and movement disorders",NULL,6
+G26,"Extrapyramidal and movement disorders in diseases classified elsewhere",NULL,6
+G30,"Alzheimer disease",NULL,6
+G31,"Other degenerative diseases of nervous system, not elsewhere classified",NULL,6
+G32,"Other degenerative disorders of nervous system in diseases classified elsewhere",NULL,6
+G35,"Multiple sclerosis",NULL,6
+G36,"Other acute disseminated demyelination",NULL,6
+G37,"Other demyelinating diseases of central nervous system",NULL,6
+G40,Epilepsy,NULL,6
+G41,"Status epilepticus",NULL,6
+G43,Migraine,NULL,6
+G44,"Other headache syndromes",NULL,6
+G45,"Transient cerebral ischaemic attacks and related syndromes",NULL,6
+G46,"Vascular syndromes of brain in cerebrovascular diseases",NULL,6
+G47,"Sleep disorders",NULL,6
+G50,"Disorders of trigeminal nerve",NULL,6
+G51,"Facial nerve disorders",NULL,6
+G52,"Disorders of other cranial nerves",NULL,6
+G53,"Cranial nerve disorders in diseases classified elsewhere",NULL,6
+G54,"Nerve root and plexus disorders",NULL,6
+G55,"Nerve root and plexus compressions in diseases classified elsewhere",NULL,6
+G56,"Mononeuropathies of upper limb",NULL,6
+G57,"Mononeuropathies of lower limb",NULL,6
+G58,"Other mononeuropathies",NULL,6
+G59,"Mononeuropathy in diseases classified elsewhere",NULL,6
+G60,"Hereditary and idiopathic neuropathy",NULL,6
+G61,"Inflammatory polyneuropathy",NULL,6
+G62,"Other polyneuropathies",NULL,6
+G63,"Polyneuropathy in diseases classified elsewhere",NULL,6
+G64,"Other disorders of peripheral nervous system",NULL,6
+G70,"Myasthenia gravis and other myoneural disorders",NULL,6
+G71,"Primary disorders of muscles",NULL,6
+G72,"Other myopathies",NULL,6
+G73,"Disorders of myoneural junction and muscle in diseases classified elsewhere",NULL,6
+G80,"Cerebral palsy",NULL,6
+G81,Hemiplegia,NULL,6
+G82,"Paraplegia and tetraplegia",NULL,6
+G83,"Other paralytic syndromes",NULL,6
+G90,"Disorders of autonomic nervous system",NULL,6
+G91,Hydrocephalus,NULL,6
+G92,"Toxic encephalopathy",NULL,6
+G93,"Other disorders of brain",NULL,6
+G94,"Other disorders of brain in diseases classified elsewhere",NULL,6
+G95,"Other diseases of spinal cord",NULL,6
+G96,"Other disorders of central nervous system",NULL,6
+G97,"Postprocedural disorders of nervous system, not elsewhere classified",NULL,6
+G98,"Other disorders of nervous system, not elsewhere classified",NULL,6
+G99,"Other disorders of nervous system in diseases classified elsewhere",NULL,6
+H00,"Hordeolum and chalazion",NULL,7
+H01,"Other inflammation of eyelid",NULL,7
+H02,"Other disorders of eyelid",NULL,7
+H03,"Disorders of eyelid in diseases classified elsewhere",NULL,7
+H04,"Disorders of lacrimal system",NULL,7
+H05,"Disorders of orbit",NULL,7
+H06,"Disorders of lacrimal system and orbit in diseases classified elsewhere",NULL,7
+H10,Conjunctivitis,NULL,7
+H11,"Other disorders of conjunctiva",NULL,7
+H13,"Disorders of conjunctiva in diseases classified elsewhere",NULL,7
+H15,"Disorders of sclera",NULL,7
+H16,Keratitis,NULL,7
+H17,"Corneal scars and opacities",NULL,7
+H18,"Other disorders of cornea",NULL,7
+H19,"Disorders of sclera and cornea in diseases classified elsewhere",NULL,7
+H20,Iridocyclitis,NULL,7
+H21,"Other disorders of iris and ciliary body",NULL,7
+H22,"Disorders of iris and ciliary body in diseases classified elsewhere",NULL,7
+H25,"Senile cataract",NULL,7
+H26,"Other cataract",NULL,7
+H27,"Other disorders of lens",NULL,7
+H28,"Cataract and other disorders of lens in diseases classified elsewhere",NULL,7
+H30,"Chorioretinal inflammation",NULL,7
+H31,"Other disorders of choroid",NULL,7
+H32,"Chorioretinal disorders in diseases classified elsewhere",NULL,7
+H33,"Retinal detachments and breaks",NULL,7
+H34,"Retinal vascular occlusions",NULL,7
+H35,"Other retinal disorders",NULL,7
+H36,"Retinal disorders in diseases classified elsewhere",NULL,7
+H40,Glaucoma,NULL,7
+H42,"Glaucoma in diseases classified elsewhere",NULL,7
+H43,"Disorders of vitreous body",NULL,7
+H44,"Disorders of globe",NULL,7
+H45,"Disorders of vitreous body and globe in diseases classified elsewhere",NULL,7
+H46,"Optic neuritis",NULL,7
+H47,"Other disorders of optic [2nd] nerve and visual pathways",NULL,7
+H48,"Disorders of optic [2nd] nerve and visual pathways in diseases classified elsewhere",NULL,7
+H49,"Paralytic strabismus",NULL,7
+H50,"Other strabismus",NULL,7
+H51,"Other disorders of binocular movement",NULL,7
+H52,"Disorders of refraction and accommodation",NULL,7
+H53,"Visual disturbances",NULL,7
+H54,"Visual impairment including blindness (binocular or monocular)",NULL,7
+H55,"Nystagmus and other irregular eye movements",NULL,7
+H57,"Other disorders of eye and adnexa",NULL,7
+H58,"Other disorders of eye and adnexa in diseases classified elsewhere",NULL,7
+H59,"Postprocedural disorders of eye and adnexa, not elsewhere classified",NULL,7
+H60,"Otitis externa",NULL,8
+H61,"Other disorders of external ear",NULL,8
+H62,"Disorders of external ear in diseases classified elsewhere",NULL,8
+H65,"Nonsuppurative otitis media",NULL,8
+H66,"Suppurative and unspecified otitis media",NULL,8
+H67,"Otitis media in diseases classified elsewhere",NULL,8
+H68,"Eustachian salpingitis and obstruction",NULL,8
+H69,"Other disorders of Eustachian tube",NULL,8
+H70,"Mastoiditis and related conditions",NULL,8
+H71,"Cholesteatoma of middle ear",NULL,8
+H72,"Perforation of tympanic membrane",NULL,8
+H73,"Other disorders of tympanic membrane",NULL,8
+H74,"Other disorders of middle ear and mastoid",NULL,8
+H75,"Other disorders of middle ear and mastoid in diseases classified elsewhere",NULL,8
+H80,Otosclerosis,NULL,8
+H81,"Disorders of vestibular function",NULL,8
+H82,"Vertiginous syndromes in diseases classified elsewhere",NULL,8
+H83,"Other diseases of inner ear",NULL,8
+H90,"Conductive and sensorineural hearing loss",NULL,8
+H91,"Other hearing loss",NULL,8
+H92,"Otalgia and effusion of ear",NULL,8
+H93,"Other disorders of ear, not elsewhere classified",NULL,8
+H94,"Other disorders of ear in diseases classified elsewhere",NULL,8
+H95,"Postprocedural disorders of ear and mastoid process, not elsewhere classified",NULL,8
+I00,"Rheumatic fever without mention of heart involvement",NULL,9
+I01,"Rheumatic fever with heart involvement",NULL,9
+I02,"Rheumatic chorea",NULL,9
+I05,"Rheumatic mitral valve diseases",NULL,9
+I06,"Rheumatic aortic valve diseases",NULL,9
+I07,"Rheumatic tricuspid valve diseases",NULL,9
+I08,"Multiple valve diseases",NULL,9
+I09,"Other rheumatic heart diseases",NULL,9
+I10,"Essential (primary) hypertension",NULL,9
+I11,"Hypertensive heart disease",NULL,9
+I12,"Hypertensive renal disease",NULL,9
+I13,"Hypertensive heart and renal disease",NULL,9
+I15,"Secondary hypertension",NULL,9
+I20,"Angina pectoris",NULL,9
+I21,"Acute myocardial infarction",NULL,9
+I22,"Subsequent myocardial infarction",NULL,9
+I23,"Certain current complications following acute myocardial infarction",NULL,9
+I24,"Other acute ischaemic heart diseases",NULL,9
+I25,"Chronic ischaemic heart disease",NULL,9
+I26,"Pulmonary embolism",NULL,9
+I27,"Other pulmonary heart diseases",NULL,9
+I28,"Other diseases of pulmonary vessels",NULL,9
+I30,"Acute pericarditis",NULL,9
+I31,"Other diseases of pericardium",NULL,9
+I32,"Pericarditis in diseases classified elsewhere",NULL,9
+I33,"Acute and subacute endocarditis",NULL,9
+I34,"Nonrheumatic mitral valve disorders",NULL,9
+I35,"Nonrheumatic aortic valve disorders",NULL,9
+I36,"Nonrheumatic tricuspid valve disorders",NULL,9
+I37,"Pulmonary valve disorders",NULL,9
+I38,"Endocarditis, valve unspecified",NULL,9
+I39,"Endocarditis and heart valve disorders in diseases classified elsewhere",NULL,9
+I40,"Acute myocarditis",NULL,9
+I41,"Myocarditis in diseases classified elsewhere",NULL,9
+I42,Cardiomyopathy,NULL,9
+I43,"Cardiomyopathy in diseases classified elsewhere",NULL,9
+I44,"Atrioventricular and left bundle-branch block",NULL,9
+I45,"Other conduction disorders",NULL,9
+I46,"Cardiac arrest",NULL,9
+I47,"Paroxysmal tachycardia",NULL,9
+I48,"Atrial fibrillation and flutter",NULL,9
+I49,"Other cardiac arrhythmias",NULL,9
+I50,"Heart failure",NULL,9
+I51,"Complications and ill-defined descriptions of heart disease",NULL,9
+I52,"Other heart disorders in diseases classified elsewhere",NULL,9
+I60,"Subarachnoid haemorrhage",NULL,9
+I61,"Intracerebral haemorrhage",NULL,9
+I62,"Other nontraumatic intracranial haemorrhage",NULL,9
+I63,"Cerebral infarction",NULL,9
+I64,"Stroke, not specified as haemorrhage or infarction",NULL,9
+I65,"Occlusion and stenosis of precerebral arteries, not resulting in cerebral infarction",NULL,9
+I66,"Occlusion and stenosis of cerebral arteries, not resulting in cerebral infarction",NULL,9
+I67,"Other cerebrovascular diseases",NULL,9
+I68,"Cerebrovascular disorders in diseases classified elsewhere",NULL,9
+I69,"Sequelae of cerebrovascular disease",NULL,9
+I70,Atherosclerosis,NULL,9
+I71,"Aortic aneurysm and dissection",NULL,9
+I72,"Other aneurysm and dissection",NULL,9
+I73,"Other peripheral vascular diseases",NULL,9
+I74,"Arterial embolism and thrombosis",NULL,9
+I77,"Other disorders of arteries and arterioles",NULL,9
+I78,"Diseases of capillaries",NULL,9
+I79,"Disorders of arteries, arterioles and capillaries in diseases classified elsewhere",NULL,9
+I80,"Phlebitis and thrombophlebitis",NULL,9
+I81,"Portal vein thrombosis",NULL,9
+I82,"Other venous embolism and thrombosis",NULL,9
+I83,"Varicose veins of lower extremities",NULL,9
+I85,"Oesophageal varices",NULL,9
+I86,"Varicose veins of other sites",NULL,9
+I87,"Other disorders of veins",NULL,9
+I88,"Nonspecific lymphadenitis",NULL,9
+I89,"Other noninfective disorders of lymphatic vessels and lymph nodes",NULL,9
+I95,Hypotension,NULL,9
+I97,"Postprocedural disorders of circulatory system, not elsewhere classified",NULL,9
+I98,"Other disorders of circulatory system in diseases classified elsewhere",NULL,9
+I99,"Other and unspecified disorders of circulatory system",NULL,9
+J00,"Acute nasopharyngitis [common cold]",NULL,10
+J01,"Acute sinusitis",NULL,10
+J02,"Acute pharyngitis",NULL,10
+J03,"Acute tonsillitis",NULL,10
+J04,"Acute laryngitis and tracheitis",NULL,10
+J05,"Acute obstructive laryngitis [croup] and epiglottitis",NULL,10
+J06,"Acute upper respiratory infections of multiple and unspecified sites",NULL,10
+J09,"Influenza due to identified zoonotic or pandemic influenza virus",NULL,10
+J10,"Influenza due to identified seasonal influenza virus",NULL,10
+J11,"Influenza, virus not identified",NULL,10
+J12,"Viral pneumonia, not elsewhere classified",NULL,10
+J13,"Pneumonia due to Streptococcus pneumoniae",NULL,10
+J14,"Pneumonia due to Haemophilus influenzae",NULL,10
+J15,"Bacterial pneumonia, not elsewhere classified",NULL,10
+J16,"Pneumonia due to other infectious organisms, not elsewhere classified",NULL,10
+J17,"Pneumonia in diseases classified elsewhere",NULL,10
+J18,"Pneumonia, organism unspecified",NULL,10
+J20,"Acute bronchitis",NULL,10
+J21,"Acute bronchiolitis",NULL,10
+J22,"Unspecified acute lower respiratory infection",NULL,10
+J30,"Vasomotor and allergic rhinitis",NULL,10
+J31,"Chronic rhinitis, nasopharyngitis and pharyngitis",NULL,10
+J32,"Chronic sinusitis",NULL,10
+J33,"Nasal polyp",NULL,10
+J34,"Other disorders of nose and nasal sinuses",NULL,10
+J35,"Chronic diseases of tonsils and adenoids",NULL,10
+J36,"Peritonsillar abscess",NULL,10
+J37,"Chronic laryngitis and laryngotracheitis",NULL,10
+J38,"Diseases of vocal cords and larynx, not elsewhere classified",NULL,10
+J39,"Other diseases of upper respiratory tract",NULL,10
+J40,"Bronchitis, not specified as acute or chronic",NULL,10
+J41,"Simple and mucopurulent chronic bronchitis",NULL,10
+J42,"Unspecified chronic bronchitis",NULL,10
+J43,Emphysema,NULL,10
+J44,"Other chronic obstructive pulmonary disease",NULL,10
+J45,Asthma,NULL,10
+J46,"Status asthmaticus",NULL,10
+J47,Bronchiectasis,NULL,10
+J60,"Coalworker pneumoconiosis",NULL,10
+J61,"Pneumoconiosis due to asbestos and other mineral fibres",NULL,10
+J62,"Pneumoconiosis due to dust containing silica",NULL,10
+J63,"Pneumoconiosis due to other inorganic dusts",NULL,10
+J64,"Unspecified pneumoconiosis",NULL,10
+J65,"Pneumoconiosis associated with tuberculosis",NULL,10
+J66,"Airway disease due to specific organic dust",NULL,10
+J67,"Hypersensitivity pneumonitis due to organic dust",NULL,10
+J68,"Respiratory conditions due to inhalation of chemicals, gases, fumes and vapours",NULL,10
+J69,"Pneumonitis due to solids and liquids",NULL,10
+J70,"Respiratory conditions due to other external agents",NULL,10
+J80,"Adult respiratory distress syndrome",NULL,10
+J81,"Pulmonary oedema",NULL,10
+J82,"Pulmonary eosinophilia, not elsewhere classified",NULL,10
+J84,"Other interstitial pulmonary diseases",NULL,10
+J85,"Abscess of lung and mediastinum",NULL,10
+J86,Pyothorax,NULL,10
+J90,"Pleural effusion, not elsewhere classified",NULL,10
+J91,"Pleural effusion in conditions classified elsewhere",NULL,10
+J92,"Pleural plaque",NULL,10
+J93,Pneumothorax,NULL,10
+J94,"Other pleural conditions",NULL,10
+J95,"Postprocedural respiratory disorders, not elsewhere classified",NULL,10
+J96,"Respiratory failure, not elsewhere classified",NULL,10
+J98,"Other respiratory disorders",NULL,10
+J99,"Respiratory disorders in diseases classified elsewhere",NULL,10
+K00,"Disorders of tooth development and eruption",NULL,11
+K01,"Embedded and impacted teeth",NULL,11
+K02,"Dental caries",NULL,11
+K03,"Other diseases of hard tissues of teeth",NULL,11
+K04,"Diseases of pulp and periapical tissues",NULL,11
+K05,"Gingivitis and periodontal diseases",NULL,11
+K06,"Other disorders of gingiva and edentulous alveolar ridge",NULL,11
+K07,"Dentofacial anomalies [including malocclusion]",NULL,11
+K08,"Other disorders of teeth and supporting structures",NULL,11
+K09,"Cysts of oral region, not elsewhere classified",NULL,11
+K10,"Other diseases of jaws",NULL,11
+K11,"Diseases of salivary glands",NULL,11
+K12,"Stomatitis and related lesions",NULL,11
+K13,"Other diseases of lip and oral mucosa",NULL,11
+K14,"Diseases of tongue",NULL,11
+K20,Oesophagitis,NULL,11
+K21,"Gastro-oesophageal reflux disease",NULL,11
+K22,"Other diseases of oesophagus",NULL,11
+K23,"Disorders of oesophagus in diseases classified elsewhere",NULL,11
+K25,"Gastric ulcer",NULL,11
+K26,"Duodenal ulcer",NULL,11
+K27,"Peptic ulcer, site unspecified",NULL,11
+K28,"Gastrojejunal ulcer",NULL,11
+K29,"Gastritis and duodenitis",NULL,11
+K30,"Functional dyspepsia",NULL,11
+K31,"Other diseases of stomach and duodenum",NULL,11
+K35,"Acute appendicitis",NULL,11
+K36,"Other appendicitis",NULL,11
+K37,"Unspecified appendicitis",NULL,11
+K38,"Other diseases of appendix",NULL,11
+K40,"Inguinal hernia",NULL,11
+K41,"Femoral hernia",NULL,11
+K42,"Umbilical hernia",NULL,11
+K43,"Ventral hernia",NULL,11
+K44,"Diaphragmatic hernia",NULL,11
+K45,"Other abdominal hernia",NULL,11
+K46,"Unspecified abdominal hernia",NULL,11
+K50,"Crohn disease [regional enteritis]",NULL,11
+K51,"Ulcerative colitis",NULL,11
+K52,"Other noninfective gastroenteritis and colitis",NULL,11
+K55,"Vascular disorders of intestine",NULL,11
+K56,"Paralytic ileus and intestinal obstruction without hernia",NULL,11
+K57,"Diverticular disease of intestine",NULL,11
+K58,"Irritable bowel syndrome",NULL,11
+K59,"Other functional intestinal disorders",NULL,11
+K60,"Fissure and fistula of anal and rectal regions",NULL,11
+K61,"Abscess of anal and rectal regions",NULL,11
+K62,"Other diseases of anus and rectum",NULL,11
+K63,"Other diseases of intestine",NULL,11
+K64,"Haemorrhoids and perianal venous thrombosis",NULL,11
+K65,Peritonitis,NULL,11
+K66,"Other disorders of peritoneum",NULL,11
+K67,"Disorders of peritoneum in infectious diseases classified elsewhere",NULL,11
+K70,"Alcoholic liver disease",NULL,11
+K71,"Toxic liver disease",NULL,11
+K72,"Hepatic failure, not elsewhere classified",NULL,11
+K73,"Chronic hepatitis, not elsewhere classified",NULL,11
+K74,"Fibrosis and cirrhosis of liver",NULL,11
+K75,"Other inflammatory liver diseases",NULL,11
+K76,"Other diseases of liver",NULL,11
+K77,"Liver disorders in diseases classified elsewhere",NULL,11
+K80,Cholelithiasis,NULL,11
+K81,Cholecystitis,NULL,11
+K82,"Other diseases of gallbladder",NULL,11
+K83,"Other diseases of biliary tract",NULL,11
+K85,"Acute pancreatitis",NULL,11
+K86,"Other diseases of pancreas",NULL,11
+K87,"Disorders of gallbladder, biliary tract and pancreas in diseases classified elsewhere",NULL,11
+K90,"Intestinal malabsorption",NULL,11
+K91,"Postprocedural disorders of digestive system, not elsewhere classified",NULL,11
+K92,"Other diseases of digestive system",NULL,11
+K93,"Disorders of other digestive organs in diseases classified elsewhere",NULL,11
+L00,"Staphylococcal scalded skin syndrome",NULL,12
+L01,Impetigo,NULL,12
+L02,"Cutaneous abscess, furuncle and carbuncle",NULL,12
+L03,Cellulitis,NULL,12
+L04,"Acute lymphadenitis",NULL,12
+L05,"Pilonidal cyst",NULL,12
+L08,"Other local infections of skin and subcutaneous tissue",NULL,12
+L10,Pemphigus,NULL,12
+L11,"Other acantholytic disorders",NULL,12
+L12,Pemphigoid,NULL,12
+L13,"Other bullous disorders",NULL,12
+L14,"Bullous disorders in diseases classified elsewhere",NULL,12
+L20,"Atopic dermatitis",NULL,12
+L21,"Seborrhoeic dermatitis",NULL,12
+L22,"Diaper [napkin] dermatitis",NULL,12
+L23,"Allergic contact dermatitis",NULL,12
+L24,"Irritant contact dermatitis",NULL,12
+L25,"Unspecified contact dermatitis",NULL,12
+L26,"Exfoliative dermatitis",NULL,12
+L27,"Dermatitis due to substances taken internally",NULL,12
+L28,"Lichen simplex chronicus and prurigo",NULL,12
+L29,Pruritus,NULL,12
+L30,"Other dermatitis",NULL,12
+L40,Psoriasis,NULL,12
+L41,Parapsoriasis,NULL,12
+L42,"Pityriasis rosea",NULL,12
+L43,"Lichen planus",NULL,12
+L44,"Other papulosquamous disorders",NULL,12
+L45,"Papulosquamous disorders in diseases classified elsewhere",NULL,12
+L50,Urticaria,NULL,12
+L51,"Erythema multiforme",NULL,12
+L52,"Erythema nodosum",NULL,12
+L53,"Other erythematous conditions",NULL,12
+L54,"Erythema in diseases classified elsewhere",NULL,12
+L55,Sunburn,NULL,12
+L56,"Other acute skin changes due to ultraviolet radiation",NULL,12
+L57,"Skin changes due to chronic exposure to nonionizing radiation",NULL,12
+L58,Radiodermatitis,NULL,12
+L59,"Other disorders of skin and subcutaneous tissue related to radiation",NULL,12
+L60,"Nail disorders",NULL,12
+L62,"Nail disorders in diseases classified elsewhere",NULL,12
+L63,"Alopecia areata",NULL,12
+L64,"Androgenic alopecia",NULL,12
+L65,"Other nonscarring hair loss",NULL,12
+L66,"Cicatricial alopecia [scarring hair loss]",NULL,12
+L67,"Hair colour and hair shaft abnormalities",NULL,12
+L68,Hypertrichosis,NULL,12
+L70,Acne,NULL,12
+L71,Rosacea,NULL,12
+L72,"Follicular cysts of skin and subcutaneous tissue",NULL,12
+L73,"Other follicular disorders",NULL,12
+L74,"Eccrine sweat disorders",NULL,12
+L75,"Apocrine sweat disorders",NULL,12
+L80,Vitiligo,NULL,12
+L81,"Other disorders of pigmentation",NULL,12
+L82,"Seborrhoeic keratosis",NULL,12
+L83,"Acanthosis nigricans",NULL,12
+L84,"Corns and callosities",NULL,12
+L85,"Other epidermal thickening",NULL,12
+L86,"Keratoderma in diseases classified elsewhere",NULL,12
+L87,"Transepidermal elimination disorders",NULL,12
+L88,"Pyoderma gangrenosum",NULL,12
+L89,"Decubitus ulcer and pressure area",NULL,12
+L90,"Atrophic disorders of skin",NULL,12
+L91,"Hypertrophic disorders of skin",NULL,12
+L92,"Granulomatous disorders of skin and subcutaneous tissue",NULL,12
+L93,"Lupus erythematosus",NULL,12
+L94,"Other localized connective tissue disorders",NULL,12
+L95,"Vasculitis limited to skin, not elsewhere classified",NULL,12
+L97,"Ulcer of lower limb, not elsewhere classified",NULL,12
+L98,"Other disorders of skin and subcutaneous tissue, not elsewhere classified",NULL,12
+L99,"Other disorders of skin and subcutaneous tissue in diseases classified elsewhere",NULL,12
+M00,"Pyogenic arthritis",NULL,13
+M01,"Direct infections of joint in infectious and parasitic diseases classified elsewhere",NULL,13
+M02,"Reactive arthropathies",NULL,13
+M03,"Postinfective and reactive arthropathies in diseases classified elsewhere",NULL,13
+M05,"Seropositive rheumatoid arthritis",NULL,13
+M06,"Other rheumatoid arthritis",NULL,13
+M07,"Psoriatic and enteropathic arthropathies",NULL,13
+M08,"Juvenile arthritis",NULL,13
+M09,"Juvenile arthritis in diseases classified elsewhere",NULL,13
+M10,Gout,NULL,13
+M11,"Other crystal arthropathies",NULL,13
+M12,"Other specific arthropathies",NULL,13
+M13,"Other arthritis",NULL,13
+M14,"Arthropathies in other diseases classified elsewhere",NULL,13
+M15,Polyarthrosis,NULL,13
+M16,"Coxarthrosis [arthrosis of hip]",NULL,13
+M17,"Gonarthrosis [arthrosis of knee]",NULL,13
+M18,"Arthrosis of first carpometacarpal joint",NULL,13
+M19,"Other arthrosis",NULL,13
+M20,"Acquired deformities of fingers and toes",NULL,13
+M21,"Other acquired deformities of limbs",NULL,13
+M22,"Disorders of patella",NULL,13
+M23,"Internal derangement of knee",NULL,13
+M24,"Other specific joint derangements",NULL,13
+M25,"Other joint disorders, not elsewhere classified",NULL,13
+M30,"Polyarteritis nodosa and related conditions",NULL,13
+M31,"Other necrotizing vasculopathies",NULL,13
+M32,"Systemic lupus erythematosus",NULL,13
+M33,Dermatopolymyositis,NULL,13
+M34,"Systemic sclerosis",NULL,13
+M35,"Other systemic involvement of connective tissue",NULL,13
+M36,"Systemic disorders of connective tissue in diseases classified elsewhere",NULL,13
+M40,"Kyphosis and lordosis",NULL,13
+M41,Scoliosis,NULL,13
+M42,"Spinal osteochondrosis",NULL,13
+M43,"Other deforming dorsopathies",NULL,13
+M45,"Ankylosing spondylitis",NULL,13
+M46,"Other inflammatory spondylopathies",NULL,13
+M47,Spondylosis,NULL,13
+M48,"Other spondylopathies",NULL,13
+M49,"Spondylopathies in diseases classified elsewhere",NULL,13
+M50,"Cervical disc disorders",NULL,13
+M51,"Other intervertebral disc disorders",NULL,13
+M53,"Other dorsopathies, not elsewhere classified",NULL,13
+M54,Dorsalgia,NULL,13
+M60,Myositis,NULL,13
+M61,"Calcification and ossification of muscle",NULL,13
+M62,"Other disorders of muscle",NULL,13
+M63,"Disorders of muscle in diseases classified elsewhere",NULL,13
+M65,"Synovitis and tenosynovitis",NULL,13
+M66,"Spontaneous rupture of synovium and tendon",NULL,13
+M67,"Other disorders of synovium and tendon",NULL,13
+M68,"Disorders of synovium and tendon in diseases classified elsewhere",NULL,13
+M70,"Soft tissue disorders related to use, overuse and pressure",NULL,13
+M71,"Other bursopathies",NULL,13
+M72,"Fibroblastic disorders",NULL,13
+M73,"Soft tissue disorders in diseases classified elsewhere",NULL,13
+M75,"Shoulder lesions",NULL,13
+M76,"Enthesopathies of lower limb, excluding foot",NULL,13
+M77,"Other enthesopathies",NULL,13
+M79,"Other soft tissue disorders, not elsewhere classified",NULL,13
+M80,"Osteoporosis with pathological fracture",NULL,13
+M81,"Osteoporosis without pathological fracture",NULL,13
+M82,"Osteoporosis in diseases classified elsewhere",NULL,13
+M83,"Adult osteomalacia",NULL,13
+M84,"Disorders of continuity of bone",NULL,13
+M85,"Other disorders of bone density and structure",NULL,13
+M86,Osteomyelitis,NULL,13
+M87,Osteonecrosis,NULL,13
+M88,"Paget disease of bone [osteitis deformans]",NULL,13
+M89,"Other disorders of bone",NULL,13
+M90,"Osteopathies in diseases classified elsewhere",NULL,13
+M91,"Juvenile osteochondrosis of hip and pelvis",NULL,13
+M92,"Other juvenile osteochondrosis",NULL,13
+M93,"Other osteochondropathies",NULL,13
+M94,"Other disorders of cartilage",NULL,13
+M95,"Other acquired deformities of musculoskeletal system and connective tissue",NULL,13
+M96,"Postprocedural musculoskeletal disorders, not elsewhere classified",NULL,13
+M99,"Biomechanical lesions, not elsewhere classified",NULL,13
+N00,"Acute nephritic syndrome",NULL,14
+N01,"Rapidly progressive nephritic syndrome",NULL,14
+N02,"Recurrent and persistent haematuria",NULL,14
+N03,"Chronic nephritic syndrome",NULL,14
+N04,"Nephrotic syndrome",NULL,14
+N05,"Unspecified nephritic syndrome",NULL,14
+N06,"Isolated proteinuria with specified morphological lesion",NULL,14
+N07,"Hereditary nephropathy, not elsewhere classified",NULL,14
+N08,"Glomerular disorders in diseases classified elsewhere",NULL,14
+N10,"Acute tubulo-interstitial nephritis",NULL,14
+N11,"Chronic tubulo-interstitial nephritis",NULL,14
+N12,"Tubulo-interstitial nephritis, not specified as acute or chronic",NULL,14
+N13,"Obstructive and reflux uropathy",NULL,14
+N14,"Drug- and heavy-metal-induced tubulo-interstitial and tubular conditions",NULL,14
+N15,"Other renal tubulo-interstitial diseases",NULL,14
+N16,"Renal tubulo-interstitial disorders in diseases classified elsewhere",NULL,14
+N17,"Acute renal failure",NULL,14
+N18,"Chronic kidney disease",NULL,14
+N19,"Unspecified kidney failure",NULL,14
+N20,"Calculus of kidney and ureter",NULL,14
+N21,"Calculus of lower urinary tract",NULL,14
+N22,"Calculus of urinary tract in diseases classified elsewhere",NULL,14
+N23,"Unspecified renal colic",NULL,14
+N25,"Disorders resulting from impaired renal tubular function",NULL,14
+N26,"Unspecified contracted kidney",NULL,14
+N27,"Small kidney of unknown cause",NULL,14
+N28,"Other disorders of kidney and ureter, not elsewhere classified",NULL,14
+N29,"Other disorders of kidney and ureter in diseases classified elsewhere",NULL,14
+N30,Cystitis,NULL,14
+N31,"Neuromuscular dysfunction of bladder, not elsewhere classified",NULL,14
+N32,"Other disorders of bladder",NULL,14
+N33,"Bladder disorders in diseases classified elsewhere",NULL,14
+N34,"Urethritis and urethral syndrome",NULL,14
+N35,"Urethral stricture",NULL,14
+N36,"Other disorders of urethra",NULL,14
+N37,"Urethral disorders in diseases classified elsewhere",NULL,14
+N39,"Other disorders of urinary system",NULL,14
+N40,"Hyperplasia of prostate",NULL,14
+N41,"Inflammatory diseases of prostate",NULL,14
+N42,"Other disorders of prostate",NULL,14
+N43,"Hydrocele and spermatocele",NULL,14
+N44,"Torsion of testis",NULL,14
+N45,"Orchitis and epididymitis",NULL,14
+N46,"Male infertility",NULL,14
+N47,"Redundant prepuce, phimosis and paraphimosis",NULL,14
+N48,"Other disorders of penis",NULL,14
+N49,"Inflammatory disorders of male genital organs, not elsewhere classified",NULL,14
+N50,"Other disorders of male genital organs",NULL,14
+N51,"Disorders of male genital organs in diseases classified elsewhere",NULL,14
+N60,"Benign mammary dysplasia",NULL,14
+N61,"Inflammatory disorders of breast",NULL,14
+N62,"Hypertrophy of breast",NULL,14
+N63,"Unspecified lump in breast",NULL,14
+N64,"Other disorders of breast",NULL,14
+N70,"Salpingitis and oophoritis",NULL,14
+N71,"Inflammatory disease of uterus, except cervix",NULL,14
+N72,"Inflammatory disease of cervix uteri",NULL,14
+N73,"Other female pelvic inflammatory diseases",NULL,14
+N74,"Female pelvic inflammatory disorders in diseases classified elsewhere",NULL,14
+N75,"Diseases of Bartholin gland",NULL,14
+N76,"Other inflammation of vagina and vulva",NULL,14
+N77,"Vulvovaginal ulceration and inflammation in diseases classified elsewhere",NULL,14
+N80,Endometriosis,NULL,14
+N81,"Female genital prolapse",NULL,14
+N82,"Fistulae involving female genital tract",NULL,14
+N83,"Noninflammatory disorders of ovary, fallopian tube and broad ligament",NULL,14
+N84,"Polyp of female genital tract",NULL,14
+N85,"Other noninflammatory disorders of uterus, except cervix",NULL,14
+N86,"Erosion and ectropion of cervix uteri",NULL,14
+N87,"Dysplasia of cervix uteri",NULL,14
+N88,"Other noninflammatory disorders of cervix uteri",NULL,14
+N89,"Other noninflammatory disorders of vagina",NULL,14
+N90,"Other noninflammatory disorders of vulva and perineum",NULL,14
+N91,"Absent, scanty and rare menstruation",NULL,14
+N92,"Excessive, frequent and irregular menstruation",NULL,14
+N93,"Other abnormal uterine and vaginal bleeding",NULL,14
+N94,"Pain and other conditions associated with female genital organs and menstrual cycle",NULL,14
+N95,"Menopausal and other perimenopausal disorders",NULL,14
+N96,"Habitual aborter",NULL,14
+N97,"Female infertility",NULL,14
+N98,"Complications associated with artificial fertilization",NULL,14
+N99,"Postprocedural disorders of genitourinary system, not elsewhere classified",NULL,14
+O00,"Ectopic pregnancy",NULL,15
+O01,"Hydatidiform mole",NULL,15
+O02,"Other abnormal products of conception",NULL,15
+O03,"Spontaneous abortion",NULL,15
+O04,"Medical abortion",NULL,15
+O05,"Other abortion",NULL,15
+O06,"Unspecified abortion",NULL,15
+O07,"Failed attempted abortion",NULL,15
+O08,"Complications following abortion and ectopic and molar pregnancy",NULL,15
+O10,"Pre-existing hypertension complicating pregnancy, childbirth and the puerperium",NULL,15
+O11,"Pre-eclampsia superimposed on chronic hypertension",NULL,15
+O12,"Gestational [pregnancy-induced] oedema and proteinuria without hypertension",NULL,15
+O13,"Gestational [pregnancy-induced] hypertension",NULL,15
+O14,Pre-eclampsia,NULL,15
+O15,Eclampsia,NULL,15
+O16,"Unspecified maternal hypertension",NULL,15
+O20,"Haemorrhage in early pregnancy",NULL,15
+O21,"Excessive vomiting in pregnancy",NULL,15
+O22,"Venous complications and haemorrhoids in pregnancy",NULL,15
+O23,"Infections of genitourinary tract in pregnancy",NULL,15
+O24,"Diabetes mellitus in pregnancy",NULL,15
+O25,"Malnutrition in pregnancy",NULL,15
+O26,"Maternal care for other conditions predominantly related to pregnancy",NULL,15
+O28,"Abnormal findings on antenatal screening of mother",NULL,15
+O29,"Complications of anaesthesia during pregnancy",NULL,15
+O30,"Multiple gestation",NULL,15
+O31,"Complications specific to multiple gestation",NULL,15
+O32,"Maternal care for known or suspected malpresentation of fetus",NULL,15
+O33,"Maternal care for known or suspected disproportion",NULL,15
+O34,"Maternal care for known or suspected abnormality of pelvic organs",NULL,15
+O35,"Maternal care for known or suspected fetal abnormality and damage",NULL,15
+O36,"Maternal care for other known or suspected fetal problems",NULL,15
+O40,Polyhydramnios,NULL,15
+O41,"Other disorders of amniotic fluid and membranes",NULL,15
+O42,"Premature rupture of membranes",NULL,15
+O43,"Placental disorders",NULL,15
+O44,"Placenta praevia",NULL,15
+O45,"Premature separation of placenta [abruptio placentae]",NULL,15
+O46,"Antepartum haemorrhage, not elsewhere classified",NULL,15
+O47,"False labour",NULL,15
+O48,"Prolonged pregnancy",NULL,15
+O60,"Preterm labour and delivery",NULL,15
+O61,"Failed induction of labour",NULL,15
+O62,"Abnormalities of forces of labour",NULL,15
+O63,"Long labour",NULL,15
+O64,"Obstructed labour due to malposition and malpresentation of fetus",NULL,15
+O65,"Obstructed labour due to maternal pelvic abnormality",NULL,15
+O66,"Other obstructed labour",NULL,15
+O67,"Labour and delivery complicated by intrapartum haemorrhage, not elsewhere classified",NULL,15
+O68,"Labour and delivery complicated by fetal stress [distress]",NULL,15
+O69,"Labour and delivery complicated by umbilical cord complications",NULL,15
+O70,"Perineal laceration during delivery",NULL,15
+O71,"Other obstetric trauma",NULL,15
+O72,"Postpartum haemorrhage",NULL,15
+O73,"Retained placenta and membranes, without haemorrhage",NULL,15
+O74,"Complications of anaesthesia during labour and delivery",NULL,15
+O75,"Other complications of labour and delivery, not elsewhere classified",NULL,15
+O80,"Single spontaneous delivery",NULL,15
+O81,"Single delivery by forceps and vacuum extractor",NULL,15
+O82,"Single delivery by caesarean section",NULL,15
+O83,"Other assisted single delivery",NULL,15
+O84,"Multiple delivery",NULL,15
+O85,"Puerperal sepsis",NULL,15
+O86,"Other puerperal infections",NULL,15
+O87,"Venous complications and haemorrhoids in the puerperium",NULL,15
+O88,"Obstetric embolism",NULL,15
+O89,"Complications of anaesthesia during the puerperium",NULL,15
+O90,"Complications of the puerperium, not elsewhere classified",NULL,15
+O91,"Infections of breast associated with childbirth",NULL,15
+O92,"Other disorders of breast and lactation associated with childbirth",NULL,15
+O94,"Sequelae of complication of pregnancy, childbirth and the puerperium",NULL,15
+O95,"Obstetric death of unspecified cause",NULL,15
+O96,"Death from any obstetric cause occurring more than 42 days but less than one year after delivery",NULL,15
+O97,"Death from sequelae of obstetric causes",NULL,15
+O98,"Maternal infectious and parasitic diseases classifiable elsewhere but complicating pregnancy, childbirth and the puerperium",NULL,15
+O99,"Other maternal diseases classifiable elsewhere but complicating pregnancy, childbirth and the puerperium",NULL,15
+P00,"Fetus and newborn affected by maternal conditions that may be unrelated to present pregnancy",NULL,16
+P01,"Fetus and newborn affected by maternal complications of pregnancy",NULL,16
+P02,"Fetus and newborn affected by complications of placenta, cord and membranes",NULL,16
+P03,"Fetus and newborn affected by other complications of labour and delivery",NULL,16
+P04,"Fetus and newborn affected by noxious influences transmitted via placenta or breast milk",NULL,16
+P05,"Slow fetal growth and fetal malnutrition",NULL,16
+P07,"Disorders related to short gestation and low birth weight, not elsewhere classified",NULL,16
+P08,"Disorders related to long gestation and high birth weight",NULL,16
+P10,"Intracranial laceration and haemorrhage due to birth injury",NULL,16
+P11,"Other birth injuries to central nervous system",NULL,16
+P12,"Birth injury to scalp",NULL,16
+P13,"Birth injury to skeleton",NULL,16
+P14,"Birth injury to peripheral nervous system",NULL,16
+P15,"Other birth injuries",NULL,16
+P20,"Intrauterine hypoxia",NULL,16
+P21,"Birth asphyxia",NULL,16
+P22,"Respiratory distress of newborn",NULL,16
+P23,"Congenital pneumonia",NULL,16
+P24,"Neonatal aspiration syndromes",NULL,16
+P25,"Interstitial emphysema and related conditions originating in the perinatal period",NULL,16
+P26,"Pulmonary haemorrhage originating in the perinatal period",NULL,16
+P27,"Chronic respiratory disease originating in the perinatal period",NULL,16
+P28,"Other respiratory conditions originating in the perinatal period",NULL,16
+P29,"Cardiovascular disorders originating in the perinatal period",NULL,16
+P35,"Congenital viral diseases",NULL,16
+P36,"Bacterial sepsis of newborn",NULL,16
+P37,"Other congenital infectious and parasitic diseases",NULL,16
+P38,"Omphalitis of newborn with or without mild haemorrhage",NULL,16
+P39,"Other infections specific to the perinatal period",NULL,16
+P50,"Fetal blood loss",NULL,16
+P51,"Umbilical haemorrhage of newborn",NULL,16
+P52,"Intracranial nontraumatic haemorrhage of fetus and newborn",NULL,16
+P53,"Haemorrhagic disease of fetus and newborn",NULL,16
+P54,"Other neonatal haemorrhages",NULL,16
+P55,"Haemolytic disease of fetus and newborn",NULL,16
+P56,"Hydrops fetalis due to haemolytic disease",NULL,16
+P57,Kernicterus,NULL,16
+P58,"Neonatal jaundice due to other excessive haemolysis",NULL,16
+P59,"Neonatal jaundice from other and unspecified causes",NULL,16
+P60,"Disseminated intravascular coagulation of fetus and newborn",NULL,16
+P61,"Other perinatal haematological disorders",NULL,16
+P70,"Transitory disorders of carbohydrate metabolism specific to fetus and newborn",NULL,16
+P71,"Transitory neonatal disorders of calcium and magnesium metabolism",NULL,16
+P72,"Other transitory neonatal endocrine disorders",NULL,16
+P74,"Other transitory neonatal electrolyte and metabolic disturbances",NULL,16
+P75,"Meconium ileus in cystic fibrosis",NULL,16
+P76,"Other intestinal obstruction of newborn",NULL,16
+P77,"Necrotizing enterocolitis of fetus and newborn",NULL,16
+P78,"Other perinatal digestive system disorders",NULL,16
+P80,"Hypothermia of newborn",NULL,16
+P81,"Other disturbances of temperature regulation of newborn",NULL,16
+P83,"Other conditions of integument specific to fetus and newborn",NULL,16
+P90,"Convulsions of newborn",NULL,16
+P91,"Other disturbances of cerebral status of newborn",NULL,16
+P92,"Feeding problems of newborn",NULL,16
+P93,"Reactions and intoxications due to drugs administered to fetus and newborn",NULL,16
+P94,"Disorders of muscle tone of newborn",NULL,16
+P95,"Fetal death of unspecified cause",NULL,16
+P96,"Other conditions originating in the perinatal period",NULL,16
+Q00,"Anencephaly and similar malformations",NULL,17
+Q01,Encephalocele,NULL,17
+Q02,Microcephaly,NULL,17
+Q03,"Congenital hydrocephalus",NULL,17
+Q04,"Other congenital malformations of brain",NULL,17
+Q05,"Spina bifida",NULL,17
+Q06,"Other congenital malformations of spinal cord",NULL,17
+Q07,"Other congenital malformations of nervous system",NULL,17
+Q10,"Congenital malformations of eyelid, lacrimal apparatus and orbit",NULL,17
+Q11,"Anophthalmos, microphthalmos and macrophthalmos",NULL,17
+Q12,"Congenital lens malformations",NULL,17
+Q13,"Congenital malformations of anterior segment of eye",NULL,17
+Q14,"Congenital malformations of posterior segment of eye",NULL,17
+Q15,"Other congenital malformations of eye",NULL,17
+Q16,"Congenital malformations of ear causing impairment of hearing",NULL,17
+Q17,"Other congenital malformations of ear",NULL,17
+Q18,"Other congenital malformations of face and neck",NULL,17
+Q20,"Congenital malformations of cardiac chambers and connections",NULL,17
+Q21,"Congenital malformations of cardiac septa",NULL,17
+Q22,"Congenital malformations of pulmonary and tricuspid valves",NULL,17
+Q23,"Congenital malformations of aortic and mitral valves",NULL,17
+Q24,"Other congenital malformations of heart",NULL,17
+Q25,"Congenital malformations of great arteries",NULL,17
+Q26,"Congenital malformations of great veins",NULL,17
+Q27,"Other congenital malformations of peripheral vascular system",NULL,17
+Q28,"Other congenital malformations of circulatory system",NULL,17
+Q30,"Congenital malformations of nose",NULL,17
+Q31,"Congenital malformations of larynx",NULL,17
+Q32,"Congenital malformations of trachea and bronchus",NULL,17
+Q33,"Congenital malformations of lung",NULL,17
+Q34,"Other congenital malformations of respiratory system",NULL,17
+Q35,"Cleft palate",NULL,17
+Q36,"Cleft lip",NULL,17
+Q37,"Cleft palate with cleft lip",NULL,17
+Q38,"Other congenital malformations of tongue, mouth and pharynx",NULL,17
+Q39,"Congenital malformations of oesophagus",NULL,17
+Q40,"Other congenital malformations of upper alimentary tract",NULL,17
+Q41,"Congenital absence, atresia and stenosis of small intestine",NULL,17
+Q42,"Congenital absence, atresia and stenosis of large intestine",NULL,17
+Q43,"Other congenital malformations of intestine",NULL,17
+Q44,"Congenital malformations of gallbladder, bile ducts and liver",NULL,17
+Q45,"Other congenital malformations of digestive system",NULL,17
+Q50,"Congenital malformations of ovaries, fallopian tubes and broad ligaments",NULL,17
+Q51,"Congenital malformations of uterus and cervix",NULL,17
+Q52,"Other congenital malformations of female genitalia",NULL,17
+Q53,"Undescended testicle",NULL,17
+Q54,Hypospadias,NULL,17
+Q55,"Other congenital malformations of male genital organs",NULL,17
+Q56,"Indeterminate sex and pseudohermaphroditism",NULL,17
+Q60,"Renal agenesis and other reduction defects of kidney",NULL,17
+Q61,"Cystic kidney disease",NULL,17
+Q62,"Congenital obstructive defects of renal pelvis and congenital malformations of ureter",NULL,17
+Q63,"Other congenital malformations of kidney",NULL,17
+Q64,"Other congenital malformations of urinary system",NULL,17
+Q65,"Congenital deformities of hip",NULL,17
+Q66,"Congenital deformities of feet",NULL,17
+Q67,"Congenital musculoskeletal deformities of head, face, spine and chest",NULL,17
+Q68,"Other congenital musculoskeletal deformities",NULL,17
+Q69,Polydactyly,NULL,17
+Q70,Syndactyly,NULL,17
+Q71,"Reduction defects of upper limb",NULL,17
+Q72,"Reduction defects of lower limb",NULL,17
+Q73,"Reduction defects of unspecified limb",NULL,17
+Q74,"Other congenital malformations of limb(s)",NULL,17
+Q75,"Other congenital malformations of skull and face bones",NULL,17
+Q76,"Congenital malformations of spine and bony thorax",NULL,17
+Q77,"Osteochondrodysplasia with defects of growth of tubular bones and spine",NULL,17
+Q78,"Other osteochondrodysplasias",NULL,17
+Q79,"Congenital malformations of the musculoskeletal system, not elsewhere classified",NULL,17
+Q80,"Congenital ichthyosis",NULL,17
+Q81,"Epidermolysis bullosa",NULL,17
+Q82,"Other congenital malformations of skin",NULL,17
+Q83,"Congenital malformations of breast",NULL,17
+Q84,"Other congenital malformations of integument",NULL,17
+Q85,"Phakomatoses, not elsewhere classified",NULL,17
+Q86,"Congenital malformation syndromes due to known exogenous causes, not elsewhere classified",NULL,17
+Q87,"Other specified congenital malformation syndromes affecting multiple systems",NULL,17
+Q89,"Other congenital malformations, not elsewhere classified",NULL,17
+Q90,"Down syndrome",NULL,17
+Q91,"Edwards syndrome and Patau syndrome",NULL,17
+Q92,"Other trisomies and partial trisomies of the autosomes, not elsewhere classified",NULL,17
+Q93,"Monosomies and deletions from the autosomes, not elsewhere classified",NULL,17
+Q95,"Balanced rearrangements and structural markers, not elsewhere classified",NULL,17
+Q96,"Turner syndrome",NULL,17
+Q97,"Other sex chromosome abnormalities, female phenotype, not elsewhere classified",NULL,17
+Q98,"Other sex chromosome abnormalities, male phenotype, not elsewhere classified",NULL,17
+Q99,"Other chromosome abnormalities, not elsewhere classified",NULL,17
+R00,"Abnormalities of heart beat",NULL,18
+R01,"Cardiac murmurs and other cardiac sounds",NULL,18
+R02,"Gangrene, not elsewhere classified",NULL,18
+R03,"Abnormal blood-pressure reading, without diagnosis",NULL,18
+R04,"Haemorrhage from respiratory passages",NULL,18
+R05,Cough,NULL,18
+R06,"Abnormalities of breathing",NULL,18
+R07,"Pain in throat and chest",NULL,18
+R09,"Other symptoms and signs involving the circulatory and respiratory systems",NULL,18
+R10,"Abdominal and pelvic pain",NULL,18
+R11,"Nausea and vomiting",NULL,18
+R12,Heartburn,NULL,18
+R13,Dysphagia,NULL,18
+R14,"Flatulence and related conditions",NULL,18
+R15,"Faecal incontinence",NULL,18
+R16,"Hepatomegaly and splenomegaly, not elsewhere classified",NULL,18
+R17,"Hyperbilirubinaemia, with or without jaundice, not elsewhere classified",NULL,18
+R18,Ascites,NULL,18
+R19,"Other symptoms and signs involving the digestive system and abdomen",NULL,18
+R20,"Disturbances of skin sensation",NULL,18
+R21,"Rash and other nonspecific skin eruption",NULL,18
+R22,"Localized swelling, mass and lump of skin and subcutaneous tissue",NULL,18
+R23,"Other skin changes",NULL,18
+R25,"Abnormal involuntary movements",NULL,18
+R26,"Abnormalities of gait and mobility",NULL,18
+R27,"Other lack of coordination",NULL,18
+R29,"Other symptoms and signs involving the nervous and musculoskeletal systems",NULL,18
+R30,"Pain associated with micturition",NULL,18
+R31,"Unspecified haematuria",NULL,18
+R32,"Unspecified urinary incontinence",NULL,18
+R33,"Retention of urine",NULL,18
+R34,"Anuria and oliguria",NULL,18
+R35,Polyuria,NULL,18
+R36,"Urethral discharge",NULL,18
+R39,"Other symptoms and signs involving the urinary system",NULL,18
+R40,"Somnolence, stupor and coma",NULL,18
+R41,"Other symptoms and signs involving cognitive functions and awareness",NULL,18
+R42,"Dizziness and giddiness",NULL,18
+R43,"Disturbances of smell and taste",NULL,18
+R44,"Other symptoms and signs involving general sensations and perceptions",NULL,18
+R45,"Symptoms and signs involving emotional state",NULL,18
+R46,"Symptoms and signs involving appearance and behaviour",NULL,18
+R47,"Speech disturbances, not elsewhere classified",NULL,18
+R48,"Dyslexia and other symbolic dysfunctions, not elsewhere classified",NULL,18
+R49,"Voice disturbances",NULL,18
+R50,"Fever of other and unknown origin",NULL,18
+R51,Headache,NULL,18
+R52,"Pain, not elsewhere classified",NULL,18
+R53,"Malaise and fatigue",NULL,18
+R54,Senility,NULL,18
+R55,"Syncope and collapse",NULL,18
+R56,"Convulsions, not elsewhere classified",NULL,18
+R57,"Shock, not elsewhere classified",NULL,18
+R58,"Haemorrhage, not elsewhere classified",NULL,18
+R59,"Enlarged lymph nodes",NULL,18
+R60,"Oedema, not elsewhere classified",NULL,18
+R61,Hyperhidrosis,NULL,18
+R62,"Lack of expected normal physiological development",NULL,18
+R63,"Symptoms and signs concerning food and fluid intake",NULL,18
+R64,Cachexia,NULL,18
+R65,"Systemic Inflammatory Response Syndrome [SIRS]",NULL,18
+R68,"Other general symptoms and signs",NULL,18
+R69,"Unknown and unspecified causes of morbidity",NULL,18
+R70,"Elevated erythrocyte sedimentation rate and abnormality of plasma viscosity",NULL,18
+R71,"Abnormality of red blood cells",NULL,18
+R72,"Abnormality of white blood cells, not elsewhere classified",NULL,18
+R73,"Elevated blood glucose level",NULL,18
+R74,"Abnormal serum enzyme levels",NULL,18
+R75,"Laboratory evidence of human immunodeficiency virus [HIV]",NULL,18
+R76,"Other abnormal immunological findings in serum",NULL,18
+R77,"Other abnormalities of plasma proteins",NULL,18
+R78,"Findings of drugs and other substances, not normally found in blood",NULL,18
+R79,"Other abnormal findings of blood chemistry",NULL,18
+R80,"Isolated proteinuria",NULL,18
+R81,Glycosuria,NULL,18
+R82,"Other abnormal findings in urine",NULL,18
+R83,"Abnormal findings in cerebrospinal fluid",NULL,18
+R84,"Abnormal findings in specimens from respiratory organs and thorax",NULL,18
+R85,"Abnormal findings in specimens from digestive organs and abdominal cavity",NULL,18
+R86,"Abnormal findings in specimens from male genital organs",NULL,18
+R87,"Abnormal findings in specimens from female genital organs",NULL,18
+R89,"Abnormal findings in specimens from other organs, systems and tissues",NULL,18
+R90,"Abnormal findings on diagnostic imaging of central nervous system",NULL,18
+R91,"Abnormal findings on diagnostic imaging of lung",NULL,18
+R92,"Abnormal findings on diagnostic imaging of breast",NULL,18
+R93,"Abnormal findings on diagnostic imaging of other body structures",NULL,18
+R94,"Abnormal results of function studies",NULL,18
+R95,"Sudden infant death syndrome",NULL,18
+R96,"Other sudden death, cause unknown",NULL,18
+R98,"Unattended death",NULL,18
+R99,"Other ill-defined and unspecified causes of mortality",NULL,18
+S00,"Superficial injury of head",NULL,19
+S01,"Open wound of head",NULL,19
+S02,"Fracture of skull and facial bones",NULL,19
+S03,"Dislocation, sprain and strain of joints and ligaments of head",NULL,19
+S04,"Injury of cranial nerves",NULL,19
+S05,"Injury of eye and orbit",NULL,19
+S06,"Intracranial injury",NULL,19
+S07,"Crushing injury of head",NULL,19
+S08,"Traumatic amputation of part of head",NULL,19
+S09,"Other and unspecified injuries of head",NULL,19
+S10,"Superficial injury of neck",NULL,19
+S11,"Open wound of neck",NULL,19
+S12,"Fracture of neck",NULL,19
+S13,"Dislocation, sprain and strain of joints and ligaments at neck level",NULL,19
+S14,"Injury of nerves and spinal cord at neck level",NULL,19
+S15,"Injury of blood vessels at neck level",NULL,19
+S16,"Injury of muscle and tendon at neck level",NULL,19
+S17,"Crushing injury of neck",NULL,19
+S18,"Traumatic amputation at neck level",NULL,19
+S19,"Other and unspecified injuries of neck",NULL,19
+S20,"Superficial injury of thorax",NULL,19
+S21,"Open wound of thorax",NULL,19
+S22,"Fracture of rib(s), sternum and thoracic spine",NULL,19
+S23,"Dislocation, sprain and strain of joints and ligaments of thorax",NULL,19
+S24,"Injury of nerves and spinal cord at thorax level",NULL,19
+S25,"Injury of blood vessels of thorax",NULL,19
+S26,"Injury of heart",NULL,19
+S27,"Injury of other and unspecified intrathoracic organs",NULL,19
+S28,"Crushing injury of thorax and traumatic amputation of part of thorax",NULL,19
+S29,"Other and unspecified injuries of thorax",NULL,19
+S30,"Superficial injury of abdomen, lower back and pelvis",NULL,19
+S31,"Open wound of abdomen, lower back and pelvis",NULL,19
+S32,"Fracture of lumbar spine and pelvis",NULL,19
+S33,"Dislocation, sprain and strain of joints and ligaments of lumbar spine and pelvis",NULL,19
+S34,"Injury of nerves and lumbar spinal cord at abdomen, lower back and pelvis level",NULL,19
+S35,"Injury of blood vessels at abdomen, lower back and pelvis level",NULL,19
+S36,"Injury of intra-abdominal organs",NULL,19
+S37,"Injury of urinary and pelvic organs",NULL,19
+S38,"Crushing injury and traumatic amputation of part of abdomen, lower back and pelvis",NULL,19
+S39,"Other and unspecified injuries of abdomen, lower back and pelvis",NULL,19
+S40,"Superficial injury of shoulder and upper arm",NULL,19
+S41,"Open wound of shoulder and upper arm",NULL,19
+S42,"Fracture of shoulder and upper arm",NULL,19
+S43,"Dislocation, sprain and strain of joints and ligaments of shoulder girdle",NULL,19
+S44,"Injury of nerves at shoulder and upper arm level",NULL,19
+S45,"Injury of blood vessels at shoulder and upper arm level",NULL,19
+S46,"Injury of muscle and tendon at shoulder and upper arm level",NULL,19
+S47,"Crushing injury of shoulder and upper arm",NULL,19
+S48,"Traumatic amputation of shoulder and upper arm",NULL,19
+S49,"Other and unspecified injuries of shoulder and upper arm",NULL,19
+S50,"Superficial injury of forearm",NULL,19
+S51,"Open wound of forearm",NULL,19
+S52,"Fracture of forearm",NULL,19
+S53,"Dislocation, sprain and strain of joints and ligaments of elbow",NULL,19
+S54,"Injury of nerves at forearm level",NULL,19
+S55,"Injury of blood vessels at forearm level",NULL,19
+S56,"Injury of muscle and tendon at forearm level",NULL,19
+S57,"Crushing injury of forearm",NULL,19
+S58,"Traumatic amputation of forearm",NULL,19
+S59,"Other and unspecified injuries of forearm",NULL,19
+S60,"Superficial injury of wrist and hand",NULL,19
+S61,"Open wound of wrist and hand",NULL,19
+S62,"Fracture at wrist and hand level",NULL,19
+S63,"Dislocation, sprain and strain of joints and ligaments at wrist and hand level",NULL,19
+S64,"Injury of nerves at wrist and hand level",NULL,19
+S65,"Injury of blood vessels at wrist and hand level",NULL,19
+S66,"Injury of muscle and tendon at wrist and hand level",NULL,19
+S67,"Crushing injury of wrist and hand",NULL,19
+S68,"Traumatic amputation of wrist and hand",NULL,19
+S69,"Other and unspecified injuries of wrist and hand",NULL,19
+S70,"Superficial injury of hip and thigh",NULL,19
+S71,"Open wound of hip and thigh",NULL,19
+S72,"Fracture of femur",NULL,19
+S73,"Dislocation, sprain and strain of joint and ligaments of hip",NULL,19
+S74,"Injury of nerves at hip and thigh level",NULL,19
+S75,"Injury of blood vessels at hip and thigh level",NULL,19
+S76,"Injury of muscle and tendon at hip and thigh level",NULL,19
+S77,"Crushing injury of hip and thigh",NULL,19
+S78,"Traumatic amputation of hip and thigh",NULL,19
+S79,"Other and unspecified injuries of hip and thigh",NULL,19
+S80,"Superficial injury of lower leg",NULL,19
+S81,"Open wound of lower leg",NULL,19
+S82,"Fracture of lower leg, including ankle",NULL,19
+S83,"Dislocation, sprain and strain of joints and ligaments of knee",NULL,19
+S84,"Injury of nerves at lower leg level",NULL,19
+S85,"Injury of blood vessels at lower leg level",NULL,19
+S86,"Injury of muscle and tendon at lower leg level",NULL,19
+S87,"Crushing injury of lower leg",NULL,19
+S88,"Traumatic amputation of lower leg",NULL,19
+S89,"Other and unspecified injuries of lower leg",NULL,19
+S90,"Superficial injury of ankle and foot",NULL,19
+S91,"Open wound of ankle and foot",NULL,19
+S92,"Fracture of foot, except ankle",NULL,19
+S93,"Dislocation, sprain and strain of joints and ligaments at ankle and foot level",NULL,19
+S94,"Injury of nerves at ankle and foot level",NULL,19
+S95,"Injury of blood vessels at ankle and foot level",NULL,19
+S96,"Injury of muscle and tendon at ankle and foot level",NULL,19
+S97,"Crushing injury of ankle and foot",NULL,19
+S98,"Traumatic amputation of ankle and foot",NULL,19
+S99,"Other and unspecified injuries of ankle and foot",NULL,19
+T00,"Superficial injuries involving multiple body regions",NULL,19
+T01,"Open wounds involving multiple body regions",NULL,19
+T02,"Fractures involving multiple body regions",NULL,19
+T03,"Dislocations, sprains and strains involving multiple body regions",NULL,19
+T04,"Crushing injuries involving multiple body regions",NULL,19
+T05,"Traumatic amputations involving multiple body regions",NULL,19
+T06,"Other injuries involving multiple body regions, not elsewhere classified",NULL,19
+T07,"Unspecified multiple injuries",NULL,19
+T08,"Fracture of spine, level unspecified",NULL,19
+T09,"Other injuries of spine and trunk, level unspecified",NULL,19
+T10,"Fracture of upper limb, level unspecified",NULL,19
+T11,"Other injuries of upper limb, level unspecified",NULL,19
+T12,"Fracture of lower limb, level unspecified",NULL,19
+T13,"Other injuries of lower limb, level unspecified",NULL,19
+T14,"Injury of unspecified body region",NULL,19
+T15,"Foreign body on external eye",NULL,19
+T16,"Foreign body in ear",NULL,19
+T17,"Foreign body in respiratory tract",NULL,19
+T18,"Foreign body in alimentary tract",NULL,19
+T19,"Foreign body in genitourinary tract",NULL,19
+T20,"Burn and corrosion of head and neck",NULL,19
+T21,"Burn and corrosion of trunk",NULL,19
+T22,"Burn and corrosion of shoulder and upper limb, except wrist and hand",NULL,19
+T23,"Burn and corrosion of wrist and hand",NULL,19
+T24,"Burn and corrosion of hip and lower limb, except ankle and foot",NULL,19
+T25,"Burn and corrosion of ankle and foot",NULL,19
+T26,"Burn and corrosion confined to eye and adnexa",NULL,19
+T27,"Burn and corrosion of respiratory tract",NULL,19
+T28,"Burn and corrosion of other internal organs",NULL,19
+T29,"Burns and corrosions of multiple body regions",NULL,19
+T30,"Burn and corrosion, body region unspecified",NULL,19
+T31,"Burns classified according to extent of body surface involved",NULL,19
+T32,"Corrosions classified according to extent of body surface involved",NULL,19
+T33,"Superficial frostbite",NULL,19
+T34,"Frostbite with tissue necrosis",NULL,19
+T35,"Frostbite involving multiple body regions and unspecified frostbite",NULL,19
+T36,"Poisoning by systemic antibiotics",NULL,19
+T37,"Poisoning by other systemic anti-infectives and antiparasitics",NULL,19
+T38,"Poisoning by hormones and their synthetic substitutes and antagonists, not elsewhere classified",NULL,19
+T39,"Poisoning by nonopioid analgesics, antipyretics and antirheumatics",NULL,19
+T40,"Poisoning by narcotics and psychodysleptics [hallucinogens]",NULL,19
+T41,"Poisoning by anaesthetics and therapeutic gases",NULL,19
+T42,"Poisoning by antiepileptic, sedative-hypnotic and antiparkinsonism drugs",NULL,19
+T43,"Poisoning by psychotropic drugs, not elsewhere classified",NULL,19
+T44,"Poisoning by drugs primarily affecting the autonomic nervous system",NULL,19
+T45,"Poisoning by primarily systemic and haematological agents, not elsewhere classified",NULL,19
+T46,"Poisoning by agents primarily affecting the cardiovascular system",NULL,19
+T47,"Poisoning by agents primarily affecting the gastrointestinal system",NULL,19
+T48,"Poisoning by agents primarily acting on smooth and skeletal muscles and the respiratory system",NULL,19
+T49,"Poisoning by topical agents primarily affecting skin and mucous membrane and by ophthalmological, otorhinolaryngological and dental drugs",NULL,19
+T50,"Poisoning by diuretics and other and unspecified drugs, medicaments and biological substances",NULL,19
+T51,"Toxic effect of alcohol",NULL,19
+T52,"Toxic effect of organic solvents",NULL,19
+T53,"Toxic effect of halogen derivatives of aliphatic and aromatic hydrocarbons",NULL,19
+T54,"Toxic effect of corrosive substances",NULL,19
+T55,"Toxic effect of soaps and detergents",NULL,19
+T56,"Toxic effect of metals",NULL,19
+T57,"Toxic effect of other inorganic substances",NULL,19
+T58,"Toxic effect of carbon monoxide",NULL,19
+T59,"Toxic effect of other gases, fumes and vapours",NULL,19
+T60,"Toxic effect of pesticides",NULL,19
+T61,"Toxic effect of noxious substances eaten as seafood",NULL,19
+T62,"Toxic effect of other noxious substances eaten as food",NULL,19
+T63,"Toxic effect of contact with venomous animals",NULL,19
+T64,"Toxic effect of aflatoxin and other mycotoxin food contaminants",NULL,19
+T65,"Toxic effect of other and unspecified substances",NULL,19
+T66,"Unspecified effects of radiation",NULL,19
+T67,"Effects of heat and light",NULL,19
+T68,Hypothermia,NULL,19
+T69,"Other effects of reduced temperature",NULL,19
+T70,"Effects of air pressure and water pressure",NULL,19
+T71,Asphyxiation,NULL,19
+T73,"Effects of other deprivation",NULL,19
+T74,"Maltreatment syndromes",NULL,19
+T75,"Effects of other external causes",NULL,19
+T76,"Unspecified effects of external causes",NULL,19
+T78,"Adverse effects, not elsewhere classified",NULL,19
+T79,"Certain early complications of trauma, not elsewhere classified",NULL,19
+T80,"Complications following infusion, transfusion and therapeutic injection",NULL,19
+T81,"Complications of procedures, not elsewhere classified",NULL,19
+T82,"Complications of cardiac and vascular prosthetic devices, implants and grafts",NULL,19
+T83,"Complications of genitourinary prosthetic devices, implants and grafts",NULL,19
+T84,"Complications of internal orthopaedic prosthetic devices, implants and grafts",NULL,19
+T85,"Complications of other internal prosthetic devices, implants and grafts",NULL,19
+T86,"Failure and rejection of transplanted organs and tissues",NULL,19
+T87,"Complications peculiar to reattachment and amputation",NULL,19
+T88,"Other complications of surgical and medical care, not elsewhere classified",NULL,19
+T90,"Sequelae of injuries of head",NULL,19
+T91,"Sequelae of injuries of neck and trunk",NULL,19
+T92,"Sequelae of injuries of upper limb",NULL,19
+T93,"Sequelae of injuries of lower limb",NULL,19
+T94,"Sequelae of injuries involving multiple and unspecified body regions",NULL,19
+T95,"Sequelae of burns, corrosions and frostbite",NULL,19
+T96,"Sequelae of poisoning by drugs, medicaments and biological substances",NULL,19
+T97,"Sequelae of toxic effects of substances chiefly nonmedicinal as to source",NULL,19
+T98,"Sequelae of other and unspecified effects of external causes",NULL,19
+U04,"Severe acute respiratory syndrome [SARS]",NULL,22
+U07,"Emergency use of U07",NULL,22
+U08,"Personal history of COVID-19",NULL,22
+U09,"Post COVID-19 condition",NULL,22
+U10,"Multisystem inflammatory syndrome associated with COVID-19",NULL,22
+U11,"Need for immunization against COVID-19",NULL,22
+U12,"COVID-19 vaccines causing adverse effects in therapeutic use",NULL,22
+U13,"Emergency use of U13",NULL,22
+U14,"Emergency use of U14",NULL,22
+U15,"Emergency use of U15",NULL,22
+U16,"Emergency use of U16",NULL,22
+U17,"Emergency use of U17",NULL,22
+U18,"Emergency use of U18",NULL,22
+U19,"Emergency use of U19",NULL,22
+U20,"Emergency use of U20",NULL,22
+U21,"Emergency use of U21",NULL,22
+U22,"Emergency use of U22",NULL,22
+U23,"Emergency use of U23",NULL,22
+U24,"Emergency use of U24",NULL,22
+U25,"Emergency use of U25",NULL,22
+U26,"Emergency use of U26",NULL,22
+U27,"Emergency use of U27",NULL,22
+U28,"Emergency use of U28",NULL,22
+U29,"Emergency use of U29",NULL,22
+U30,"Emergency use of U30",NULL,22
+U31,"Emergency use of U31",NULL,22
+U32,"Emergency use of U32",NULL,22
+U33,"Emergency use of U33",NULL,22
+U34,"Emergency use of U34",NULL,22
+U35,"Emergency use of U35",NULL,22
+U36,"Emergency use of U36",NULL,22
+U37,"Emergency use of U37",NULL,22
+U38,"Emergency use of U38",NULL,22
+U39,"Emergency use of U39",NULL,22
+U40,"Emergency use of U40",NULL,22
+U41,"Emergency use of U41",NULL,22
+U42,"Emergency use of U42",NULL,22
+U43,"Emergency use of U43",NULL,22
+U44,"Emergency use of U44",NULL,22
+U45,"Emergency use of U45",NULL,22
+U46,"Emergency use of U46",NULL,22
+U47,"Emergency use of U47",NULL,22
+U48,"Emergency use of U48",NULL,22
+U49,"Emergency use of U49",NULL,22
+U82,"Resistance to betalactam antibiotics",NULL,22
+U83,"Resistance to other antibiotics",NULL,22
+U84,"Resistance to other antimicrobial drugs",NULL,22
+U85,"Resistance to antineoplastic drugs",NULL,22
+V01,"V99ÊTransport accidents",NULL,20
+W00,"X59ÊOther external causes of accidental injury",NULL,20
+X60,"Intentional self-poisoning by and exposure to nonopioid analgesics, antipyretics and antirheumatics",NULL,20
+X61,"Intentional self-poisoning by and exposure to antiepileptic, sedative-hypnotic, antiparkinsonism and psychotropic drugs, not elsewhere classified",NULL,20
+X62,"Intentional self-poisoning by and exposure to narcotics and psychodysleptics [hallucinogens], not elsewhere classified",NULL,20
+X63,"Intentional self-poisoning by and exposure to other drugs acting on the autonomic nervous system",NULL,20
+X64,"Intentional self-poisoning by and exposure to other and unspecified drugs, medicaments and biological substances",NULL,20
+X65,"Intentional self-poisoning by and exposure to alcohol",NULL,20
+X66,"Intentional self-poisoning by and exposure to organic solvents and halogenated hydrocarbons and their vapours",NULL,20
+X67,"Intentional self-poisoning by and exposure to carbon monoxide and other gases and vapours",NULL,20
+X68,"Intentional self-poisoning by and exposure to pesticides",NULL,20
+X69,"Intentional self-poisoning by and exposure to other and unspecified chemicals and noxious substances",NULL,20
+X70,"Intentional self-harm by hanging, strangulation and suffocation",NULL,20
+X71,"Intentional self-harm by drowning and submersion",NULL,20
+X72,"Intentional self-harm by handgun discharge",NULL,20
+X73,"Intentional self-harm by rifle, shotgun and larger firearm discharge",NULL,20
+X74,"Intentional self-harm by other and unspecified firearm discharge",NULL,20
+X75,"Intentional self-harm by explosive material",NULL,20
+X76,"Intentional self-harm by smoke, fire and flames",NULL,20
+X77,"Intentional self-harm by steam, hot vapours and hot objects",NULL,20
+X78,"Intentional self-harm by sharp object",NULL,20
+X79,"Intentional self-harm by blunt object",NULL,20
+X80,"Intentional self-harm by jumping from a high place",NULL,20
+X81,"Intentional self-harm by jumping or lying before moving object",NULL,20
+X82,"Intentional self-harm by crashing of motor vehicle",NULL,20
+X83,"Intentional self-harm by other specified means",NULL,20
+X84,"Intentional self-harm by unspecified means",NULL,20
+X85,"Assault by drugs, medicaments and biological substances",NULL,20
+X86,"Assault by corrosive substance",NULL,20
+X87,"Assault by pesticides",NULL,20
+X88,"Assault by gases and vapours",NULL,20
+X89,"Assault by other specified chemicals and noxious substances",NULL,20
+X90,"Assault by unspecified chemical or noxious substance",NULL,20
+X91,"Assault by hanging, strangulation and suffocation",NULL,20
+X92,"Assault by drowning and submersion",NULL,20
+X93,"Assault by handgun discharge",NULL,20
+X94,"Assault by rifle, shotgun and larger firearm discharge",NULL,20
+X95,"Assault by other and unspecified firearm discharge",NULL,20
+X96,"Assault by explosive material",NULL,20
+X97,"Assault by smoke, fire and flames",NULL,20
+X98,"Assault by steam, hot vapours and hot objects",NULL,20
+X99,"Assault by sharp object",NULL,20
+Y00,"Assault by blunt object",NULL,20
+Y01,"Assault by pushing from high place",NULL,20
+Y02,"Assault by pushing or placing victim before moving object",NULL,20
+Y03,"Assault by crashing of motor vehicle",NULL,20
+Y04,"Assault by bodily force",NULL,20
+Y05,"Sexual assault by bodily force",NULL,20
+Y06,"Neglect and abandonment",NULL,20
+Y07,"Other maltreatment",NULL,20
+Y08,"Assault by other specified means",NULL,20
+Y09,"Assault by unspecified means",NULL,20
+Y10,"Poisoning by and exposure to nonopioid analgesics, antipyretics and antirheumatics, undetermined intent",NULL,20
+Y11,"Poisoning by and exposure to antiepileptic, sedative-hypnotic, antiparkinsonism and psychotropic drugs, not elsewhere classified, undetermined intent",NULL,20
+Y12,"Poisoning by and exposure to narcotics and psychodysleptics [hallucinogens], not elsewhere classified, undetermined intent",NULL,20
+Y13,"Poisoning by and exposure to other drugs acting on the autonomic nervous system, undetermined intent",NULL,20
+Y14,"Poisoning by and exposure to other and unspecified drugs, medicaments and biological substances, undetermined intent",NULL,20
+Y15,"Poisoning by and exposure to alcohol, undetermined intent",NULL,20
+Y16,"Poisoning by and exposure to organic solvents and halogenated hydrocarbons and their vapours, undetermined intent",NULL,20
+Y17,"Poisoning by and exposure to carbon monoxide and other gases and vapours, undetermined intent",NULL,20
+Y18,"Poisoning by and exposure to pesticides, undetermined intent",NULL,20
+Y19,"Poisoning by and exposure to other and unspecified chemicals and noxious substances, undetermined intent",NULL,20
+Y20,"Hanging, strangulation and suffocation, undetermined intent",NULL,20
+Y21,"Drowning and submersion, undetermined intent",NULL,20
+Y22,"Handgun discharge, undetermined intent",NULL,20
+Y23,"Rifle, shotgun and larger firearm discharge, undetermined intent",NULL,20
+Y24,"Other and unspecified firearm discharge, undetermined intent",NULL,20
+Y25,"Contact with explosive material, undetermined intent",NULL,20
+Y26,"Exposure to smoke, fire and flames, undetermined intent",NULL,20
+Y27,"Contact with steam, hot vapours and hot objects, undetermined intent",NULL,20
+Y28,"Contact with sharp object, undetermined intent",NULL,20
+Y29,"Contact with blunt object, undetermined intent",NULL,20
+Y30,"Falling, jumping or pushed from a high place, undetermined intent",NULL,20
+Y31,"Falling, lying or running before or into moving object, undetermined intent",NULL,20
+Y32,"Crashing of motor vehicle, undetermined intent",NULL,20
+Y33,"Other specified events, undetermined intent",NULL,20
+Y34,"Unspecified event, undetermined intent",NULL,20
+Y35,"Legal intervention",NULL,20
+Y36,"Operations of war",NULL,20
+Y85,"Sequelae of transport accidents",NULL,20
+Y86,"Sequelae of other accidents",NULL,20
+Y87,"Sequelae of intentional self-harm, assault and events of undetermined intent",NULL,20
+Y88,"Sequelae with surgical and medical care as external cause",NULL,20
+Y89,"Sequelae of other external causes",NULL,20
+Y90,"Evidence of alcohol involvement determined by blood alcohol level",NULL,20
+Y91,"Evidence of alcohol involvement determined by level of intoxication",NULL,20
+Y95,"Nosocomial condition",NULL,20
+Y96,"Work-related condition",NULL,20
+Y97,"Environmental-pollution-related condition",NULL,20
+Y98,"Lifestyle-related condition",NULL,20
+Z00,"General examination and investigation of persons without complaint and reported diagnosis",NULL,21
+Z01,"Other special examinations and investigations of persons without complaint or reported diagnosis",NULL,21
+Z02,"Examination and encounter for administrative purposes",NULL,21
+Z03,"Medical observation and evaluation for suspected diseases and conditions, ruled out",NULL,21
+Z04,"Examination and observation for other reasons",NULL,21
+Z08,"Follow-up examination after treatment for malignant neoplasms",NULL,21
+Z09,"Follow-up examination after treatment for conditions other than malignant neoplasms",NULL,21
+Z10,"Routine general health check-up of defined subpopulation",NULL,21
+Z11,"Special screening examination for infectious and parasitic diseases",NULL,21
+Z12,"Special screening examination for neoplasms",NULL,21
+Z13,"Special screening examination for other diseases and disorders",NULL,21
+Z20,"Contact with and exposure to communicable diseases",NULL,21
+Z21,"Asymptomatic human immunodeficiency virus [HIV] infection status",NULL,21
+Z22,"Carrier of infectious disease",NULL,21
+Z23,"Need for immunization against single bacterial diseases",NULL,21
+Z24,"Need for immunization against certain single viral diseases",NULL,21
+Z25,"Need for immunization against other single viral diseases",NULL,21
+Z26,"Need for immunization against other single infectious diseases",NULL,21
+Z27,"Need for immunization against combinations of infectious diseases",NULL,21
+Z28,"Immunization not carried out",NULL,21
+Z29,"Need for other prophylactic measures",NULL,21
+Z30,"Contraceptive management",NULL,21
+Z31,"Procreative management",NULL,21
+Z32,"Pregnancy examination and test",NULL,21
+Z33,"Pregnant state, incidental",NULL,21
+Z34,"Supervision of normal pregnancy",NULL,21
+Z35,"Supervision of high-risk pregnancy",NULL,21
+Z36,"Antenatal screening",NULL,21
+Z37,"Outcome of delivery",NULL,21
+Z38,"Liveborn infants according to place of birth",NULL,21
+Z39,"Postpartum care and examination",NULL,21
+Z40,"Prophylactic surgery",NULL,21
+Z41,"Procedures for purposes other than remedying health state",NULL,21
+Z42,"Follow-up care involving plastic surgery",NULL,21
+Z43,"Attention to artificial openings",NULL,21
+Z44,"Fitting and adjustment of external prosthetic device",NULL,21
+Z45,"Adjustment and management of implanted device",NULL,21
+Z46,"Fitting and adjustment of other devices",NULL,21
+Z47,"Other orthopaedic follow-up care",NULL,21
+Z48,"Other surgical follow-up care",NULL,21
+Z49,"Care involving dialysis",NULL,21
+Z50,"Care involving use of rehabilitation procedures",NULL,21
+Z51,"Other medical care",NULL,21
+Z52,"Donors of organs and tissues",NULL,21
+Z53,"Persons encountering health services for specific procedures, not carried out",NULL,21
+Z54,Convalescence,NULL,21
+Z55,"Problems related to education and literacy",NULL,21
+Z56,"Problems related to employment and unemployment",NULL,21
+Z57,"Occupational exposure to risk-factors",NULL,21
+Z58,"Problems related to physical environment",NULL,21
+Z59,"Problems related to housing and economic circumstances",NULL,21
+Z60,"Problems related to social environment",NULL,21
+Z61,"Problems related to negative life events in childhood",NULL,21
+Z62,"Other problems related to upbringing",NULL,21
+Z63,"Other problems related to primary support group, including family circumstances",NULL,21
+Z64,"Problems related to certain psychosocial circumstances",NULL,21
+Z65,"Problems related to other psychosocial circumstances",NULL,21
+Z70,"Counselling related to sexual attitude, behaviour and orientation",NULL,21
+Z71,"Persons encountering health services for other counselling and medical advice, not elsewhere classified",NULL,21
+Z72,"Problems related to lifestyle",NULL,21
+Z73,"Problems related to life-management difficulty",NULL,21
+Z74,"Problems related to care-provider dependency",NULL,21
+Z75,"Problems related to medical facilities and other health care",NULL,21
+Z76,"Persons encountering health services in other circumstances",NULL,21
+Z80,"Family history of malignant neoplasm",NULL,21
+Z81,"Family history of mental and behavioural disorders",NULL,21
+Z82,"Family history of certain disabilities and chronic diseases leading to disablement",NULL,21
+Z83,"Family history of other specific disorders",NULL,21
+Z84,"Family history of other conditions",NULL,21
+Z85,"Personal history of malignant neoplasm",NULL,21
+Z86,"Personal history of certain other diseases",NULL,21
+Z87,"Personal history of other diseases and conditions",NULL,21
+Z88,"Personal history of allergy to drugs, medicaments and biological substances",NULL,21
+Z89,"Acquired absence of limb",NULL,21
+Z90,"Acquired absence of organs, not elsewhere classified",NULL,21
+Z91,"Personal history of risk-factors, not elsewhere classified",NULL,21
+Z92,"Personal history of medical treatment",NULL,21
+Z93,"Artificial opening status",NULL,21
+Z94,"Transplanted organ and tissue status",NULL,21
+Z95,"Presence of cardiac and vascular implants and grafts",NULL,21
+Z96,"Presence of other functional implants",NULL,21
+Z97,"Presence of other devices",NULL,21
+Z98,"Other postsurgical states",NULL,21
+Z99,"Dependence on enabling machines and devices, not elsewhere classified",NULL,21

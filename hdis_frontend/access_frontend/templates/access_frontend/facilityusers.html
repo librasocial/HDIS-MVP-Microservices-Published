@@ -1,0 +1,68 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+  <div class="container-fluid" style="margin-top:70px;">
+
+    <div class="row">
+        <div class="col-sm-3 card-title" style="text-align: center">
+        {{ user }}
+            <br/><br/>
+            {% for users in facility_users %}
+                {% if 'Default' not in users.name %}
+            Welcome admin of {{user.name}}
+                {% endif %}
+            {% endfor %}
+            <br/><br/>
+          
+        
+        </div>    
+
+        <div class="row" >
+
+          {% for users in facility_users %}
+          <div class="col-sm-4" id="profile_column">
+            <div id="inner_column" class="alert-success">
+              <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>{{users.name}}
+            </div>
+              <div id="inner_column" class="alert-success">
+              <form method="post" action="{% url 'changepassword' %}"  onsubmit="submitForm()">
+                    {% csrf_token %}
+                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" style="margin:0px 10px 10px 0px" required>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" style="margin:0px 10px 10px 0px" required>
+                    <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ users.username }}" style="margin:0px 10px 10px 0px" required>
+                    <button type="submit" class="btn btn-secondary btn-block"  value="">
+                    Set Password
+                    </button>
+                </form>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+        
+    
+     
+    
+          <div id="dialog">
+        </div>
+            
+           
+        
+    
+    </div>    
+    
+    
+    </div>
+
+{% endblock %}

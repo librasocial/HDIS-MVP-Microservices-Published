@@ -1,0 +1,394 @@
+bodySiteCode,bodySiteName
+818981001,Abdomen
+818982008,Abdomen and Pelvis
+7832008,Abdominal aorta
+85856004,Acromioclavicular joint
+23451007,Adrenal gland
+77012006,Amniotic fluid
+70258002,Ankle joint
+128585006,Anomalous pulmonary vein
+128553008,Antecubital vein
+194996006,Anterior cardiac vein
+60176003,Anterior cerebral artery
+8012006,Anterior communicating artery
+17388009,Anterior spinal artery
+68053000,Anterior tibial artery
+53505006,Anus
+110612005,"Anus, rectum and sigmoid colon"
+15825003,Aorta
+57034009,Aortic arch
+128551005,Aortic fistula
+128564006,Apex of left ventricle
+86598002,Apex of Lung
+128565007,Apex of right ventricle
+66754008,Appendix
+51114001,Artery
+54247002,Ascending aorta
+9040008,Ascending colon
+59652004,Atrium
+91470000,Axilla
+67937003,Axillary Artery
+68705008,Axillary vein
+72107004,Azygos vein
+77568009,Back
+128981007,Baffle
+59011009,Basilar artery
+28273000,Bile duct
+34707002,Biliary tract
+89837001,Bladder
+110837003,Bladder and urethra
+91830000,Body conduit
+72001000,Bone of lower limb
+371195002,Bone of upper limb
+128548003,Boyd's perforating vein
+17137000,Brachial artery
+20115005,Brachial vein
+12738006,Brain
+76752008,Breast
+34411009,Broad ligament
+955009,Bronchus
+60819002,Buccal region of face
+46862004,Buttock
+80144004,Calcaneus
+53840002,Calf of leg
+2334006,Calyx
+69105007,Carotid Artery
+21479005,Carotid bulb
+57850000,Celiac artery
+20699002,Cephalic vein
+113305005,Cerebellum
+88556005,Cerebral artery
+372073000,Cerebral hemisphere
+122494005,Cervical spine
+297171002,Cervico-thoracic spine
+71252005,Cervix
+60819002,Cheek
+43799004,Chest
+416775004,"Chest, Abdomen and Pelvis"
+416550000,Chest and Abdomen
+80621003,Choroid plexus
+11279006,Circle of Willis
+51299004,Clavicle
+64688005,Coccyx
+71854001,Colon
+253276007,Common atrium
+79741001,Common bile duct
+32062004,Common carotid artery
+181347005,Common femoral artery
+397363009,Common femoral vein
+73634005,Common iliac artery
+46027005,Common iliac vein
+45503006,Common ventricle
+128555001,Congenital coronary artery fistula to left atrium
+128556000,Congenital coronary artery fistula to left ventricle
+128557009,Congenital coronary artery fistula to right atrium
+128558004,Congenital coronary artery fistula to right ventricle
+111289009,Pulmonary arteriovenous fistula
+28726007,Cornea
+41801008,Coronary artery
+90219004,Coronary sinus
+128320002,Cranial venous system
+32672002,Descending aorta
+32622004,Descending colon
+128554002,Dodd's perforating vein
+38848004,Duodenum
+117590005,Ear
+16953009,Elbow joint
+51114001,Endo-arterial
+80891009,Endo-cardiac
+32849002,Endo-esophageal
+2739003,Endometrium
+53342003,Endo-nasal
+18962004,Endo-nasopharyngeal
+34402009,Endo-rectal
+64033007,Endo-renal
+87953007,Endo-ureteric
+13648007,Endo-urethral
+76784001,Endo-vaginal
+59820001,Endo-vascular
+29092000,Endo-venous
+48367006,Endo-vesical
+38266002,Entire body
+87644002,Epididymis
+27947004,Epigastric region
+32849002,Esophagus
+110861005,"Esophagus, stomach and duodenum"
+84301002,External auditory canal
+22286001,External carotid artery
+113269004,External iliac artery
+63507001,External iliac vein
+71585003,External jugular vein
+66019005,Extremity
+81745001,Eye
+80243003,Eyelid
+371398005,Eye region
+89545001,Face
+23074001,Facial artery
+91397008,Facial bones
+7657000,Femoral artery
+83419000,Femoral vein
+71341001,Femur
+87342007,Fibula
+7569003,Finger
+58602004,Flank
+79361005,Fontanel of skull
+56459004,Foot
+14975008,Forearm
+35918002,Fourth ventricle
+28231008,Gallbladder
+110568007,Gastric vein
+128559007,Genicular artery
+300571009,Gestational sac
+46862004,Gluteal region
+5928000,Great cardiac vein
+60734001,Great saphenous vein
+85562004,Hand
+69536005,Head
+774007,Head and Neck
+80891009,Heart
+76015000,Hepatic artery
+8993003,Hepatic vein
+24136001,Hip joint
+85050009,Humerus
+128560002,Hunterian perforating vein
+11708003,Hypogastric region
+81502006,Hypopharynx
+34516001,Ileum
+299716001,Iliac and/or femoral artery
+10293006,Iliac artery
+244411005,Iliac vein
+22356005,Ilium
+195416006,Inferior cardiac vein
+51249003,Inferior left pulmonary vein
+33795007,Inferior mesenteric artery
+113273001,Inferior right pulmonary vein
+64131007,Inferior vena cava
+26893007,Inguinal region
+12691009,Innominate artery
+8887007,Innominate vein
+361078006,Internal Auditory Canal
+86117002,Internal carotid artery
+90024005,Internal iliac artery
+12123001,Internal jugular vein
+69327007,Internal mammary artery
+818987002,Intra-abdominopelvic
+131183008,Intra-articular
+1101003,Intracranial
+32849002,Intra-esophageal
+816989007,Intra-pelvic
+43799004,Intra-thoracic
+661005,Jaw region
+21306003,Jejunum
+39352004,Joint
+128563000,Juxtaposed atrial appendage
+64033007,Kidney
+72696002,Knee
+59749000,Lacrimal artery
+128979005,Lacrimal artery of right eye
+14742008,Large intestine
+4596009,Larynx
+66720007,Lateral Ventricle
+82471001,Left atrium
+33626005,Left auricular appendage
+113270003,Left femoral artery
+273202007,Left hepatic vein
+133945003,Left hypochondriac region
+85119005,Left inguinal region
+68505006,Left lower quadrant of abdomen
+133943005,Left lumbar region
+70253006,Left portal vein
+50408007,Left pulmonary artery
+86367003,Left upper quadrant of abdomen
+87878005,Left ventricle
+70238003,Left ventricle inflow
+13418002,Left ventricle outflow tract
+113264009,Lingual artery
+10200004,Liver
+19100000,Lower inner quadrant of breast
+30021000,Lower leg
+61685007,Lower limb
+33564002,Lower outer quadrant of breast
+34635009,Lumbar artery
+52612000,Lumbar region
+122496007,Lumbar spine
+297173004,Lumbo-sacral spine
+91747007,Lumen of blood vessel
+39607008,Lung
+91609006,Mandible
+59066005,Mastoid bone
+70925003,Maxilla
+72410000,Mediastinum
+86570000,Mesenteric artery
+128583004,Mesenteric vein
+17232002,Middle cerebral artery
+273099000,Middle hepatic vein
+243977002,Morisons pouch
+123851003,Mouth
+102292000,Muscle of lower limb
+30608006,Muscle of upper limb
+74386004,Nasal bone
+360955006,Nasopharynx
+45048000,Neck
+416319003,"Neck, Chest, Abdomen and Pelvis"
+416152001,"Neck, Chest and Abdomen"
+417437006,Neck and Chest
+45206002,Nose
+31145008,Occipital artery
+32114007,Occipital vein
+113346000,Omental bursa
+27398004,Omentum
+53549008,Ophthalmic artery
+55024004,Optic canal
+363654007,Orbital structure
+15497006,Ovary
+15776009,Pancreas
+69930009,Pancreatic duct
+110621006,Pancreatic duct and bile duct systems
+2095001,Paranasal sinus
+91691001,Parasternal
+111002,Parathyroid
+45289007,Parotid gland
+64234005,Patella
+83330001,Patent ductus arteriosus
+816092008,Pelvis
+416631005,Pelvis and lower extremities
+282044005,Penile artery
+18911002,Penis
+38864007,Perineum
+8821006,Peroneal artery
+113681,Phantom
+54066008,Pharynx
+312535008,Pharynx and larynx
+78067005,Placenta
+43899006,Popliteal artery
+32361000,Popliteal fossa
+56849005,Popliteal vein
+32764006,Portal vein
+70382005,Posterior cerebral artery
+43119007,Posterior communicating artery
+128569001,Posterior medial tributary
+13363002,Posterior tibial artery
+14944004,Primitive aorta
+91707000,Primitive pulmonary artery
+31677005,Profunda femoris artery
+23438002,Profunda femoris vein
+41216001,Prostate
+81040000,Pulmonary artery
+128584005,Pulmonary artery conduit
+128586007,Pulmonary chamber of cor triatriatum
+122972007,Pulmonary vein
+128566008,Pulmonary vein confluence
+128567004,Pulmonary venous atrium
+45631007,Radial artery
+62413002,Radius
+110535000,Radius and ulna
+53843000,Rectouterine pouch
+34402009,Rectum
+2841007,Renal artery
+25990002,Renal pelvis
+56400007,Renal vein
+82849001,Retroperitoneum
+113197003,Rib
+73829009,Right atrium
+68300000,Right auricular appendage
+69833005,Right femoral artery
+272998002,Right hepatic vein
+133946002,Right hypochondriac region
+37117007,Right inguinal region
+48544008,Right lower quadrant of abdomen
+133944004,Right lumbar region
+73931004,Right portal vein
+78480002,Right pulmonary artery
+50519007,Right upper quadrant of abdomen
+53085002,Right ventricle
+8017000,Right ventricle inflow
+44627009,Right ventricle outflow tract
+39723000,Sacroiliac joint
+54735007,Sacrum
+128587003,Saphenofemoral junction
+362072009,Saphenous vein
+41695006,Scalp
+79601000,Scapula
+18619003,Sclera
+20233005,Scrotum
+42575006,Sella turcica
+64739004,Seminal vesicle
+58742003,Sesamoid bones of foot
+16982005,Shoulder
+60184004,Sigmoid colon
+89546000,Skull
+30315005,Small intestine
+2748008,Spinal cord
+421060004,Spine
+78961009,Spleen
+22083002,Splenic artery
+35819009,Splenic vein
+7844006,Sternoclavicular joint
+56873002,Sternum
+69695003,Stomach
+36765005,Subclavian artery
+9454009,Subclavian vein
+19695001,Subcostal
+5713008,Submandibular area
+54019009,Submandibular gland
+170887008,Submental
+5076001,Subxiphoid
+181349008,Superficial femoral artery
+397364003,Superficial femoral vein
+15672000,Superficial temporal artery
+43863001,Superior left pulmonary vein
+42258001,Superior mesenteric artery
+8629005,Superior right pulmonary vein
+72021004,Superior thyroid artery
+48345005,Superior vena cava
+77621008,Supraclavicular region of neck
+11708003,Suprapubic region
+26493002,Suprasternal notch
+128589000,Systemic collateral artery to lung
+128568009,Systemic venous atrium
+27949001,Tarsal joint
+53620006,Temporomandibular joint
+40689003,Testis
+42695009,Thalamus
+68367000,Thigh
+49841001,Third ventricle
+113262008,Thoracic aorta
+122495006,Thoracic spine
+297172009,Thoraco-lumbar spine
+43799004,Thorax
+76505004,Thumb
+9875009,Thymus
+69748006,Thyroid
+12611008,Tibia
+110536004,Tibia and fibula
+29707007,Toe
+21974007,Tongue
+44567001,Trachea
+110726009,Trachea and bronchus
+485005,Transverse colon
+61959006,Truncus arteriosus communis
+57850000,Truncus coeliacus
+23416004,Ulna
+44984001,Ulnar artery
+50536004,Umbilical artery
+90290004,Umbilical region
+284639000,Umbilical vein
+40983000,Upper arm
+77831004,Upper inner quadrant of breast
+53120007,Upper limb
+76365002,Upper outer quadrant of breast
+431491007,Upper urinary tract
+87953007,Ureter
+13648007,Urethra
+35039007,Uterus
+110639002,Uterus and fallopian tubes
+76784001,Vagina
+118375008,Vascular graft
+29092000,Vein
+34340008,Venous network
+21814001,Ventricle
+85234005,Vertebral artery
+110517009,Vertebral column and cranium
+45292006,Vulva
+74670003,Wrist joint
+13881006,Zygoma

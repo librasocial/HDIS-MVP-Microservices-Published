@@ -1,0 +1,5851 @@
+{
+	"info": {
+		"_postman_id": "8473dc04-b6d8-4d94-bec9-22ad90e63ea1",
+		"name": "Service Master",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3195893"
+	},
+	"item": [
+		{
+			"name": "Create Service Type (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": 999,\r\n    \"name\": \"Test Service Type\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-types/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-types",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 999,\r\n    \"name\": \"Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 12 Jan 2024 15:15:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 999,\n    \"name\": \"Test Service Type\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Service Types (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-types/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-types",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 12 Jan 2024 15:12:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "722"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"code\": 1,\n        \"name\": \"Room Rent\"\n    },\n    {\n        \"code\": 2,\n        \"name\": \"Nursing\"\n    },\n    {\n        \"code\": 3,\n        \"name\": \"Consultation\"\n    },\n    {\n        \"code\": 4,\n        \"name\": \"Surgery\"\n    },\n    {\n        \"code\": 5,\n        \"name\": \"Pharmacy\"\n    },\n    {\n        \"code\": 6,\n        \"name\": \"Consumables and Disposables\"\n    },\n    {\n        \"code\": 7,\n        \"name\": \"OT\"\n    },\n    {\n        \"code\": 8,\n        \"name\": \"Diet\"\n    },\n    {\n        \"code\": 9,\n        \"name\": \"Food & Beverages\"\n    },\n    {\n        \"code\": 10,\n        \"name\": \"Housekeeping(Laundry)\"\n    },\n    {\n        \"code\": 11,\n        \"name\": \"Ambulance\"\n    },\n    {\n        \"code\": 12,\n        \"name\": \"Telephone Expenses\"\n    },\n    {\n        \"code\": 13,\n        \"name\": \"Administration\"\n    },\n    {\n        \"code\": 14,\n        \"name\": \"First-Aids\"\n    },\n    {\n        \"code\": 15,\n        \"name\": \"Lab Orders\"\n    },\n    {\n        \"code\": 16,\n        \"name\": \"Radiology Orders\"\n    },\n    {\n        \"code\": 17,\n        \"name\": \"Blood Bank\"\n    },\n    {\n        \"code\": 18,\n        \"name\": \"Immunization Orders\"\n    },\n    {\n        \"code\": 19,\n        \"name\": \"Package\"\n    },\n    {\n        \"code\": 20,\n        \"name\": \"CSSD\"\n    },\n    {\n        \"code\": 21,\n        \"name\": \"Procedures\"\n    },\n    {\n        \"code\": 22,\n        \"name\": \"Others\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Service Type (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-types",
+						":serviceTypeCode",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTypeCode",
+							"value": "999"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceTypeCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTypeCode",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 15:36:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceTypeCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTypeCode",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 15:33:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 999,\n    \"name\": \"Updated Test Service Type\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a Service Type (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-types",
+						":serviceTypeCode",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTypeCode",
+							"value": "999"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceTypeCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTypeCode",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 13 Jan 2024 18:18:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceCode",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 12 Jan 2024 17:14:47 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 999,\n    \"name\": \"Updated Test Service Type\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Service Type (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-types/:serviceTypeCode/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-types",
+						":serviceTypeCode",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTypeCode",
+							"value": "999"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceCode",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 12 Jan 2024 17:24:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-types/:serviceCode/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-types",
+								":serviceCode",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceCode",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 12 Jan 2024 17:24:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Service",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\r\n    \"service_type\": 3,\r\n    \"name\": \"Test Service\",\r\n    \"short_name\": \"Test\",\r\n    \"usage_type\": \"Time-based\",\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-06-01\",\r\n    \"maximum_rate\": 200,\r\n    \"minimum_rate\": 100,\r\n    \"is_inventory\": \"False\",\r\n    \"is_active\": \"True\",\r\n    \"is_taxable\": \"True\",\r\n    \"tax_code\": \"0\",\r\n    \"is_orderable\": \"True\",\r\n    \"is_auto_post\": \"False\",\r\n    \"is_appointment_required\": \"False\",\r\n    \"is_bundling_allowed\": \"False\",\r\n    \"is_discount_allowed\": \"True\",\r\n    \"is_component_type\": \"False\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/services/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\r\n    \"service_type\": 3,\r\n    \"name\": \"Test Service\",\r\n    \"short_name\": \"Test\",\r\n    \"usage_type\": \"Time-based\",\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-06-01\",\r\n    \"maximum_rate\": 200,\r\n    \"minimum_rate\": 100,\r\n    \"is_inventory\": \"False\",\r\n    \"is_active\": \"True\",\r\n    \"is_taxable\": \"True\",\r\n    \"tax_code\": \"0\",\r\n    \"is_orderable\": \"True\",\r\n    \"is_auto_post\": \"False\",\r\n    \"is_appointment_required\": \"False\",\r\n    \"is_bundling_allowed\": \"False\",\r\n    \"is_discount_allowed\": \"True\",\r\n    \"is_component_type\": \"False\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:45:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "509"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"e77e224fd5cd414295ecf4f81a359a48\",\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"name\": \"Test Service\",\n    \"short_name\": \"Test\",\n    \"effective_from\": \"2024-01-01\",\n    \"effective_to\": \"2024-06-01\",\n    \"minimum_price\": null,\n    \"maximum_price\": null,\n    \"usage_type\": \"Time-based\",\n    \"is_inventory\": false,\n    \"is_active\": true,\n    \"is_taxable\": true,\n    \"tax_code\": \"0\",\n    \"is_orderable\": true,\n    \"is_auto_post\": false,\n    \"is_appointment_required\": false,\n    \"is_bundling_allowed\": false,\n    \"is_discount_allowed\": true,\n    \"is_component_type\": false,\n    \"service_type\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Service",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"facility_id\": \"b95ad81e-452d-4404-9712-cadab7a769e1\",\r\n    \"name\": \"Test Service\",\r\n    \"short_name\": \"UpdTest\",\r\n    \"effective_from\": \"2024-03-01\",\r\n    \"effective_to\": \"2024-09-01\",\r\n    \"minimum_price\": null,\r\n    \"maximum_price\": null,\r\n    \"usage_type\": \"Time-based\",\r\n    \"is_inventory\": false,\r\n    \"is_active\": true,\r\n    \"is_taxable\": true,\r\n    \"tax_code\": \"1\",\r\n    \"is_orderable\": true,\r\n    \"is_auto_post\": false,\r\n    \"is_appointment_required\": false,\r\n    \"is_bundling_allowed\": false,\r\n    \"is_discount_allowed\": true,\r\n    \"is_component_type\": false,\r\n    \"service_type\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/services/:servicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						":servicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePk",
+							"value": "e77e224fd5cd414295ecf4f81a359a48"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"facility_id\": \"b95ad81e-452d-4404-9712-cadab7a769e1\",\r\n    \"name\": \"Updated Test Service\",\r\n    \"short_name\": \"UpdTest\",\r\n    \"effective_from\": \"2024-03-01\",\r\n    \"effective_to\": \"2024-09-01\",\r\n    \"minimum_price\": null,\r\n    \"maximum_price\": null,\r\n    \"usage_type\": \"Time-based\",\r\n    \"is_inventory\": false,\r\n    \"is_active\": true,\r\n    \"is_taxable\": true,\r\n    \"tax_code\": \"1\",\r\n    \"is_orderable\": true,\r\n    \"is_auto_post\": false,\r\n    \"is_appointment_required\": false,\r\n    \"is_bundling_allowed\": false,\r\n    \"is_discount_allowed\": true,\r\n    \"is_component_type\": false,\r\n    \"service_type\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "000e224fd5cd414295ecf4f81a359a48"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:50:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"facility_id\": \"b95ad81e-452d-4404-9712-cadab7a769e1\",\r\n    \"name\": \"Updated Test Service\",\r\n    \"short_name\": \"UpdTest\",\r\n    \"effective_from\": \"2024-03-01\",\r\n    \"effective_to\": \"2024-09-01\",\r\n    \"minimum_price\": null,\r\n    \"maximum_price\": null,\r\n    \"usage_type\": \"Time-based\",\r\n    \"is_inventory\": false,\r\n    \"is_active\": true,\r\n    \"is_taxable\": true,\r\n    \"tax_code\": \"1\",\r\n    \"is_orderable\": true,\r\n    \"is_auto_post\": false,\r\n    \"is_appointment_required\": false,\r\n    \"is_bundling_allowed\": false,\r\n    \"is_discount_allowed\": true,\r\n    \"is_component_type\": false,\r\n    \"service_type\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "e77e224fd5cd414295ecf4f81a359a48"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:50:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "520"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"e77e224fd5cd414295ecf4f81a359a48\",\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"name\": \"Updated Test Service\",\n    \"short_name\": \"UpdTest\",\n    \"effective_from\": \"2024-03-01\",\n    \"effective_to\": \"2024-09-01\",\n    \"minimum_price\": null,\n    \"maximum_price\": null,\n    \"usage_type\": \"Time-based\",\n    \"is_inventory\": false,\n    \"is_active\": true,\n    \"is_taxable\": true,\n    \"tax_code\": \"1\",\n    \"is_orderable\": true,\n    \"is_auto_post\": false,\n    \"is_appointment_required\": false,\n    \"is_bundling_allowed\": false,\n    \"is_discount_allowed\": true,\n    \"is_component_type\": false,\n    \"service_type\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Partially Update Service",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tax_code\": \"9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/services/:servicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						":servicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePk",
+							"value": "e77e224fd5cd414295ecf4f81a359a48"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tax_code\": \"9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "000e224fd5cd414295ecf4f81a359a48"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 11:41:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tax_code\": \"9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "e77e224fd5cd414295ecf4f81a359a48"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 11:38:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "512"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"e77e224fd5cd414295ecf4f81a359a48\",\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"name\": \"Test Service\",\n    \"short_name\": \"UpdTest\",\n    \"effective_from\": \"2024-03-01\",\n    \"effective_to\": \"2024-09-01\",\n    \"minimum_price\": null,\n    \"maximum_price\": null,\n    \"usage_type\": \"Time-based\",\n    \"is_inventory\": false,\n    \"is_active\": true,\n    \"is_taxable\": true,\n    \"tax_code\": \"9\",\n    \"is_orderable\": true,\n    \"is_auto_post\": false,\n    \"is_appointment_required\": false,\n    \"is_bundling_allowed\": false,\n    \"is_discount_allowed\": true,\n    \"is_component_type\": false,\n    \"service_type\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Services (SU only)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/services/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 13 Jan 2024 17:36:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1158"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"5a491569a8fd4213b7dcf934aaf36e44\",\n        \"facility_id\": \"b95ad81e-452d-4404-9712-cadab7a769e1\",\n        \"resource_id\": \"E314864344\",\n        \"name\": \"Test Service 2\",\n        \"short_name\": \"Test2\",\n        \"effective_from\": \"2024-01-01\",\n        \"effective_to\": \"2024-06-01\",\n        \"price\": \"10.00\",\n        \"minimum_price\": null,\n        \"maximum_price\": null,\n        \"usage_type\": \"Time-based\",\n        \"unit\": \"days\",\n        \"is_inventory\": false,\n        \"is_active\": true,\n        \"is_taxable\": true,\n        \"tax_code\": \"0\",\n        \"is_orderable\": true,\n        \"is_auto_post\": false,\n        \"is_appointment_required\": false,\n        \"is_bundling_allowed\": false,\n        \"is_discount_allowed\": true,\n        \"is_component_type\": false,\n        \"service_type\": 3\n    },\n    {\n        \"primary_key\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\n        \"facility_id\": \"b95ad81e-452d-4404-9712-cadab7a769e1\",\n        \"resource_id\": \"E314864344\",\n        \"name\": \"Updated Test Service\",\n        \"short_name\": \"UpdTest\",\n        \"effective_from\": \"2024-01-01\",\n        \"effective_to\": \"2024-06-01\",\n        \"price\": \"150.00\",\n        \"minimum_price\": null,\n        \"maximum_price\": null,\n        \"usage_type\": \"Time-based\",\n        \"unit\": \"days\",\n        \"is_inventory\": false,\n        \"is_active\": true,\n        \"is_taxable\": true,\n        \"tax_code\": \"9\",\n        \"is_orderable\": true,\n        \"is_auto_post\": false,\n        \"is_appointment_required\": false,\n        \"is_bundling_allowed\": false,\n        \"is_discount_allowed\": true,\n        \"is_component_type\": false,\n        \"service_type\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve a Service by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/services/:servicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						":servicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePk",
+							"value": "23110121909e4a298982e2c09a04b107"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "00010121909e4a298982e2c09a04b107"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:53:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "23110121909e4a298982e2c09a04b107"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:52:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "520"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"23110121909e4a298982e2c09a04b107\",\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"name\": \"Updated Test Service\",\n    \"short_name\": \"UpdTest\",\n    \"effective_from\": \"2024-01-01\",\n    \"effective_to\": \"2024-06-01\",\n    \"minimum_price\": null,\n    \"maximum_price\": null,\n    \"usage_type\": \"Time-based\",\n    \"is_inventory\": false,\n    \"is_active\": true,\n    \"is_taxable\": true,\n    \"tax_code\": \"1\",\n    \"is_orderable\": true,\n    \"is_auto_post\": false,\n    \"is_appointment_required\": false,\n    \"is_bundling_allowed\": false,\n    \"is_discount_allowed\": true,\n    \"is_component_type\": false,\n    \"service_type\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/services/search?facility_id=b95ad81e452d44049712cadab7a769e1&name=Test Service&is_active=True&service_type=3&is_component_type=False&is_discount_allowed=True",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						"search"
+					],
+					"query": [
+						{
+							"key": "facility_id",
+							"value": "b95ad81e452d44049712cadab7a769e1"
+						},
+						{
+							"key": "name",
+							"value": "Test Service"
+						},
+						{
+							"key": "is_active",
+							"value": "True"
+						},
+						{
+							"key": "service_type",
+							"value": "3"
+						},
+						{
+							"key": "is_component_type",
+							"value": "False"
+						},
+						{
+							"key": "is_discount_allowed",
+							"value": "True"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Mandatory parameters missing",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/services/search?is_active=True&service_type=3&is_component_type=False&is_discount_allowed=True",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								"search"
+							],
+							"query": [
+								{
+									"key": "facility_id",
+									"value": "b95ad81e452d44049712cadab7a769e1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Test Service",
+									"disabled": true
+								},
+								{
+									"key": "is_active",
+									"value": "True"
+								},
+								{
+									"key": "service_type",
+									"value": "3"
+								},
+								{
+									"key": "is_component_type",
+									"value": "False"
+								},
+								{
+									"key": "is_discount_allowed",
+									"value": "True"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 11:35:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"At least one search parameter among 'facility_id' and 'name' must be specified.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/services/search?facility_id=b95ad81e452d44049712cadab7a769e1&name=Test Service&is_active=True&service_type=3&is_component_type=False&is_discount_allowed=True",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								"search"
+							],
+							"query": [
+								{
+									"key": "facility_id",
+									"value": "b95ad81e452d44049712cadab7a769e1"
+								},
+								{
+									"key": "name",
+									"value": "Test Service"
+								},
+								{
+									"key": "is_active",
+									"value": "True"
+								},
+								{
+									"key": "service_type",
+									"value": "3"
+								},
+								{
+									"key": "is_component_type",
+									"value": "False"
+								},
+								{
+									"key": "is_discount_allowed",
+									"value": "True"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 11:34:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "514"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"e77e224fd5cd414295ecf4f81a359a48\",\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"name\": \"Test Service\",\n        \"short_name\": \"UpdTest\",\n        \"effective_from\": \"2024-03-01\",\n        \"effective_to\": \"2024-09-01\",\n        \"minimum_price\": null,\n        \"maximum_price\": null,\n        \"usage_type\": \"Time-based\",\n        \"is_inventory\": false,\n        \"is_active\": true,\n        \"is_taxable\": true,\n        \"tax_code\": \"1\",\n        \"is_orderable\": true,\n        \"is_auto_post\": false,\n        \"is_appointment_required\": false,\n        \"is_bundling_allowed\": false,\n        \"is_discount_allowed\": true,\n        \"is_component_type\": false,\n        \"service_type\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete a Service",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/services/:servicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"services",
+						":servicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePk",
+							"value": "23110121909e4a298982e2c09a04b107"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "23110121909e4a298982e2c09a04b107"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 11:37:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/services/:servicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"services",
+								":servicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePk",
+									"value": "23110121909e4a298982e2c09a04b107"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 10:54:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Service Price",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"9ccf62fadc2c4243a13e815272ae0c8f\",\r\n    \"price\": 100.0,\r\n    \"effective_from\": \"2024-06-02 09:00\",\r\n    \"effective_to\": \"2024-o6-30 23:59\",\r\n    \"unit\": \"days\",\r\n    \"patient_type\": \"BPL\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 50.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-prices/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-prices",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Invalid Service PK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"9ccf62fadc2c4243a13e815272ae0c8f\",\r\n    \"price\": 100.0,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"unit\": \"days\",\r\n    \"patient_type\": \"BPL\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 50.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 12:57:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"9ccf62fadc2c4243a13e815272ae0c8f\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"e77e224fd5cd414295ecf4f81a359a48\",\r\n    \"price\": 100.0,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"unit\": \"days\",\r\n    \"patient_type\": \"BPL\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 50.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 12:56:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "332"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"947e963544b34991897e785a6ee6d5c8\",\n    \"price\": \"100.00\",\n    \"effective_from\": \"2024-06-02\",\n    \"effective_to\": \"2024-06-30\",\n    \"unit\": \"days\",\n    \"resource_id\": null,\n    \"patient_type\": \"BPL\",\n    \"source_of_payment_code\": null,\n    \"is_shareable\": true,\n    \"provider_id\": \"E314864344\",\n    \"share_percentage\": \"50.00\",\n    \"service\": \"e77e224f-d5cd-4142-95ec-f4f81a359a48\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Service Prices",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-prices/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-prices",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:27:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "649"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"2971fff6b5954beca56a47a46dfd7289\",\n        \"price\": \"0.00\",\n        \"effective_from\": \"2024-01-01\",\n        \"effective_to\": \"2024-06-01\",\n        \"unit\": null,\n        \"resource_id\": null,\n        \"patient_type\": \"BPL\",\n        \"source_of_payment_code\": null,\n        \"is_shareable\": true,\n        \"provider_id\": \"E314864344\",\n        \"share_percentage\": \"75.00\",\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    },\n    {\n        \"primary_key\": \"75a11f43162f42e09651c1e55481ade8\",\n        \"price\": \"0.00\",\n        \"effective_from\": \"2024-01-01\",\n        \"effective_to\": \"2024-06-01\",\n        \"unit\": null,\n        \"resource_id\": null,\n        \"patient_type\": \"VIP\",\n        \"source_of_payment_code\": null,\n        \"is_shareable\": false,\n        \"provider_id\": null,\n        \"share_percentage\": null,\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a Service Price",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-prices",
+						":servicePricePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePricePk",
+							"value": "947e963544b34991897e785a6ee6d5c8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "000e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:17:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "947e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:16:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "332"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"947e963544b34991897e785a6ee6d5c8\",\n    \"price\": \"100.00\",\n    \"effective_from\": \"2024-06-02\",\n    \"effective_to\": \"2024-06-30\",\n    \"unit\": \"days\",\n    \"resource_id\": null,\n    \"patient_type\": \"BPL\",\n    \"source_of_payment_code\": null,\n    \"is_shareable\": true,\n    \"provider_id\": \"E314864344\",\n    \"share_percentage\": \"50.00\",\n    \"service\": \"e77e224f-d5cd-4142-95ec-f4f81a359a48\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Service Price",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"patient_type\": \"BPL\",\r\n    \"price\": 10,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 75.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-prices",
+						":servicePricePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePricePk",
+							"value": "947e963544b34991897e785a6ee6d5c8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"patient_type\": \"BPL\",\r\n    \"price\": 10,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 75.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "000e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:21:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Error Response - 400 Invalid Service PK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"0005b9bf7c13417fa302c672bf0525b9\",\r\n    \"patient_type\": \"BPL\",\r\n    \"price\": 10,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 75.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "947e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:22:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"0005b9bf7c13417fa302c672bf0525b9\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"patient_type\": \"BPL\",\r\n    \"price\": 10,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\",\r\n    \"is_shareable\": \"True\",\r\n    \"provider_id\": \"E314864344\",\r\n    \"share_percentage\": 75.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "947e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:19:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "331"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"947e963544b34991897e785a6ee6d5c8\",\n    \"price\": \"10.00\",\n    \"effective_from\": \"2024-06-02\",\n    \"effective_to\": \"2024-06-30\",\n    \"unit\": \"days\",\n    \"resource_id\": null,\n    \"patient_type\": \"BPL\",\n    \"source_of_payment_code\": null,\n    \"is_shareable\": true,\n    \"provider_id\": \"E314864344\",\n    \"share_percentage\": \"75.00\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Service Price",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-prices",
+						":servicePricePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "servicePricePk",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "000e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:25:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-prices/:servicePricePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-prices",
+								":servicePricePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "servicePricePk",
+									"value": "947e963544b34991897e785a6ee6d5c8"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:26:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Service Tax",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"e2943ddabd4043b1be49a4a79fcdfc89\",\r\n    \"tax_rate\": 5.0,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-taxes/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-taxes",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Invalid Service PK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"000f62fadc2c4243a13e815272ae0c8f\",\r\n    \"tax_rate\": 5.0,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:35:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"000f62fadc2c4243a13e815272ae0c8f\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 400 Invalid date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"e77e224fd5cd414295ecf4f81a359a48\",\r\n    \"tax_rate\": 5.0,\r\n    \"effective_from\": \"02-06-2024\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:38:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"effective_from\": [\n        \"Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"e77e224fd5cd414295ecf4f81a359a48\",\r\n    \"tax_rate\": 5.0,\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:39:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"2cb43488faf64d2a91f1c8e969c7ccb1\",\n    \"tax_location\": null,\n    \"source_of_payment_code\": null,\n    \"tax_rate\": \"5.00\",\n    \"effective_from\": \"2024-06-02T00:00:00+05:30\",\n    \"effective_to\": \"2024-06-30T00:00:00+05:30\",\n    \"service\": \"e77e224f-d5cd-4142-95ec-f4f81a359a48\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Service Taxes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-taxes/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-taxes",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:54:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "515"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"551a4e68059d49acb728415fbc7a01e3\",\n        \"tax_location\": null,\n        \"source_of_payment_code\": null,\n        \"tax_rate\": \"18.00\",\n        \"effective_from\": \"2024-01-02T00:00:00+05:30\",\n        \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    },\n    {\n        \"primary_key\": \"6551e2be663b4b55bbcfc3375202034b\",\n        \"tax_location\": null,\n        \"source_of_payment_code\": null,\n        \"tax_rate\": \"10.00\",\n        \"effective_from\": \"2024-06-02T00:00:00+05:30\",\n        \"effective_to\": \"2024-12-31T00:00:00+05:30\",\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a Service Tax",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPK/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-taxes",
+						":serviceTaxPK",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTaxPK",
+							"value": "551a4e68059d49acb728415fbc7a01e3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPK/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPK",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPK",
+									"value": "000a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:40:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPK/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPK",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPK",
+									"value": "551a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:42:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"551a4e68059d49acb728415fbc7a01e3\",\n    \"tax_location\": null,\n    \"source_of_payment_code\": null,\n    \"tax_rate\": \"18.00\",\n    \"effective_from\": \"2024-01-02T00:00:00+05:30\",\n    \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Service Tax",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"tax_rate\": 18.0,\r\n    \"effective_from\": \"2024-01-02\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-taxes",
+						":serviceTaxPk",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTaxPk",
+							"value": "551a4e68059d49acb728415fbc7a01e3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Invalid Service PK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"0005b9bf7c13417fa302c672bf0525b9\",\r\n    \"tax_rate\": 18.0,\r\n    \"effective_from\": \"2024-01-02\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "551a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:50:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"0005b9bf7c13417fa302c672bf0525b9\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 400 Invalid date",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"tax_rate\": 18.0,\r\n    \"effective_from\": \"02-01-2024\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "551a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:52:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"effective_from\": [\n        \"Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"tax_rate\": 18.0,\r\n    \"effective_from\": \"2024-01-02\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "000a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:50:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"tax_rate\": 18.0,\r\n    \"effective_from\": \"2024-01-02\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "551a4e68059d49acb728415fbc7a01e3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:49:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"551a4e68059d49acb728415fbc7a01e3\",\n    \"tax_location\": null,\n    \"source_of_payment_code\": null,\n    \"tax_rate\": \"18.00\",\n    \"effective_from\": \"2024-01-02T00:00:00+05:30\",\n    \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Service Tax",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-taxes",
+						":serviceTaxPk",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceTaxPk",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "00043488faf64d2a91f1c8e969c7ccb1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:53:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-taxes/:serviceTaxPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-taxes",
+								":serviceTaxPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceTaxPk",
+									"value": "2cb43488faf64d2a91f1c8e969c7ccb1"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 13:54:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Service Discount",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard discount\",\r\n    \"value\": 10.0,\r\n    \"coupon_code\": \"STDDSC\",\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-discounts/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-discounts",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Invalid Service PK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"0005b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard discount\",\r\n    \"value\": 10.0,\r\n    \"coupon_code\": \"STDDSC\",\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:00:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"0005b9bf7c13417fa302c672bf0525b9\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 400 Invalid date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard discount\",\r\n    \"value\": 10.0,\r\n    \"coupon_code\": \"STDDSC\",\r\n    \"effective_from\": \"02-06-2024\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:01:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"effective_from\": [\n        \"Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard discount\",\r\n    \"value\": 10.0,\r\n    \"coupon_code\": \"STDDSC\",\r\n    \"effective_from\": \"2024-06-02\",\r\n    \"effective_to\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:02:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "271"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"bfb72dd7012a4da7a8d5bcaeda375d24\",\n    \"discount_type\": 2,\n    \"name\": \"Standard discount\",\n    \"value\": \"10.00\",\n    \"coupon_code\": \"STDDSC\",\n    \"effective_from\": \"2024-06-02T00:00:00+05:30\",\n    \"effective_to\": \"2024-06-30T00:00:00+05:30\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Service Discounts",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-discounts/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-discounts",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:56:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"e9908d2a548d4f57938b8c4affddfad2\",\n        \"discount_type\": 2,\n        \"name\": \"Standard Discount\",\n        \"value\": \"5.00\",\n        \"coupon_code\": null,\n        \"effective_from\": \"2024-01-01T00:00:00+05:30\",\n        \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    },\n    {\n        \"primary_key\": \"ef8ae47a335a46a2bc46ee9b6625da94\",\n        \"discount_type\": 1,\n        \"name\": \"Special discount\",\n        \"value\": \"20.00\",\n        \"coupon_code\": null,\n        \"effective_from\": \"2024-01-01T00:00:00+05:30\",\n        \"effective_to\": \"2024-06-01T00:00:00+05:30\",\n        \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a Service Discount",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-discounts",
+						":serviceDiscountPk",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceDiscountPk",
+							"value": "e9908d2a548d4f57938b8c4affddfad2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "00008d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:06:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "e9908d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:05:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"e9908d2a548d4f57938b8c4affddfad2\",\n    \"discount_type\": 1,\n    \"name\": \"Standard Discount\",\n    \"value\": \"5.00\",\n    \"coupon_code\": null,\n    \"effective_from\": \"2024-01-01T00:00:00+05:30\",\n    \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Service Discount",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard Discount\",\r\n    \"value\": 5.0,\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-discounts",
+						":serviceDiscountPk",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceDiscountPk",
+							"value": "e9908d2a548d4f57938b8c4affddfad2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"0005b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard Discount\",\r\n    \"value\": 5.0,\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "e9908d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:11:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": [\n        \"Invalid pk \\\"0005b9bf7c13417fa302c672bf0525b9\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 400 Mandatory field missing",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"name\": \"Standard Discount\",\r\n    \"value\": 5.0,\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "e9908d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:10:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"discount_type\": [\n        \"This field is required.\"\n    ]\n}"
+				},
+				{
+					"name": "Error Response - 400 Invalid date",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard Discount\",\r\n    \"value\": 5.0,\r\n    \"effective_from\": \"01-01-2024\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "e9908d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:11:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"effective_from\": [\n        \"Datetime has wrong format. Use one of these formats instead: YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z].\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"d7c5b9bf7c13417fa302c672bf0525b9\",\r\n    \"discount_type\": 2,\r\n    \"name\": \"Standard Discount\",\r\n    \"value\": 5.0,\r\n    \"effective_from\": \"2024-01-01\",\r\n    \"effective_to\": \"2024-03-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "e9908d2a548d4f57938b8c4affddfad2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:13:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"e9908d2a548d4f57938b8c4affddfad2\",\n    \"discount_type\": 2,\n    \"name\": \"Standard Discount\",\n    \"value\": \"5.00\",\n    \"coupon_code\": null,\n    \"effective_from\": \"2024-01-01T00:00:00+05:30\",\n    \"effective_to\": \"2024-03-01T00:00:00+05:30\",\n    \"service\": \"d7c5b9bf-7c13-417f-a302-c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Service Discount",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"service-discounts",
+						":serviceDiscountPk",
+						""
+					],
+					"variable": [
+						{
+							"key": "serviceDiscountPk",
+							"value": "bfb72dd7012a4da7a8d5bcaeda375d24"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "00072dd7012a4da7a8d5bcaeda375d24"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:15:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/service-discounts/:serviceDiscountPk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"service-discounts",
+								":serviceDiscountPk",
+								""
+							],
+							"variable": [
+								{
+									"key": "serviceDiscountPk",
+									"value": "bfb72dd7012a4da7a8d5bcaeda375d24"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 14:15:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Component Service",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\r\n    \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_service_master}}/component-services/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"component-services",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Invalid Service PKs",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"component_service\": \"0005bb1aacf2460098196304ac621e71\",\r\n    \"component\": \"0005b9bf7c13417fa302c672bf0525b9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:12:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"component_service\": [\n        \"Invalid pk \\\"0005bb1a-acf2-4600-9819-6304ac621e71\\\" - object does not exist.\"\n    ],\n    \"component\": [\n        \"Invalid pk \\\"0005b9bf-7c13-417f-a302-c672bf0525b9\\\" - object does not exist.\"\n    ]\n}"
+				},
+				{
+					"name": "Sample Response - Entry 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\r\n    \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:11:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"b390867b453f441b9eb1f61380230b36\",\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n    \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\n}"
+				},
+				{
+					"name": "Sample Response - Entry 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\r\n    \"component\": \"d7c5b9bf7c13417fa302c672bf0525b9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:12:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"c35cecef51f741619f4aefdd1916cbaf\",\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n    \"component\": \"d7c5b9bf7c13417fa302c672bf0525b9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Component Service entries",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/component-services/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"component-services",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response - 200 No results",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Test Service Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2024 10:41:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:19:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"b390867b453f441b9eb1f61380230b36\",\n        \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n        \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\n    },\n    {\n        \"primary_key\": \"c35cecef51f741619f4aefdd1916cbaf\",\n        \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n        \"component\": \"d7c5b9bf7c13417fa302c672bf0525b9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a Component Service entry",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"component-services",
+						":componentServicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "componentServicePk",
+							"value": "b390867b453f441b9eb1f61380230b36"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								":componentServicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "componentServicePk",
+									"value": "0000867b453f441b9eb1f61380230b36"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:46:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								":componentServicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "componentServicePk",
+									"value": "b390867b453f441b9eb1f61380230b36"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:45:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"b390867b453f441b9eb1f61380230b36\",\n    \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n    \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Components for a Component Service ID",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/component-services/component-service-id/:componentServiceId",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"component-services",
+						"component-service-id",
+						":componentServiceId"
+					],
+					"variable": [
+						{
+							"key": "componentServiceId",
+							"value": "3185bb1aacf2460098196304ac621e71"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/component-service-id/:componentServiceId",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								"component-service-id",
+								":componentServiceId"
+							],
+							"variable": [
+								{
+									"key": "componentServiceId",
+									"value": "0005bb1aacf2460098196304ac621e71"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:52:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/component-service-id/:componentServiceId",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								"component-service-id",
+								":componentServiceId"
+							],
+							"variable": [
+								{
+									"key": "componentServiceId",
+									"value": "3185bb1aacf2460098196304ac621e71"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2024 15:52:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"b390867b453f441b9eb1f61380230b36\",\n        \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n        \"component\": \"5a491569a8fd4213b7dcf934aaf36e44\"\n    },\n    {\n        \"primary_key\": \"c35cecef51f741619f4aefdd1916cbaf\",\n        \"component_service\": \"3185bb1aacf2460098196304ac621e71\",\n        \"component\": \"d7c5b9bf7c13417fa302c672bf0525b9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete a Component Service entry",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+					"host": [
+						"{{base_url_service_master}}"
+					],
+					"path": [
+						"component-services",
+						":componentServicePk",
+						""
+					],
+					"variable": [
+						{
+							"key": "componentServicePk",
+							"value": "439c229640e542b3bee9bd73ad98082a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								":componentServicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "componentServicePk",
+									"value": "000c229640e542b3bee9bd73ad98082a"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2024 17:33:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_service_master}}/component-services/:componentServicePk/",
+							"host": [
+								"{{base_url_service_master}}"
+							],
+							"path": [
+								"component-services",
+								":componentServicePk",
+								""
+							],
+							"variable": [
+								{
+									"key": "componentServicePk",
+									"value": "439c229640e542b3bee9bd73ad98082a"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2024 17:33:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{internal_service_client_credentials}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,32 @@
+facility_type_code,facility_type_description,facility_short_type_name,facility_type_internal
+1,Sub Centre,SC,Clinic
+2,Primary Health Centre,PHC,Clinic
+3,Community Heallth Centre,CHC,Nursing Home
+4,District Hospital,DH,Hospital
+5,Sub District Hospital ,SDH,Hospital
+6,Dispensaries,DIS,Clinic
+7,Clinics,CL,Clinic
+8,Drug Warehouse,DW,Other
+9,Nursing Homes,NH,Nursing Home
+10,Urban Health Post,UHP,Clinic
+11,Urban Family Welfare Centre,UFWC,Nursing Home
+12,Polyclinic,PLCL,Nursing Home
+13,Medical College Hospital,MCH,Hospital
+18,Urban Primary Health Centre,UPHC,Clinic
+19,Urban Community Health Centre,UCHC,Nursing Home
+20,Maternity Hospitals,MH,Hospital
+21,Public Sector Undertaking Hospitals,PSUH,Hospital
+24,Township Hospitals,TH,Hospital
+25,Pharmacy,PH,Other
+26,Mortuary,MOR,Other
+27,Anganwadi Centre,AWC,Clinic
+28,Nutritional Rehabilitation Centre,NRC,Nursing Home
+29,Gram Arogya Kendra,GAK,Clinic
+30,Blood Bank,BB,Other
+31,Blood Storage Centre,BSC,Other
+32,Pathology Lab,PL,Other
+33,Radiology Centre,RC,Other
+34,Ambulance Call Centre,ACC,Other
+35,General Hospital,GH,Hospital
+36,Super Speciality Hospital,SSH,Hospital
+37,Others,OTH,Other

@@ -1,0 +1,93 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+<div class="row align-middle" style="margin-top:20px">
+  <div class="col-sm"></div>
+
+<div class="col-sm-6 card-title" style="text-align: center"><h2>{{facilityType}}</h2></div>
+<div class="col-sm"></div>
+</div>
+<form method="get" action="{% url 'register_facility' %}" method='get'  onsubmit="submitForm()">
+      {% csrf_token %}
+
+
+    <!-- Card 1 -->
+ <div class="row" id="top_row2" style="padding-top:100px">
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "facility_registration/images/logged_out/Diagnostics.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <input type="radio" id="microservice_combo" name="microservice_combo" value="registration_only" style="margin-right:5px;">
+    <h5 class="card-title">Registration Only</h5>
+    <p class="card-text">
+        Use the registration microservice to register new users in the facility.
+
+      <li>UHID Search</li>
+      <li>Bulk Registration</li>
+      <li>Search Existing Patients</li>
+    </p>
+
+  </div>
+</div>
+</div>
+<!-- Card 2 -->
+
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "facility_registration/images/logged_out/Diagnostics.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <input type="radio" id="microservice_combo" name="microservice_combo" value="registration_appointment" style="margin-right:5px;">
+    <h5 class="card-title">Registration & Appointment</h5>
+    <p class="card-text">
+        Register and book appointments for patients based on the availability of doctors.
+        <li>Bulk Appointment Booking</li>
+        <li>Default Doctor Slots</li>
+        <li>Online Appointment Booking</li>
+    </p>
+
+  </div>
+</div>
+</div>
+<!-- Card 3 -->
+
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "facility_registration/images/logged_out/Diagnostics.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <input type="radio" id="microservice_combo" name="microservice_combo" value="all_op" style="margin-right:5px;">
+    <h5 class="card-title">All Out Patient Services</h5>
+    <p class="card-text">
+        A set of services to manage out patient services including consultation.
+        <li>Queue Management</li>
+        <li>ePrescription</li>
+         <li>Billing</li>
+    </p>
+
+  </div>
+</div>
+</div>
+
+
+      <button type="submit" class="btn btn-secondary btn-block" name='microservices_selected' id='microservices_selected' value="Submit">
+      Select
+      </button>
+     </div>
+      </form>
+
+<div class="row align-middle" style="margin-bottom:50px">
+  <div class="col-sm"></div>
+</div>
+
+</div>
+{% endblock %}

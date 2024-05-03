@@ -1,0 +1,1362 @@
+{
+	"info": {
+		"_postman_id": "fbc5e7e4-d60d-4f97-b40f-f39e94af8358",
+		"name": "Visit Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3195893"
+	},
+	"item": [
+		{
+			"name": "Create a Visit (Encounter)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unique_individual_health_care_provider_number\": \"UHPID0001\",\r\n    \"local_facility_patient_id\": \"P510179262\",\r\n    \"appointment_id\": \"0f8392bd722e4b05995a8499eda56898\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_visit_management}}/visits/",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"visits",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Mandatory input missing",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uniqueIndividualHealthCareProviderNumber\": \"UHPID0001\",\r\n    \"localFacilityPatientId\": \"P510179262\",\r\n    \"uniqueFacilityIdentificationNumber\": \"b95ad81e452d44049712cadab7a769e1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 21:24:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "176"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Input parameters 'uniqueFacilityIdentificationNumber', 'uniqueIndividualHealthCareProviderNumber', 'localFacilityPatientId', 'appointmentId' must all be specified.\"\n}"
+				},
+				{
+					"name": "Sample Response (without Appointment)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"unique_individual_health_care_provider_number\": \"UHPID0001\",\r\n    \"local_facility_patient_id\": \"P510179262\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:23:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"2ae9747387c54e15b787fcef57d7c8d6\",\n    \"episode\": \"31a29d0424a941f794817af9442c76cd\",\n    \"timestamp\": \"2024-04-17 16:53\",\n    \"appointment_id\": null,\n    \"type\": 1,\n    \"patient_id\": \"P510179262\",\n    \"status_code\": 1\n}"
+				},
+				{
+					"name": "Sample Response (with Appointment)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"unique_individual_health_care_provider_number\": \"UHPID0001\",\r\n    \"local_facility_patient_id\": \"P510179262\",\r\n    \"appointment_id\": \"0f8392bd722e4b05995a8499eda56898\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:17:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"episode\": \"b7a6320a41ba418baf377af20ccf9b39\",\n    \"timestamp\": \"2024-04-17 16:47\",\n    \"appointment_id\": \"0f8392bd722e4b05995a8499eda56898\",\n    \"type\": 1,\n    \"patient_id\": \"P510179262\",\n    \"status_code\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an Encounter",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_code\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_visit_management}}/visits/:visitId/",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"visits",
+						":visitId",
+						""
+					],
+					"variable": [
+						{
+							"key": "visitId",
+							"value": "1da7b24fd249494b82cd5dd4297d3341"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status_code\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/:visitId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								":visitId",
+								""
+							],
+							"variable": [
+								{
+									"key": "visitId",
+									"value": "0008240f0b1f405eb0fb5f3e6aa51d65"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 13:33:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status_code\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/:visitId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								":visitId",
+								""
+							],
+							"variable": [
+								{
+									"key": "visitId",
+									"value": "1da7b24fd249494b82cd5dd4297d3341"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:20:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "273"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"episode\": {\n        \"primary_key\": \"b7a6320a41ba418baf377af20ccf9b39\",\n        \"episode_type\": 0,\n        \"status\": 1\n    },\n    \"timestamp\": \"2024-04-17 16:47\",\n    \"appointment_id\": \"0f8392bd722e4b05995a8499eda56898\",\n    \"type\": 1,\n    \"patient_id\": \"P510179262\",\n    \"status_code\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an Encounter (disabled)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_visit_management}}/visits/:visitId/",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"visits",
+						":visitId",
+						""
+					],
+					"variable": [
+						{
+							"key": "visitId",
+							"value": "2ae9747387c54e15b787fcef57d7c8d6"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 405 Method Not allowed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/:visitId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								":visitId",
+								""
+							],
+							"variable": [
+								{
+									"key": "visitId",
+									"value": "2ae9747387c54e15b787fcef57d7c8d6"
+								}
+							]
+						}
+					},
+					"status": "Method Not Allowed",
+					"code": 405,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:26:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Method \\\"DELETE\\\" not allowed.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Visits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_visit_management}}/visits/search?patient_id=P510179262&encounter_from_date=2024-01-05&encounter_to_date=2024-01-05",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"visits",
+						"search"
+					],
+					"query": [
+						{
+							"key": "patient_id",
+							"value": "P510179262"
+						},
+						{
+							"key": "patient_mobile",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "encounter_id",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "encounter_status",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "encounter_from_date",
+							"value": "2024-01-05"
+						},
+						{
+							"key": "encounter_to_date",
+							"value": "2024-01-05"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Required input missing",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/search?encounter_from_date=2024-01-01&encounter_to_date=2024-01-07",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								"search"
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "P510179262",
+									"disabled": true
+								},
+								{
+									"key": "patient_mobile",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_status",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_from_date",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "encounter_to_date",
+									"value": "2024-01-07"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 20:30:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"At least one search parameter among Patient ID and Encounter ID must be specified.\"\n}"
+				},
+				{
+					"name": "Sample Response - No results",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/search?patient_id=P510179262&encounter_from_date=2024-01-15&encounter_to_date=2024-01-30",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								"search"
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "P510179262"
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_status",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_from_date",
+									"value": "2024-01-15"
+								},
+								{
+									"key": "encounter_to_date",
+									"value": "2024-01-30"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 20:39:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/search?patient_id=P510179262&encounter_from_date=2024-01-05&encounter_to_date=2024-01-05",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								"search"
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "P510179262"
+								},
+								{
+									"key": "patient_mobile",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_status",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "encounter_from_date",
+									"value": "2024-01-05"
+								},
+								{
+									"key": "encounter_to_date",
+									"value": "2024-01-05"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:31:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1007"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"35f0c228686443eb88ab76223f2f0432\",\n        \"episode\": {\n            \"primary_key\": \"5898fb8561494b78a0f3c85d3d67d1ba\",\n            \"episode_type\": 0,\n            \"status\": 1\n        },\n        \"timestamp\": \"2024-01-05 14:50\",\n        \"appointment_id\": null,\n        \"type\": 1,\n        \"patient_id\": \"P510179262\",\n        \"status_code\": 1\n    },\n    {\n        \"primary_key\": \"76b8cef74d754250b8e1cbf9d28aff2f\",\n        \"episode\": {\n            \"primary_key\": \"786ff19482c247a18e17e83bfd5440e2\",\n            \"episode_type\": 0,\n            \"status\": 1\n        },\n        \"timestamp\": \"2024-01-05 15:16\",\n        \"appointment_id\": null,\n        \"type\": 1,\n        \"patient_id\": \"P510179262\",\n        \"status_code\": 1\n    },\n    {\n        \"primary_key\": \"c4f21df9e6274532a982f4b8f9b7ca0d\",\n        \"episode\": {\n            \"primary_key\": \"fa126689bba04c0699f6b01fd5b49403\",\n            \"episode_type\": 0,\n            \"status\": 1\n        },\n        \"timestamp\": \"2024-01-05 14:47\",\n        \"appointment_id\": null,\n        \"type\": 1,\n        \"patient_id\": \"P510179262\",\n        \"status_code\": 1\n    },\n    {\n        \"primary_key\": \"dc2253f48ff845c6bbcb54c08eac27a9\",\n        \"episode\": {\n            \"primary_key\": \"593270763d04451399fd20203fdbcf5a\",\n            \"episode_type\": 0,\n            \"status\": 1\n        },\n        \"timestamp\": \"2024-01-05 14:20\",\n        \"appointment_id\": \"0f8392bd722e4b05995a8499eda56898\",\n        \"type\": 1,\n        \"patient_id\": \"P510179262\",\n        \"status_code\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve details for an Episode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_visit_management}}/episodes/:episodeId",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"episodes",
+						":episodeId"
+					],
+					"variable": [
+						{
+							"key": "episodeId",
+							"value": "593270763d04451399fd20203fdbcf5a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/episodes/:episodeId",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"episodes",
+								":episodeId"
+							],
+							"variable": [
+								{
+									"key": "episodeId",
+									"value": "000afd4ddda24a42abc4dc7a65b40000"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 04 Jan 2024 15:53:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/episodes/:episodeId",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"episodes",
+								":episodeId"
+							],
+							"variable": [
+								{
+									"key": "episodeId",
+									"value": "593270763d04451399fd20203fdbcf5a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:32:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"593270763d04451399fd20203fdbcf5a\",\n    \"episode_type\": 0,\n    \"status\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Episode Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_visit_management}}/episodes/:episodeId/",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"episodes",
+						":episodeId",
+						""
+					],
+					"variable": [
+						{
+							"key": "episodeId",
+							"value": "31a29d0424a941f794817af9442c76cd"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 No updateable params",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_id\": \"12345678901234567890123456789012\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/visits/:visitId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"visits",
+								":visitId",
+								""
+							],
+							"variable": [
+								{
+									"key": "visitId",
+									"value": "d8a8240f0b1f405eb0fb5f3e6aa51d65"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 11:37:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No updateable parameters provided. Note that updates are allowed only to 'status'.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_visit_management}}/episodes/:episodeId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"episodes",
+								":episodeId",
+								""
+							],
+							"variable": [
+								{
+									"key": "episodeId",
+									"value": "31a29d0424a941f794817af9442c76cd"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:42:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"31a29d0424a941f794817af9442c76cd\",\n    \"episode_type\": 0,\n    \"status\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an Episode (disabled)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_visit_management}}/episodes/:episodeId/",
+					"host": [
+						"{{base_url_visit_management}}"
+					],
+					"path": [
+						"episodes",
+						":episodeId",
+						""
+					],
+					"variable": [
+						{
+							"key": "episodeId",
+							"value": "31a29d0424a941f794817af9442c76cd"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 405 Method Not allowed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_visit_management}}/episodes/:episodeId/",
+							"host": [
+								"{{base_url_visit_management}}"
+							],
+							"path": [
+								"episodes",
+								":episodeId",
+								""
+							],
+							"variable": [
+								{
+									"key": "episodeId",
+									"value": "31a29d0424a941f794817af9442c76cd"
+								}
+							]
+						}
+					},
+					"status": "Method Not Allowed",
+					"code": 405,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 11:46:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Method \\\"DELETE\\\" not allowed.\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{internal_service_client_credentials}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{% extends 'register_facility/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- LetsDoc Tagline -->
+<div class="container-fluid" style="margin-top:70px">
+ <div class="row" id="top_row1">
+   <div class="col-sm-6">
+   <p id="top"><span style="font-size:30px">Open Source Healthcare Delivery Information System</span><br/>
+   <span style="font-size:16px">Manage your clinical, financial, laboratory, inpatient, outpatient, pharmacy operations
+       seamlessly from anywhere at anytime. Helps you focus more on providing quality healthcare.</span></p>
+</div>
+ </div>
+
+<!-- Card 1 -->
+ <div class="row" id="top_row2" style="padding-top:100px">
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "register_facility/images/logged_out/Diagnostics.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <h5 class="card-title">Schedule Demo</h5>
+    <p class="card-text">Experience the ease with which you can transition from your existing processes and systems to the OpenHDIS.</p>
+    <a href="#" class="btn btn-outline-secondary btn-block">Schedule Now</a>
+  </div>
+</div>
+</div>
+
+<!-- Card 2 -->
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "register_facility/images/logged_out/steth.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <h5 class="card-title">30 Day Free Trial</h5>
+    <p class="card-text">With the OpenHDIS you get an out of the box compliant mobile first solution built as per the NDHB standards.</p>
+    <a href="{% url 'register_facility'%}" class="btn btn-outline-secondary btn-block">Try Now</a>
+  </div>
+</div>
+ </div>
+
+ <!-- Card 3 -->
+
+   <div class="col-sm" id="columns">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "register_facility/images/logged_out/Pills.png" %}" alt="Card image">-->
+  <div class="card-body" id = "body">
+    <h5 class="card-title">Get Quotation</h5>
+    <p class="card-text">You pay only for the services that you chose to use, and only as and when you use those services.</p>
+    <a href="#" class="btn btn-outline-secondary btn-block">Get Quotation Now</a>
+  </div>
+</div>
+   </div>
+
+<!-- Card 4 -->
+
+   <div class="col-sm" id="columns" style="margin-bottom:160px">
+     <div class="card" id = "cards">
+  <!--<img id = 'img1' class="card-img-top" src="{% static "register_facility/images/logged_out/nutri.png" %}" alt="Card image">-->
+  <div class="card-body">
+    <h5 class="card-title">Sign Up as Partner</h5>
+    <p class="card-text">Partner with OpenHDIS to build, promote, sell or provide services and help the platform service the bottom of the pyramid. </p>
+    <a href="#" class="btn btn-outline-secondary btn-block">Sign Up Now</a>
+  </div>
+</div>
+ </div>
+
+ </div>
+</div>
+{% endblock %}

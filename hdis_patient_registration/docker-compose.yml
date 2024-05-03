@@ -1,0 +1,46 @@
+version: '2.10.2'
+services:
+  check-db-started: 
+    image: jwilder/dockerize:0.6.1
+    depends_on:
+      - db
+    command: 'dockerize -wait=tcp://db:3306'
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 8002:8000
+    volumes:
+      - .:/app
+    depends_on:
+      check-db-started:
+        condition: service_completed_successfully
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python consumer.py'
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: mysql
+    security_opt:
+      - 'seccomp:unconfined'
+    restart: always
+    environment:
+      MYSQL_DATABASE: patient_register_main
+      MYSQL_USER: patient_register_main_admin
+      MYSQL_PASSWORD: patient_admin_password
+      MYSQL_ROOT_PASSWORD: patient_admin_password
+    volumes:
+      - db6:/var/lib/mysql
+    ports:
+      - 33098:3306
+
+
+volumes: 
+  db6:

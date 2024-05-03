@@ -1,0 +1,4345 @@
+{
+	"info": {
+		"_postman_id": "940d7185-d024-41c4-aabd-fa870cadcda0",
+		"name": "Access Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3195893"
+	},
+	"item": [
+		{
+			"name": "Create new Member (SU only, password unencrypted)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"thisismypw\",\r\n    \"is_superuser\": false,\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_active\": true,\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"user_permissions\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/members/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"thisismypw\",\r\n    \"is_superuser\": false,\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_active\": true,\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"user_permissions\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:07:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 104,\n    \"last_login\": null,\n    \"is_superuser\": false,\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"is_staff\": false,\n    \"is_active\": true,\n    \"date_joined\": \"2024-02-02T11:07:35.916514Z\",\n    \"name\": \"Test User\",\n    \"mobile\": \"123456789\",\n    \"user_permissions\": []\n}"
+				},
+				{
+					"name": "Error Response - Existing username 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"thisismypw\",\r\n    \"is_superuser\": false,\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_active\": true,\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"user_permissions\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 12:54:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update existing Member (SU only)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"xyz\",\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_superuser\": false,\r\n    \"is_active\": true,\r\n    \"user_permissions\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId",
+						""
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "104",
+							"description": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"xyz\",\r\n    \"is_superuser\": false,\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_active\": true,\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"user_permissions\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/:memberId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								":memberId",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 12:11:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"xyz\",\r\n    \"name\": \"Test User\",\r\n    \"mobile\": \"123456789\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"is_staff\": false,\r\n    \"is_superuser\": false,\r\n    \"is_active\": true,\r\n    \"user_permissions\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "104",
+									"description": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:10:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 104,\n    \"last_login\": null,\n    \"is_superuser\": false,\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"is_staff\": false,\n    \"is_active\": true,\n    \"date_joined\": \"2024-02-02T11:07:35.916514Z\",\n    \"name\": \"Test User\",\n    \"mobile\": \"123456789\",\n    \"user_permissions\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Partially update existing Member (SU only)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"New Test User\",\r\n    \"mobile\": \"7777777777\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId",
+						""
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "105",
+							"description": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Test User\",\r\n    \"mobile\": \"7777777777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "105",
+									"description": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 13:25:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 105,\n    \"last_login\": null,\n    \"is_superuser\": false,\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"is_staff\": false,\n    \"is_active\": true,\n    \"date_joined\": \"2024-02-02T16:47:29.721213+05:30\",\n    \"name\": \"New Test User\",\n    \"mobile\": \"7777777777\",\n    \"user_permissions\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Members (SU only)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 31 Jan 2024 16:27:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1210"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 29,\n        \"last_login\": \"2023-11-20T09:41:02.190211Z\",\n        \"is_superuser\": true,\n        \"username\": \"admin\",\n        \"email\": \"\",\n        \"is_staff\": true,\n        \"is_active\": true,\n        \"date_joined\": \"2023-11-20T09:34:26.855044Z\",\n        \"name\": \"Administrator\",\n        \"mobile\": \"\",\n        \"user_permissions\": []\n    },\n    {\n        \"id\": 39,\n        \"last_login\": null,\n        \"is_superuser\": true,\n        \"username\": \"authtestuser\",\n        \"email\": \"authtestuser@letsdoc.in\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-01-25T15:33:35Z\",\n        \"name\": \"Auth Test User\",\n        \"mobile\": \"9876543210\",\n        \"user_permissions\": []\n    },\n    {\n        \"id\": 70,\n        \"last_login\": null,\n        \"is_superuser\": false,\n        \"username\": \"2ndtestuser\",\n        \"email\": \"testuser2@example.com\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-01-31T15:33:18.960290Z\",\n        \"name\": \"Test User 2\",\n        \"mobile\": \"987654321\",\n        \"user_permissions\": []\n    },\n    {\n        \"id\": 71,\n        \"last_login\": null,\n        \"is_superuser\": false,\n        \"username\": \"3rdtestuser\",\n        \"email\": \"testuser3@example.com\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-01-31T15:33:19.061190Z\",\n        \"name\": \"Test User 3\",\n        \"mobile\": \"987654321\",\n        \"user_permissions\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Details for a Member",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{internal_service_client_credentials}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId"
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "104"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:14:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 104,\n    \"last_login\": null,\n    \"is_superuser\": false,\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"is_staff\": false,\n    \"is_active\": true,\n    \"date_joined\": \"2024-02-02T11:07:35.916514Z\",\n    \"name\": \"Test User\",\n    \"mobile\": \"123456789\",\n    \"user_permissions\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete existing Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId",
+						""
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 18:38:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Member By Username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/username/:username",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						"username",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "testuser"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:16:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 102,\n    \"last_login\": null,\n    \"is_superuser\": false,\n    \"username\": \"2ndtestuser\",\n    \"email\": \"testuser2@example.com\",\n    \"is_staff\": false,\n    \"is_active\": true,\n    \"date_joined\": \"2024-02-01T11:28:57.009231Z\",\n    \"name\": \"Test User 2\",\n    \"mobile\": \"987654321\",\n    \"user_permissions\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Member By Username",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test User Updated\",\r\n    \"mobile\": \"0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/members/username/:username",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						"username",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "testuser"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test User Updated\",\r\n    \"mobile\": \"0123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 06:08:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Update Password By Username",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"testuser_password\",\r\n    \"confirm_password\": \"testuser_password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/members/username/:username/password/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						"username",
+						":username",
+						"password",
+						""
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "testuser"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Access Denied",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"testuser_password\",\r\n    \"confirm_password\": \"testuser_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/username/:username/password/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								"username",
+								":username",
+								"password",
+								""
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 06:39:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8080/errors/superuser-and-self-access-only\",\n    \"title\": \"Access Denied.\",\n    \"detail\": \"Only Superusers and the concerned Member can access this data.\",\n    \"instance\": \"http://127.0.0.1:8080/access/members/username/testuser/password/\"\n}"
+				},
+				{
+					"name": "Error Response - Username not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"testuser_password\",\r\n    \"confirm_password\": \"testuser_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/username/:username/password/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								"username",
+								":username",
+								"password",
+								""
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "xyz"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 07:22:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"testuser_password\",\r\n    \"confirm_password\": \"testuser_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username/password/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username",
+								"password",
+								""
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:21:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Password updated successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new Group (unused)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"permissions\": [{\"codename\": \"test_permission_1\", \"content_type\": null, \"name\": \"Can Test 1\"}, {\"codename\": \"test_permission_2\", \"content_type\": null, \"name\": \"Can Test 2\"}],\r\n    \"name\": \"Test Group\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/access/groups/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"access",
+						"groups",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update existing Group (unused)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"permissions\": [{\"codename\": \"test_permission_1\", \"content_type\": null, \"name\": \"Can Test 1\"}, {\"codename\": \"test_permission_2\", \"content_type\": null, \"name\": \"Can Test 2\"}],\r\n    \"name\": \"Test Group\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/access/groups/:groupId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"access",
+						"groups",
+						":groupId",
+						""
+					],
+					"variable": [
+						{
+							"key": "groupId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all Groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/groups/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"groups",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/groups/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"groups",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:22:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"permissions\": [],\n        \"name\": \"Admin\"\n    },\n    {\n        \"id\": 1,\n        \"permissions\": [],\n        \"name\": \"Doctor\"\n    },\n    {\n        \"id\": 2,\n        \"permissions\": [],\n        \"name\": \"Front Desk\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve details for a Group",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/groups/:groupId",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"groups",
+						":groupId"
+					],
+					"variable": [
+						{
+							"key": "groupId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/groups/:groupId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"groups",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 06:07:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"permissions\": [],\n    \"name\": \"Doctor\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete existing Group (unused)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/groups/:groupId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"groups",
+						":groupId",
+						""
+					],
+					"variable": [
+						{
+							"key": "groupId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all Permissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/permissions/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"permissions",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/permissions/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"permissions",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:24:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1636"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"codename\": \"add_facilitymembership\"\n    },\n    {\n        \"codename\": \"change_facilitymembership\"\n    },\n    {\n        \"codename\": \"delete_facilitymembership\"\n    },\n    {\n        \"codename\": \"view_facilitymembership\"\n    },\n    {\n        \"codename\": \"add_member\"\n    },\n    {\n        \"codename\": \"change_member\"\n    },\n    {\n        \"codename\": \"delete_member\"\n    },\n    {\n        \"codename\": \"view_member\"\n    },\n    {\n        \"codename\": \"add_rolepermissions\"\n    },\n    {\n        \"codename\": \"change_rolepermissions\"\n    },\n    {\n        \"codename\": \"delete_rolepermissions\"\n    },\n    {\n        \"codename\": \"view_rolepermissions\"\n    },\n    {\n        \"codename\": \"add_logentry\"\n    },\n    {\n        \"codename\": \"change_logentry\"\n    },\n    {\n        \"codename\": \"delete_logentry\"\n    },\n    {\n        \"codename\": \"view_logentry\"\n    },\n    {\n        \"codename\": \"add_group\"\n    },\n    {\n        \"codename\": \"change_group\"\n    },\n    {\n        \"codename\": \"delete_group\"\n    },\n    {\n        \"codename\": \"view_group\"\n    },\n    {\n        \"codename\": \"add_permission\"\n    },\n    {\n        \"codename\": \"change_permission\"\n    },\n    {\n        \"codename\": \"delete_permission\"\n    },\n    {\n        \"codename\": \"view_permission\"\n    },\n    {\n        \"codename\": \"add_contenttype\"\n    },\n    {\n        \"codename\": \"change_contenttype\"\n    },\n    {\n        \"codename\": \"delete_contenttype\"\n    },\n    {\n        \"codename\": \"view_contenttype\"\n    },\n    {\n        \"codename\": \"add_accesstoken\"\n    },\n    {\n        \"codename\": \"change_accesstoken\"\n    },\n    {\n        \"codename\": \"delete_accesstoken\"\n    },\n    {\n        \"codename\": \"view_accesstoken\"\n    },\n    {\n        \"codename\": \"add_application\"\n    },\n    {\n        \"codename\": \"change_application\"\n    },\n    {\n        \"codename\": \"delete_application\"\n    },\n    {\n        \"codename\": \"view_application\"\n    },\n    {\n        \"codename\": \"add_grant\"\n    },\n    {\n        \"codename\": \"change_grant\"\n    },\n    {\n        \"codename\": \"delete_grant\"\n    },\n    {\n        \"codename\": \"view_grant\"\n    },\n    {\n        \"codename\": \"add_idtoken\"\n    },\n    {\n        \"codename\": \"change_idtoken\"\n    },\n    {\n        \"codename\": \"delete_idtoken\"\n    },\n    {\n        \"codename\": \"view_idtoken\"\n    },\n    {\n        \"codename\": \"add_refreshtoken\"\n    },\n    {\n        \"codename\": \"change_refreshtoken\"\n    },\n    {\n        \"codename\": \"delete_refreshtoken\"\n    },\n    {\n        \"codename\": \"view_refreshtoken\"\n    },\n    {\n        \"codename\": \"add_session\"\n    },\n    {\n        \"codename\": \"change_session\"\n    },\n    {\n        \"codename\": \"delete_session\"\n    },\n    {\n        \"codename\": \"view_session\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Details for a Permission (limited serialization)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/permissions/:permissionId",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"permissions",
+						":permissionId"
+					],
+					"variable": [
+						{
+							"key": "permissionId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/permissions/:permissionId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"permissions",
+								":permissionId"
+							],
+							"variable": [
+								{
+									"key": "permissionId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:25:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codename\": \"add_logentry\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Membership For Member",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId/membership/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId",
+						"membership",
+						""
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "102"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Access Denied",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/:memberId/membership/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								":memberId",
+								"membership",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 06:31:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8080/errors/superuser-and-member-access-only\",\n    \"title\": \"Access Denied.\",\n    \"detail\": \"Only Superusers and the concerned Member can access this data.\",\n    \"instance\": \"http://127.0.0.1:8080/access/members/3/membership/\"\n}"
+				},
+				{
+					"name": "Error Response - 403 Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/membership/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"membership",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "102"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 08:37:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+				},
+				{
+					"name": "Sample Response - No results",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/membership/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"membership",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 11:25:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/membership/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"membership",
+								""
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "102"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 09:55:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "129"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"membership\": {\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"roles\": [\n            {\n                \"group__name\": \"Doctor\"\n            },\n            {\n                \"group__name\": \"Front Desk\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Deactivate Member By Username",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/username/:username",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						"username",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "testuser"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "invaliduser"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 09:06:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Error Response - Already inactive 422",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 09:02:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "260"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8080/errors/cannot-deactivate-inactive-member\",\n    \"title\": \"Member is already Inactive.\",\n    \"detail\": \"The specified username belongs to a member who is currently inactive.\",\n    \"instance\": \"http://127.0.0.1:8080/api/v1/members/username/testuser\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/username/:username",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"username",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "testuser"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 08:47:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "List all Members of a Facility",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/facility/:facilityId",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						"facility",
+						":facilityId"
+					],
+					"variable": [
+						{
+							"key": "facilityId",
+							"value": "b95ad81e452d44049712cadab7a769e1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Invalid Facility ID 500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "facilityId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 10:10:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Cookie, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Server Error (500)\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "facilityId",
+									"value": "b95ad81e452d44049712cadab7a769e1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 09:09:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "808"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"members\": [\n        {\n            \"id\": 28,\n            \"last_login\": \"2024-01-29T13:05:59.746552Z\",\n            \"is_superuser\": true,\n            \"username\": \"mayurn\",\n            \"email\": \"\",\n            \"is_staff\": true,\n            \"is_active\": true,\n            \"date_joined\": \"2023-11-17T15:37:54Z\",\n            \"name\": \"Mayur Nayak\",\n            \"mobile\": \"\",\n            \"user_permissions\": [],\n            \"roles\": [\n                \"Admin\"\n            ]\n        },\n        {\n            \"id\": 102,\n            \"last_login\": null,\n            \"is_superuser\": false,\n            \"username\": \"2ndtestuser\",\n            \"email\": \"testuser2@example.com\",\n            \"is_staff\": false,\n            \"is_active\": true,\n            \"date_joined\": \"2024-02-01T11:28:57.009231Z\",\n            \"name\": \"Test User 2\",\n            \"mobile\": \"987654321\",\n            \"user_permissions\": [],\n            \"roles\": [\n                \"Doctor\",\n                \"Front Desk\"\n            ]\n        },\n        {\n            \"id\": 103,\n            \"last_login\": null,\n            \"is_superuser\": false,\n            \"username\": \"3rdtestuser\",\n            \"email\": \"testuser3@example.com\",\n            \"is_staff\": false,\n            \"is_active\": true,\n            \"date_joined\": \"2024-02-01T11:28:57.113848Z\",\n            \"name\": \"Test User 3\",\n            \"mobile\": \"987654321\",\n            \"user_permissions\": [],\n            \"roles\": [\n                \"Admin\"\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Roles for a Member of a Facility",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/members/:memberId/facility/:facilityId",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"members",
+						":memberId",
+						"facility",
+						":facilityId"
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "102"
+						},
+						{
+							"key": "facilityId",
+							"value": "b95ad81e452d44049712cadab7a769e1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Access Denied",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/access/members/:memberId/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"members",
+								":memberId",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "26"
+								},
+								{
+									"key": "facilityId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 15 Nov 2023 05:10:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8080/errors/facility-level-access-only\",\n    \"title\": \"Access Denied.\",\n    \"detail\": \"Only Superusers and Facility Members can access this data.\"\n}"
+				},
+				{
+					"name": "Error Response - 403 Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "26"
+								},
+								{
+									"key": "facilityId",
+									"value": "b95ad81e452d44049712cadab7a769e1"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 11:56:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+				},
+				{
+					"name": "Error Response - Invalid Facility ID 500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "26"
+								},
+								{
+									"key": "facilityId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 11:09:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Cookie, Origin"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Server Error (500)\"\n}"
+				},
+				{
+					"name": "Error Response - No member found 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "1"
+								},
+								{
+									"key": "facilityId",
+									"value": "b95ad81e452d44049712cadab7a769e1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 14:01:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/members/:memberId/facility/:facilityId",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"members",
+								":memberId",
+								"facility",
+								":facilityId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "102"
+								},
+								{
+									"key": "facilityId",
+									"value": "b95ad81e452d44049712cadab7a769e1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 12:51:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"member_id\": \"102\",\n    \"roles\": [\n        \"Doctor\",\n        \"Front Desk\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new Membership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"member\": 105,\r\n    \"group\": 1,\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/memberships/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"memberships",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": 105,\r\n    \"group\": 1,\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 13:43:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 71,\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n    \"member\": 105,\n    \"group\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "List all Memberships",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mayurn_password_grant_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/memberships/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"memberships",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Unauthenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								""
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 28 Nov 2023 06:46:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer realm=\"api\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+				},
+				{
+					"name": "Error Response - Unauthorized User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								""
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 28 Nov 2023 06:44:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 13:44:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "409"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 7,\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"member\": 28,\n        \"group\": 3\n    },\n    {\n        \"id\": 68,\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"member\": 102,\n        \"group\": 1\n    },\n    {\n        \"id\": 69,\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"member\": 102,\n        \"group\": 2\n    },\n    {\n        \"id\": 70,\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"member\": 103,\n        \"group\": 3\n    },\n    {\n        \"id\": 71,\n        \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\n        \"member\": 105,\n        \"group\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete existing Membership",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mayurn_password_grant_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/memberships/:membershipId/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"memberships",
+						":membershipId",
+						""
+					],
+					"variable": [
+						{
+							"key": "membershipId",
+							"value": "71"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Authorization failure",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/:membershipId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								":membershipId",
+								""
+							],
+							"variable": [
+								{
+									"key": "membershipId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 29 Nov 2023 06:44:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+				},
+				{
+					"name": "Error Response - Not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/:membershipId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								":membershipId",
+								""
+							],
+							"variable": [
+								{
+									"key": "membershipId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 14:04:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_access_management}}/memberships/:membershipId/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"memberships",
+								":membershipId",
+								""
+							],
+							"variable": [
+								{
+									"key": "membershipId",
+									"value": "71"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 14:03:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Members",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{internal_service_client_credentials}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\r\n    \"members\": [\r\n        {\r\n            \"username\": \"2ndtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser2@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 2\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Doctor\", \"Front Desk\"]\r\n        },\r\n        {\r\n            \"username\": \"3rdtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser3@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 3\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Admin\"]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/registration/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"registration",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Missing mandatory attribute",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"members\": [\r\n        {\r\n            \"username\": \"2ndtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser2@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 2\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Doctor\", \"Front Desk\"]\r\n        },\r\n        {\r\n            \"username\": \"3rdtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser3@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 3\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Admin\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/registration/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"registration",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 15:21:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8080/errors/missing-request-data\",\n    \"title\": \"Mandatory attribute not provided.\",\n    \"detail\": \"An expected, mandatory attribute 'facility_id' was not found in the request body.\"\n}"
+				},
+				{
+					"name": "Error Response - Existing username",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\r\n    \"members\": [\r\n        {\r\n            \"username\": \"2ndtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser2@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 2\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Doctor\", \"Front Desk\"]\r\n        },\r\n        {\r\n            \"username\": \"3rdtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser3@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 3\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Admin\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/registration/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"registration",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Feb 2024 15:19:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"input_username\": \"2ndtestuser\",\n        \"username\": [\n            \"A user with that username already exists.\"\n        ]\n    },\n    {\n        \"input_username\": \"3rdtestuser\",\n        \"username\": [\n            \"A user with that username already exists.\"\n        ]\n    }\n]"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"facility_id\": \"b95ad81e452d44049712cadab7a769e1\",\r\n    \"members\": [\r\n        {\r\n            \"username\": \"2ndtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser2@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 2\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Doctor\", \"Front Desk\"]\r\n        },\r\n        {\r\n            \"username\": \"3rdtestuser\",\r\n            \"password\": \"thisismypw\",\r\n            \"is_superuser\": false,\r\n            \"email\": \"testuser3@example.com\",\r\n            \"is_staff\": false,\r\n            \"is_active\": true,\r\n            \"name\": \"Test User 3\",\r\n            \"mobile\": \"987654321\",\r\n            \"roles\": [\"Admin\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/registration/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"registration",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 11:28:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Cookie, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "547"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 102,\n        \"last_login\": null,\n        \"is_superuser\": false,\n        \"username\": \"2ndtestuser\",\n        \"email\": \"testuser2@example.com\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-02-01T11:28:57.009231Z\",\n        \"name\": \"Test User 2\",\n        \"mobile\": \"987654321\",\n        \"user_permissions\": []\n    },\n    {\n        \"access_token\": \"ULEVQLhgCh6PVkdXTohMQBEi9Gtr1A\",\n        \"id\": 103,\n        \"last_login\": null,\n        \"is_superuser\": false,\n        \"username\": \"3rdtestuser\",\n        \"email\": \"testuser3@example.com\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-02-01T11:28:57.113848Z\",\n        \"name\": \"Test User 3\",\n        \"mobile\": \"987654321\",\n        \"user_permissions\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "OAuth2 Client Credential grant request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/o/token/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/o/token/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"o",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 21 Nov 2023 10:44:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"zGTfTVn8Yty2vWK0ycl2E0DUPPURSm\",\n    \"expires_in\": 36000,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write introspection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "OAuth2 Password grant request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "2ndtestuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "thisismypw",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "NhndfPmDvOMQEc0cPe96Et4bpVkvpDJ1HrSfX3X5",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "du7yBjslNIHvteshINjPhQ8TR7DYryIQCKsXpJKtFTwGgOsKKbLHNQOaWUZ0tVKVNkYsts9SyGGz7oKxOSKvHk0qlzspPObQeCixdzpFLCDI6apI6qaSYYL8nl3yxWgW",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/o/token/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "mayurn",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "lemmeinnow",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/o/token/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"o",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 06 Dec 2023 08:48:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"4HWEodLWGT77spGVHKqJv6ZkwSuNP5\",\n    \"expires_in\": 36000,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write introspection\",\n    \"refresh_token\": \"DELxUq5lh6eQxFp2SHvOWebB0rwCMS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "OAuth2 Token Refresh request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "vhGBdTblE0wCOw3PATjYY6VgOWNrq5",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "NhndfPmDvOMQEc0cPe96Et4bpVkvpDJ1HrSfX3X5",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "du7yBjslNIHvteshINjPhQ8TR7DYryIQCKsXpJKtFTwGgOsKKbLHNQOaWUZ0tVKVNkYsts9SyGGz7oKxOSKvHk0qlzspPObQeCixdzpFLCDI6apI6qaSYYL8nl3yxWgW",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/o/token/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "pnTwMPVuDDhVla91xpydvK9kF4QR8X",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/o/token/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"o",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 05 Dec 2023 07:28:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eIM2TzcCxOZaHxdxm1I1V7JJw8uP07\",\n    \"expires_in\": 36000,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write introspection\",\n    \"refresh_token\": \"Cme6hhz9BfRTcehePWutKBr2WK46Mo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token Introspection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{internal_service_client_credentials}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{mayurn_password_grant_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_access_management}}/o/introspect/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"o",
+						"introspect",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response - Failed verification",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "H2ydBNklGMDvVzbvNP12JFt7ARSLue",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/o/introspect/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"o",
+								"introspect",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 21 Nov 2023 10:08:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Cookie, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"active\": false\n}"
+				},
+				{
+					"name": "Sample Response - Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "h8jQvaaphXO0nJbOfD0GDn7c5VusMx",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_access_management}}/access/o/introspect/",
+							"host": [
+								"{{base_url_access_management}}"
+							],
+							"path": [
+								"access",
+								"o",
+								"introspect",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 21 Nov 2023 11:35:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization, Cookie, Origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"active\": true,\n    \"scope\": \"read write introspection\",\n    \"exp\": 1700601614,\n    \"client_id\": \"Pzb5ssgdlfOx3hP4DphNRNFmt1o1lqe5R3rL5bJi\",\n    \"username\": \"mayurn\"\n}"
+				}
+			]
+		},
+		{
+			"name": "OAuth2 Application Code grant workflow",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "ZghPsgdu9R24vaqMWHkbPsSao6lILAMCLRRDwcJ5q1pyhqsMrA1uAjtJ1rmb8Tz7OycQOZfq38nrGVMgOpCxij16BiurTpbVhXrarmuC2cJ9tV5fmS7tqmw8Y4K1OWc6",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "f5vENngXC1fMd5SRV54u1HAttlgG9TRvL1TN4rgX",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/access/o/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/access/o/authorize/",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.getpostman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code_with_pkce",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_access_management}}/access/o/",
+					"host": [
+						"{{base_url_access_management}}"
+					],
+					"path": [
+						"access",
+						"o",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

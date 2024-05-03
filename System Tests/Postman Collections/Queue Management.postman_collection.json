@@ -1,0 +1,801 @@
+{
+	"info": {
+		"_postman_id": "a262f484-e777-45e1-b5c7-382d9610d2c5",
+		"name": "Queue Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3195893"
+	},
+	"item": [
+		{
+			"name": "Join a Queue",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provider_uhpn\" :  \"UHPID0001\",\r\n    \"visit_datetime\" :  \"2024-01-08 10:00\",\r\n    \"encounter_id\" :  \"dc2253f48ff845c6bbcb54c08eac27a9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_queue_management}}/queues/",
+					"host": [
+						"{{base_url_queue_management}}"
+					],
+					"path": [
+						"queues",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Invalid Date input",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider_uhpn\" :  \"UHPID0001\",\r\n    \"visit_datetime\" :  \"2024-30-01 10:00\",\r\n    \"encounter_id\" :  \"dc2253f48ff845c6bbcb54c08eac27a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 09:09:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid Date input. Please specify a valid 'vist_datetime' parameter in yyyy-mm-dd format.\"\n}"
+				},
+				{
+					"name": "Error Response - Invalid Provider UHPN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider_uhpn\" :  \"DOESNOTEXIST\",\r\n    \"visit_datetime\" :  \"2024-01-08 10:00\",\r\n    \"encounter_id\" :  \"dc2253f48ff845c6bbcb54c08eac27a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 09:14:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"details\": \"Error retrieving Provider Details from Employee Management service. Invalid UHPN input\"\n}"
+				},
+				{
+					"name": "Sample Response - First entry for the date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider_uhpn\" :  \"UHPID0001\",\r\n    \"visit_datetime\" :  \"2024-01-08 10:00\",\r\n    \"encounter_id\" :  \"dc2253f48ff845c6bbcb54c08eac27a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 08:38:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Location",
+							"value": "/api/v1/queues/search?encounter_id=dc2253f48ff845c6bbcb54c08eac27a9"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"bd8b8c2b9b0a4716b0468ad99b4a4986\",\n    \"encounter_id\": \"dc2253f48ff845c6bbcb54c08eac27a9\",\n    \"resource_id\": \"E314864344\",\n    \"date\": \"2024-01-08\",\n    \"token_number\": 1\n}"
+				},
+				{
+					"name": "Sample Response - Second entry for the date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider_uhpn\" :  \"UHPID0001\",\r\n    \"visit_datetime\" :  \"2024-01-08 16:00\",\r\n    \"encounter_id\" :  \"dc2253f48ff845c6bbcb54c08eac27a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 08:41:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Location",
+							"value": "/api/v1/queues/search?encounter_id=dc2253f48ff845c6bbcb54c08eac27a9"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"2f9ea9b699ca4930816c3eaa97d63e30\",\n    \"encounter_id\": \"dc2253f48ff845c6bbcb54c08eac27a9\",\n    \"resource_id\": \"E314864344\",\n    \"date\": \"2024-01-08\",\n    \"token_number\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Queues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-01-08&resource_id=E314864344",
+					"host": [
+						"{{base_url_queue_management}}"
+					],
+					"path": [
+						"queues",
+						"search"
+					],
+					"query": [
+						{
+							"key": "for_date",
+							"value": "2024-01-08"
+						},
+						{
+							"key": "resource_id",
+							"value": "E314864344"
+						},
+						{
+							"key": "encounter_id",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - Invalid for_date input",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-30-01&resource_id=E314864344",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								"search"
+							],
+							"query": [
+								{
+									"key": "for_date",
+									"value": "2024-30-01"
+								},
+								{
+									"key": "resource_id",
+									"value": "E314864344"
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 08:47:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid Date input. Please specify a valid 'for_date' parameter in yyyy-mm-dd format.\"\n}"
+				},
+				{
+					"name": "Error Response - Required input missing",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-01-08",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								"search"
+							],
+							"query": [
+								{
+									"key": "for_date",
+									"value": "2024-01-08"
+								},
+								{
+									"key": "resource_id",
+									"value": "E314864344",
+									"disabled": true
+								},
+								{
+									"key": "encounter_id",
+									"value": "dc2253f48ff845c6bbcb54c08eac27a9",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 09:04:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Either 'encounter_id' or both 'for_date' and 'resource_id' must be provided as inputs.\"\n}"
+				},
+				{
+					"name": "Error Response - Invalid input combination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-01-08&encounter_id=dc2253f48ff845c6bbcb54c08eac27a9",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								"search"
+							],
+							"query": [
+								{
+									"key": "for_date",
+									"value": "2024-01-08"
+								},
+								{
+									"key": "resource_id",
+									"value": "E314864344",
+									"disabled": true
+								},
+								{
+									"key": "encounter_id",
+									"value": "dc2253f48ff845c6bbcb54c08eac27a9"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 09:05:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid input combination. Please specify either 'encounter_id' only or both 'for_date' and 'resource_id'.\"\n}"
+				},
+				{
+					"name": "Sample Response - No results",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-01-09&resource_id=E314864344",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								"search"
+							],
+							"query": [
+								{
+									"key": "for_date",
+									"value": "2024-01-09"
+								},
+								{
+									"key": "resource_id",
+									"value": "E314864344"
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 08:47:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_queue_management}}/queues/search?for_date=2024-01-08&resource_id=E314864344",
+							"host": [
+								"{{base_url_queue_management}}"
+							],
+							"path": [
+								"queues",
+								"search"
+							],
+							"query": [
+								{
+									"key": "for_date",
+									"value": "2024-01-08"
+								},
+								{
+									"key": "resource_id",
+									"value": "E314864344"
+								},
+								{
+									"key": "encounter_id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 08:46:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "331"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"primary_key\": \"2f9ea9b699ca4930816c3eaa97d63e30\",\n        \"encounter_id\": \"dc2253f48ff845c6bbcb54c08eac27a9\",\n        \"resource_id\": \"E314864344\",\n        \"date\": \"2024-01-08\",\n        \"token_number\": 2\n    },\n    {\n        \"primary_key\": \"bd8b8c2b9b0a4716b0468ad99b4a4986\",\n        \"encounter_id\": \"dc2253f48ff845c6bbcb54c08eac27a9\",\n        \"resource_id\": \"E314864344\",\n        \"date\": \"2024-01-08\",\n        \"token_number\": 1\n    }\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{internal_service_client_credentials}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{% extends 'access_frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+  {%block messages%}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row alert-danger text-center" style="padding:20px">{{message}}</div>
+  {% endfor %}
+  {%endif%}
+  {% endblock %}
+
+  <!--<h2>Process for consult</h2>-->
+
+  <div class="container-fluid" style="margin-top:70px;height:800px;">
+
+    <div class="row">
+        <div class="col-sm-3 card-title" style="text-align: center">
+            <br/><br/>
+            Welcome {{user.name}}  ( {{user.organization}} )
+            <br/><br/>
+         
+        
+        </div>    
+        <div id="fpa"  class="col-sm-6">
+    
+            <div style="text-align: center"><h2>Bulk User Upload</h2></div>
+            <br/>
+            <form method="post" action="{% url 'bulkupload'%}">
+              {% csrf_token %}
+
+                Select CSV File: <input type="file" class="form-control" id="fileid" name="fileid" >
+                <br/>
+    
+           
+                <button type="submit" class="btn btn-secondary btn-block">Upload</button>
+    
+            </form>
+        
+        
+        </div>
+    
+    
+    </div>    
+    
+    
+    </div>
+
+{% endblock %}

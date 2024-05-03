@@ -1,0 +1,47 @@
+version: '2.10.2'
+services:
+
+  check-db-started: 
+    image: jwilder/dockerize:0.6.1
+    depends_on:
+      - db
+    command: 'dockerize -wait=tcp://db:3306'
+
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python consumer.py'
+    restart: always
+    depends_on:
+      - db
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 8007:8000
+    volumes:
+      - .:/app
+    depends_on:
+      check-db-started:
+        condition: service_completed_successfully
+  
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: appointment_management
+      MYSQL_USER: appointment_management_admin
+      MYSQL_PASSWORD: appointment_management_password
+      MYSQL_ROOT_PASSWORD: appointment_management_password
+    volumes:
+      - db2:/var/lib/mysql
+    ports:
+      - 33090:3306
+
+
+volumes: 
+  db2:
