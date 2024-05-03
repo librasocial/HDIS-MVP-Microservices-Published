@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from datetime import timedelta
 from static_variables import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,14 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
-SIGNING_KEY='OH4qelo%p8!f!cnw-ro5gza0g)$=x0u)r#h!k(g3!oj$q&&5l60@DIS'
-DEBUG = True
-
-ALLOWED_HOSTS = ['accessmanagement.openhdis.com','docker.for.mac.localhost']
-
-
-# Application definition
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'host.docker.internal', 'docker.for.mac.localhost']
+CORS_ORIGIN_ALLOW_ALL = True    #TODO: Debug only. Remove for Production
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,20 +36,35 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework_simplejwt',
+    'rest_framework',
+    'oauth2_provider',
+    'corsheaders',
     'access_management'
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+    'django.contrib.auth.backends.ModelBackend',    # Required to access the admin UI
+]
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',    #Must appear before MessageMiddleware
+    # AuthenticationMiddleware is NOT required for using django-oauth-toolkit but must appear before OAuth2TokenMiddleware.
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'access_management.jwt_middleware.JWTMiddleware',
 ]
+
+OAUTH2_PROVIDER = {
+    # Available Scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'introspection': 'Introspect token scope',},
+}
 
 ROOT_URLCONF = 'hdis_access_management.urls'
 
@@ -79,7 +89,6 @@ WSGI_APPLICATION = 'hdis_access_management.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -94,7 +103,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -112,74 +120,46 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ],
 }
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'SIGNING_KEY': SIGNING_KEY,
-    'TOKEN_OBTAIN_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenObtainPairSerializer',
-    'TOKEN_REFRESH_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenRefreshSerializer',
-    'TOKEN_VERIFY_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenVerifySerializer',
-   # 'USER_ID_FIELD': 'PrimaryKey',
-     'USER_ID_CLAIM': 'userid',
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+#     'SIGNING_KEY': SIGNING_KEY,
+#     'TOKEN_OBTAIN_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenObtainPairSerializer',
+#     'TOKEN_REFRESH_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenRefreshSerializer',
+#     'TOKEN_VERIFY_SERIALIZER': 'rest_framework_simplejwt.serializers.TokenVerifySerializer',
+#    # 'USER_ID_FIELD': 'PrimaryKey',
+#      'USER_ID_CLAIM': 'userid',
+# }
 
+AUTH_USER_MODEL = 'access_management.Member'
 
+LOGIN_URL = "/admin/login/"
 
-
-}
-#AUTH_USER_MODEL = 'access_management.User'
-
-AUTHENTICATION_BACKENDS = [
-    'access_management.auth_backend.OpenHDISAuthBackend'
-]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-HDIS_AUTH_SERVER=AUTH_SERVER
-
-HDIS_ORG_MASTER=ORG_MASTER
-
-
-HDIS_PATIENT_REGISTRATION=PATIENT_REGISTRATION
-
-HDIS_DOCTOR_ADMINISTRATION=DOCTOR_ADMINISTRATION
-HDIS_SLOT_MASTER=SLOT_MASTER
-
-HDIS_APPOINTMENT_MANAGEMENT=APPOINTMENT_MANAGEMENT
-
-HDIS_VISIT_MANAGEMENT=VISIT_MANAGEMENT
-
-HDIS_CONSULTATION_SUBJECTIVE=CONSULTATION_SUBJECTIVE
-
-HDIS_CONSULTATION_OBJECTIVE=CONSULTATION_OBJECTIVE
-
-HDIS_CONSULTATION_ASSESSMENT=CONSULTATION_ASSESSMENT
-
-HDIS_CONSULTATION_PLAN=CONSULTATION_PLAN
-
-HDIS_CONSULTATION_BILLING=CONSULTATION_BILLING
-

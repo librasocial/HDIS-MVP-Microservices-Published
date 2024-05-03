@@ -1,13 +1,12 @@
-from django.urls import path
-from . import views
-from .views import VisitViewSet
-from django.views.decorators.csrf import csrf_exempt
-urlpatterns = [
+from .views import *
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
-    path('visit_check_in/', VisitViewSet.as_view({
-            'post': 'checkin',
-    })),
-    path('episode/<str:epId>', VisitViewSet.as_view({
-            'get': 'retrieveEpisode',
-    }))
+# Register URLs for default CRUD operations
+router = DefaultRouter()
+router.register(r'visits', VisitViewSet, basename='visit')
+router.register(r'episodes', EpisodeViewSet, basename='episode')
+
+urlpatterns = [    
+    path('', include(router.urls)),
 ] 

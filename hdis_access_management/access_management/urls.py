@@ -1,21 +1,24 @@
-from django.urls import path
-from . import views
-from .views import OpenHDISTokenObtainPairView,AccessViewSet
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView
-)
+from django.urls import include, path
+from .views import *
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'members', MemberViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'permissions', PermissionViewSet)
+router.register(r'memberships', FacilityMembershipViewSet)  #TODO: Decide whether to retain for Admin
+                
 urlpatterns = [
-
-path('token/', OpenHDISTokenObtainPairView.as_view(), name='token_obtain_pair'),
-#path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-path('register/', AccessViewSet.as_view({'post': 'Register',}), name='register_user'),
-path('setpassword/', AccessViewSet.as_view({'post': 'ChangePass',}), name='change_pass'),
-path('check_access/',AccessViewSet.as_view({'post': 'CheckAccess',}), name='check_access'),
-path('update_user/',AccessViewSet.as_view({'post': 'UpdateUser',}), name='update_user'),
-path('add_user/',AccessViewSet.as_view({'post': 'AddUser',}), name='add_user'),
-
-] 
+    path('', include(router.urls)),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('registration/', MemberViewSet.as_view({'post': 'register_members'}), name='register_members'),
+    path('members/username/<str:username>', MemberViewSet.as_view({
+        'get': 'retrieve_member_by_username', 
+        'put': 'update_member_by_username', 
+        'delete': 'deactivate_user_by_username'
+    }), name='member_by_username'),
+    path('members/username/<str:username>/password/', MemberViewSet.as_view({'put': 'update_password'}), name='update_password'),
+    path('members/<str:mid>/membership/', MemberViewSet.as_view({'get': 'get_membership_for_member'}), name='get_membership_for_member'),
+    path('members/facility/<str:fid>', MemberViewSet.as_view({'get': 'list_members_of_facility'}), name='list_members_of_facility'),
+    path('members/<str:mid>/facility/<str:fid>', MemberViewSet.as_view({'get': 'get_facility_roles_for_member'}), name='get_facility_roles_for_member'),
+]

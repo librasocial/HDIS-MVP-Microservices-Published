@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from static_variables import *
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,30 +26,47 @@ SECRET_KEY = key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['facility.openhdis.com','docker.for.mac.localhost']
-
-
-# Application definition
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'host.docker.internal', 'docker.for.mac.localhost']
+CORS_ORIGIN_ALLOW_ALL = True    #TODO: Debug only. Remove for Production
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'oauth2_provider',
     'facility_management',
-    'corsheaders'
+    'corsheaders',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+    # Uncomment the following if you want to access the admin
+    #'django.contrib.auth.backends.ModelBackend',
+]
+# The following OAuth2 configurations must be updated for each environment. Note that the Client Secret is unhashed.
+HDIS_AUTH_SERVER="http://host.docker.internal:8080/api/v1"
+OAUTH2_CLIENT_ID = 'xouGo988NvlK7l5i1fiGwCOyMoixcw5zjckPEshp'
+OAUTH2_CLIENT_SECRET = 'HMe6mYBFIyzhihwi3OwclAEpNZi05sauIGRQxDdqCakfHtVo2E96ZZn3UXootWjRyBhV2FGYKXyt6EVxBprd2CpUiMEix26yGcoGJGR3vOksVV04VN7r6w6I7pS56vbf'
+OAUTH2_TOKEN_URL = HDIS_AUTH_SERVER + '/o/token/'
+OAUTH2_AUTHORIZATION_URL = HDIS_AUTH_SERVER + '/o/authorize/'
+OAYTH2_REDIRECT_URL = 'http://host.docker.internal:8081/api/v1/oauth2/callback'
+
+MEMBERSHIP_URL_PATH = f"/members/{0}/facility/{1}"
+REGISTRATION_URL_PATH = "/registration/"
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',    #Must appear before MessageMiddleware
+    # AuthenticationMiddleware is NOT required for using django-oauth-toolkit but must appear before OAuth2TokenMiddleware.
+    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -73,7 +91,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hdis_facility_management.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -87,7 +104,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -107,27 +123,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = (
-# BASE_DIR,
-)
+# STATICFILES_DIRS = (
+#     BASE_DIR,
+# )
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_URL = '/media/'
@@ -136,30 +146,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ORIGIN_ALLOW_ALL = True
 
 
-HDIS_AUTH_SERVER=AUTH_SERVER
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+}
 
-HDIS_ORG_MASTER=ORG_MASTER
-
-
-HDIS_PATIENT_REGISTRATION=PATIENT_REGISTRATION
-
-HDIS_DOCTOR_ADMINISTRATION=DOCTOR_ADMINISTRATION
-HDIS_SLOT_MASTER=SLOT_MASTER
-
-HDIS_APPOINTMENT_MANAGEMENT=APPOINTMENT_MANAGEMENT
-
-HDIS_VISIT_MANAGEMENT=VISIT_MANAGEMENT
-
-HDIS_CONSULTATION_SUBJECTIVE=CONSULTATION_SUBJECTIVE
-
-HDIS_CONSULTATION_OBJECTIVE=CONSULTATION_OBJECTIVE
-
-HDIS_CONSULTATION_ASSESSMENT=CONSULTATION_ASSESSMENT
-
-HDIS_CONSULTATION_PLAN=CONSULTATION_PLAN
-
-HDIS_CONSULTATION_BILLING=CONSULTATION_BILLING
-
+OAUTH2_PROVIDER = {
+    'OAUTH2_VALIDATOR_CLASS': 'oauth2_provider.oauth2_validators.OAuth2Validator',    #Handles access token validation
+    'RESOURCE_SERVER_INTROSPECTION_URL': HDIS_AUTH_SERVER + '/o/introspect/',
+    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': (OAUTH2_CLIENT_ID, OAUTH2_CLIENT_SECRET),
+}

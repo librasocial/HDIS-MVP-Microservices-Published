@@ -2,100 +2,130 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 import uuid
 
+class Organization(models.Model):
+    """An Organization is a grouping of one or more related Facilities."""
+    description = models.CharField(max_length=255)
 
-##### To Do #######
-# Add is user active in memebers
-
-
-
-# Create your models here.
-class Facility(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True,default=uuid.uuid4)
-    uniqueFacilityIdentificationNumber = models.UUIDField(default=uuid.uuid4)
-    facilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityServiceCode = models.CharField(max_length=18, blank=True, null=True)
-    departmentName = models.CharField(max_length=99, blank=True, null=True)
-    referralFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    referralFromFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFromFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityGlobalUniqueIdentifier = models.BinaryField(blank=True, null=True)
-    facilitySpecialtyCode = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    facilityTypeService=models.CharField(max_length=99, default="Clinic")
     class Meta:
-        verbose_name_plural = 'Facility'
+        verbose_name = 'Organization'
+        verbose_name_plural = 'Organizations'
+        db_table = 'Organization'
+    def __str__(self):
+        return str(self.id)
+
+
+class Facility(models.Model):
+    """Represents an entity providing healthcare services"""
+
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    facility_id = models.UUIDField(default=uuid.uuid4)
+    facility_type_code = models.IntegerField(default=99, validators=[MaxValueValidator(99)]) #TODO: Make foreign kay and change default value
+    name = models.CharField(max_length=99, blank=True, null=True)
+    unique_facility_id = models.BinaryField(blank=True, null=True)
+    facility_specialty_code = models.IntegerField(default=999, validators=[MaxValueValidator(999)]) #TODO: Confirm whether each Facility has a single or multiple Specialty
+    facility_type_service = models.CharField(max_length=99, default="Clinic")     #TODO: Check if this is required
+    organization = models.ForeignKey(Organization, default=None, on_delete=models.RESTRICT)
+
+    class Meta:
+        verbose_name = 'Facility'
+        verbose_name_plural = 'Facilities'
         db_table = 'Facility'
     def __str__(self):
-        return str(self.PrimaryKey)
-    
-class Members(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    userRole=models.CharField(max_length=64)
-    memberName=models.CharField(max_length=64)
-    memberEmail=models.CharField(max_length=128,blank=True)
-    memberMobile=models.CharField(max_length=64,blank=True)
-    memberPermissions=models.CharField(max_length=512,blank=True)
-    class Meta:
-        verbose_name_plural = 'Members'
-        db_table = 'Members'
-    def __str__(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
 
-    
-class FacilityMembers(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    facilityId=models.ForeignKey(Facility, on_delete=models.CASCADE)
-    memberId=models.ManyToManyField(Members,related_name="members")
-    class Meta:
-        verbose_name_plural = 'FacilityMembers'
-        db_table = 'FacilityMembers'
-    def __str__(self):
-        return str(self.PrimaryKey)
+# TODO: To confirm how this is used
+# class Department(models.Model):
+#     primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+#     facility_id = models.ForeignKey(Facility, on_delete=models.RESTRICT)
+#     code = models.IntegerField(default=99, validators=[MaxValueValidator(99)]) #TODO: Load Standardized codes into master data table
+#     name = models.CharField(max_length=99, blank=True, null=True)
+#     class Meta:
+#         verbose_name = 'Department'
+#         verbose_name_plural = 'Departments'
+#         db_table = 'department'
+#     def __str__(self):
+#         return str(self.primary_key)
 
 
 class FacilityApplication(models.Model):
-     PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-     facilityApplicantName=models.CharField(max_length=64)
-     facilityApplicantEmail=models.CharField(max_length=128)
-     facilityApplicantMobile=models.CharField(max_length=15)
-     facilityApplicantCountry=models.CharField(max_length=64)
-     facilityApplicantCity=models.CharField(max_length=64)
-     facilityName=models.CharField(max_length=128)
-     facilityTypeCode=models.IntegerField()
-     facilityInternalClass=models.IntegerField()
-     facilityApplicantRemarks=models.CharField(max_length=128,blank=True)
-     class Meta:
-        verbose_name_plural = 'FacilityApplication'
+    """Represents an Application submitted by an anonymous user requesting creating of a new Facility."""
+
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    applicant_name = models.CharField(max_length=64)
+    applicant_email = models.CharField(max_length=128)
+    applicant_mobile = models.CharField(max_length=15)
+    applicant_country = models.CharField(max_length=64)
+    applicant_city = models.CharField(max_length=64)
+    facility_name = models.CharField(max_length=128)
+    facility_type_code = models.IntegerField()
+    facility_internal_class = models.IntegerField()      #TODO: Check if this is required
+    facility_applicant_remarks = models.CharField(max_length=255, blank=True)
+    organization = models.ForeignKey(Organization, default=None, on_delete=models.RESTRICT)
+
+    class Meta:
+        verbose_name = 'Facility Application'
+        verbose_name_plural = 'Facility Applications'
         db_table = 'FacilityApplication'
-     def __str__(self):
-        return str(self.PrimaryKey)
+    def __str__(self):
+        return str(self.primary_key)
 
 
-class Facilitytype(models.Model):
+class FacilityType(models.Model):
+    """Defines the Type of a Facility (e.g. Clinic, Primary Health Centre, District Hospital)"""
+    
     facility_type_code = models.IntegerField(primary_key=True)
     facility_type_description = models.CharField(max_length=64)
     facility_short_type_name = models.CharField(max_length=4)
-    facility_type_internal=models.CharField(max_length=64)
+    facility_type_internal = models.CharField(max_length=64)
 
     class Meta:
         managed = False
+        verbose_name = 'Facility Type'
+        verbose_name_plural = 'Facility Types'
         db_table = 'FacilityType'
     def __str__(self):
         return str(self.facility_type_code)
-    
-class RoleAccess(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    Facility_type = models.CharField(max_length=64)
-    Facility_User = models.CharField(max_length=64)
-    Facility_Permission=models.CharField(max_length=64)
+
+
+class DefaultRolesByFacilityType(models.Model):
+    """For each Facility Type, defines the default User Roles and Permissions."""
+
+    facility_type_internal = models.CharField(max_length=64)
+    role_code = models.CharField(max_length=64)
 
     class Meta:
         managed = False
-        db_table = 'RoleAccess'
+        unique_together = ("facility_type_internal", "role_code")
+        db_table = 'DefaultRolesByFacilityType'
     def __str__(self):
-        return str(self.PrimaryKey)
+        return str(self.facility_type + "/" + self.role_code)
 
 
-    
+class PackageType(models.Model):
+    """Package Types define the basic structure of a payment model for a Customer (e.g. Monthly, Transactional)."""
 
+    description = models.CharField(max_length=255)
+
+    class Meta:
+        #managed = False #TODO: Decide on preloading of master data
+        verbose_name = 'Package Type'
+        verbose_name_plural = 'Package Types'
+        db_table = 'PackageType'
+    def __str__(self):
+        return str(self.id)
+
+
+class Package(models.Model):
+    """A Package is used to specify customized payment models for different customers."""
+
+    package_type = models.ForeignKey(PackageType, on_delete=models.RESTRICT)
+    description = models.CharField(max_length=255)
+    rate = models.DecimalField(max_digits=65, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Package'
+        verbose_name_plural = 'Packages'
+        db_table = 'Package'
+    def __str__(self):
+        return str(self.id)

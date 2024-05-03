@@ -1372,13 +1372,12 @@
 <div class="col-sm" id="profile_column">
 </div>
 </div>
-
 <div class="row" >
 <div class="col-sm" id="profile_column">
 </div>
     <div class="col-sm" id="profile_column">
       <div id="inner_column" class="alert-success">
-        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Lab Tests
+        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Prescribe Diagnostic Tests & Investigations
       </div>
       <div id="inner_column">
       <table class="table table-hover">
@@ -1387,123 +1386,20 @@
             <td>{{ labTests.labId}} {{ labTests.labType}}</td>
           </tr>
       {% endfor %}
-      </table>
-      </div>
-      <div id="inner_column">
-        <div class="row form-inline" id='lab_tests'>
-        <div class='col-sm form-group'>
-            <form class="form" action="{% url "opd_consultation" %}" method='post'>
-      {% csrf_token %}
-          <input type="hidden" name='eId' value="{{encounter_details.encounter.PrimaryKey}}" readonly>
-          <input type="hidden" name='prId' value="{{encounter_details.provider.PrimaryKey}}" readonly>
-            <script>
-                            $(document).ready(function() {
-              var counter = 0;
-
-              // Add button click event
-              $('#addButtonTests').click(function() {
-                var dynamicDiv = $('<div>').addClass('ui-widget').attr('id', 'dynamicDiv' + counter);
-
-                // Add the content to the dynamicDiv
-                dynamicDiv.append(`
-                    <input type="text" class="form-control tname" id="test_name" name="test_name" value="" placeholder="Test Name" style="margin:0px 5px 5px 0px">
-                `);
-
-                dynamicDiv.appendTo('#dynamicDivContainerTests');
-                counter++;
-
-                return false; // Prevent default link behavior
-              });
-
-              // Remove button click event
-              $('#removeButtonTests').click(function() {
-                if (counter > 0) {
-                  $('#dynamicDiv' + (counter - 1)).remove();
-                  counter--;
-                }
-                return false; // Prevent default link behavior
-              });
-            });
-
-            </script>
-
-            <button id="addButtonTests">+</button>
-        <button id="removeButtonTests">-</button>
-        <div id="dynamicDivContainerTests"></div>
-
-        <button type="submit" class="btn btn-success btn-block has-spinner" name='lab'>
-      <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>Update Lab Tests</button>
-            </form>
-        </div>
-        </div>
-      </div>
-    </div>
-<div class="col-sm" id="profile_column">
-</div>
-</div>
-
-<div class="row" >
-<div class="col-sm" id="profile_column">
-</div>
-    <div class="col-sm" id="profile_column">
-      <div id="inner_column" class="alert-success">
-        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Radiology Tests & Investigations
-      </div>
-      <div id="inner_column">
-      <table class="table table-hover">
       {% for radiologyTests in encounter_details.radiology %}
           <tr>
             <td>{{ radiologyTests.radiologyProcedureName}} {{ radiologyTests.radiologyCenterType}}</td>
           </tr>
       {% endfor %}
-
       </table>
       </div>
       <div id="inner_column">
-        <div class="row form-inline" id='radiology_tests'>
+        <div class="row form-inline" id='diagnostic_tests'>
         <div class='col-sm form-group'>
-            <form class="form" action="{% url "opd_consultation" %}" method='post'>
-      {% csrf_token %}
-          <input type="hidden" name='eId' value="{{encounter_details.encounter.PrimaryKey}}" readonly>
-          <input type="hidden" name='prId' value="{{encounter_details.provider.PrimaryKey}}" readonly>
-            <script>
-                            $(document).ready(function() {
-              var counter = 0;
-
-              // Add button click event
-              $('#addButtonRadiology').click(function() {
-                var dynamicDiv = $('<div>').addClass('ui-widget').attr('id', 'dynamicDiv' + counter);
-
-                // Add the content to the dynamicDiv
-                dynamicDiv.append(`
-                    <input type="text" class="form-control tname" id="radiology_test_name" name="radiology_test_name" value="" placeholder="Test Name" style="margin:0px 5px 5px 0px">
-                `);
-
-                dynamicDiv.appendTo('#dynamicDivContainerRadiology');
-                counter++;
-
-                return false; // Prevent default link behavior
-              });
-
-              // Remove button click event
-              $('#removeButtonRadiology').click(function() {
-                if (counter > 0) {
-                  $('#dynamicDiv' + (counter - 1)).remove();
-                  counter--;
-                }
-                return false; // Prevent default link behavior
-              });
-            });
-
-            </script>
-
-            <button id="addButtonRadiology">+</button>
-        <button id="removeButtonRadiology">-</button>
-        <div id="dynamicDivContainerRadiology"></div>
-
-        <button type="submit" class="btn btn-success btn-block has-spinner" name='radiology'>
-      <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>Radiology Tests</button>
-            </form>
+        <div class="ui-widget">
+        <input type="text" class="form-control tname" id="test_name" name="test_name" value="" placeholder="Test Name" style="margin:0px 5px 5px 0px">
+        <button class="btn btn-success" type="button"  onclick="add_tests();" style="margin:0px 5px 5px 0px"> <span aria-hidden="true">+</span> </button>
+        </div>
         </div>
         </div>
       </div>
@@ -1511,7 +1407,6 @@
 <div class="col-sm" id="profile_column">
 </div>
 </div>
-
 <div class="row" >
 <div class="col-sm" id="profile_column">
 </div>
@@ -1534,20 +1429,7 @@
       <div id="inner_column">
         <div class="row form-inline" id='add_medicines'>
         <div class='col-sm form-group'>
-        <form class="form" action="{% url "opd_consultation" %}" method='post'>
-      {% csrf_token %}
-          <input type="hidden" name='eId' value="{{encounter_details.encounter.PrimaryKey}}" readonly>
-          <input type="hidden" name='prId' value="{{encounter_details.provider.PrimaryKey}}" readonly>
-            <script>
-                            $(document).ready(function() {
-              var counter = 0;
-
-              // Add button click event
-              $('#addButtonMedicines').click(function() {
-                var dynamicDiv = $('<div>').addClass('ui-widget').attr('id', 'dynamicDiv' + counter);
-
-                // Add the content to the dynamicDiv
-                dynamicDiv.append(`
+        <div class="ui-widget">
         <input type="text" class="form-control med_name" id="medi_name" name="med_name" value="" placeholder="Brand Name" style="margin:0px 5px 5px 0px" minlength="4">
         <p>Number of dosage units & Time of consumption<br/>
         (Morning/Afternoon/Evening/Night)<br/></p>
@@ -1561,33 +1443,8 @@
         <select type="text" class="form-control" id="duration_unit" value="" placeholder="Duration Unit" name="duration_unit" style="margin:0px 5px 5px 0px" ><option value="" disabled selected>Duration Unit</option><option>DAYS</option><option>WEEKS</option><option>MONTHS</option><option>AS REQUIRED</option><option>SOS</option></select>
         <select type="text" class="form-control" id="consume_time" name="consume_time" style="margin:0px 5px 5px 0px" ><option value="" disabled selected>When to consume</option><option>BEFORE MEAL</option><option>AFTER MEAL</option><option>As REQUIRED</option><option>SOS</option></select>
         <textarea class="form-control" rows="2" cols="50" id="prescription_notes" placeholder="Prescription Notes" name="prescription_notes" style="margin-bottom:5px"></textarea>
-                `);
-
-                dynamicDiv.appendTo('#dynamicDivContainerMedicines');
-                counter++;
-
-                return false; // Prevent default link behavior
-              });
-
-              // Remove button click event
-              $('#removeButtonMedicines').click(function() {
-                if (counter > 0) {
-                  $('#dynamicDiv' + (counter - 1)).remove();
-                  counter--;
-                }
-                return false; // Prevent default link behavior
-              });
-            });
-
-            </script>
-
-            <button id="addButtonMedicines">+</button>
-        <button id="removeButtonMedicines">-</button>
-        <div id="dynamicDivContainerMedicines"></div>
-
-         <button type="submit" class="btn btn-success btn-block has-spinner" name='medicines'>
-      <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>Update Medicines</button>
-        </form>
+         <button class="btn btn-success" type="button"  onclick="add_more_medicines();" style="margin:0px 5px 5px 0px"> <span aria-hidden="true">+</span> </button>
+        </div>
         </div>
         </div>
       </div>
@@ -1595,154 +1452,33 @@
 <div class="col-sm" id="profile_column">
 </div>
 </div>
-
 <div class="row" >
 <div class="col-sm" id="profile_column">
 </div>
     <div class="col-sm" id="profile_column">
       <div id="inner_column" class="alert-success">
-        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Immunization
+        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Instructions & Followup Details
       </div>
       <div id="inner_column">
-      <table class="table table-hover">
-      {% for immunization in encounter_details.immunizationOrder %}
-          <tr>
-            <td>
-                {{ immunization.immunizationProductCode}} {{ immunization.immunizationProductDescription}}<br/>
-                {{ immunization.immunizationInformationSource}}
-            </td>
-          </tr>
-      {% endfor %}
-      </table>
-      </div>
-      <div id="inner_column">
-        <div class="row form-inline" id='add_immunization'>
-        <div class='col-sm form-group'>
-        <form class="form" action="{% url "opd_consultation" %}" method='post'>
-      {% csrf_token %}
-          <input type="hidden" name='eId' value="{{encounter_details.encounter.PrimaryKey}}" readonly>
-          <input type="hidden" name='prId' value="{{encounter_details.provider.PrimaryKey}}" readonly>
-            <script>
-                            $(document).ready(function() {
-              var counter = 0;
-
-              // Add button click event
-              $('#addButtonImmunization').click(function() {
-                var dynamicDiv = $('<div>').addClass('ui-widget').attr('id', 'dynamicDiv' + counter);
-
-                // Add the content to the dynamicDiv
-                dynamicDiv.append(`
-                    <input type="text" class="form-control immunizationDescription" id="immunizationDescription" name="immunizationDescription" value="" placeholder="immunization Description" style="margin:0px 5px 5px 0px" minlength="4">
-                `);
-
-                dynamicDiv.appendTo('#dynamicDivContainerImmunization');
-                counter++;
-
-                return false; // Prevent default link behavior
-              });
-
-              // Remove button click event
-              $('#removeButtonImmunization').click(function() {
-                if (counter > 0) {
-                  $('#dynamicDiv' + (counter - 1)).remove();
-                  counter--;
-                }
-                return false; // Prevent default link behavior
-              });
-            });
-
-            </script>
-
-            <button id="addButtonImmunization">+</button>
-        <button id="removeButtonImmunization">-</button>
-        <div id="dynamicDivContainerImmunization"></div>
-
-         <button type="submit" class="btn btn-success btn-block has-spinner" name='immunization'>
-      <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>Update Immunization</button>
-        </form>
+        <textarea class="form-control" rows="2" cols="50" id="instructions" placeholder="Instructions for the patient" name="instructions" style="margin-bottom:5px"></textarea>
+        <div class="input-group date" id ="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-start-date="+1d" data-date-autoclose="true" data-date-container="#dpk">
+        <input type="text" class="form-control" name="followup_date" placeholder="Followup Date" style="margin:0px 0px 5px 0px" >
+        <div class="input-group-addon" style="margin:0px 0px 5px 0px">
+            <span class="fa fa-calendar"></span>
         </div>
         </div>
       </div>
-    </div>
-<div class="col-sm" id="profile_column">
-</div>
-</div>
-
-<div class="row" >
-<div class="col-sm" id="profile_column">
-</div>
-    <div class="col-sm" id="profile_column">
       <div id="inner_column" class="alert-success">
-        <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>Procedure
+        <input type="hidden" class="form-control" id="request_id" name="request_id" value={{encounter_details.order_details.encounterId}} style="display:none">
+        <button type="submit" class="btn btn-success btn-block has-spinner" name='save_consultation_notes' id='save_consultation_notes' value="">
+          <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>
+          Save Consultation Details
+      </button>
       </div>
-      <div id="inner_column">
-      <table class="table table-hover">
-      {% for procedures in encounter_details.procedure %}
-          <tr>
-            <td>
-                {{ procedures.procedureCode}} {{ procedures.procedureName}}<br/>
-                {{ procedures.procedureDateTime}} {{ procedures.multipleProcedureFlag}}
-            </td>
-          </tr>
-      {% endfor %}
-      </table>
-      </div>
-      <div id="inner_column">
-        <div class="row form-inline" id='add_procedures'>
-        <div class='col-sm form-group'>
-        <form class="form" action="{% url "opd_consultation" %}" method='post'>
-      {% csrf_token %}
-          <input type="hidden" name='eId' value="{{encounter_details.encounter.PrimaryKey}}" readonly>
-          <input type="hidden" name='prId' value="{{encounter_details.provider.PrimaryKey}}" readonly>
-            <script>
-                            $(document).ready(function() {
-              var counter = 0;
+      </form>
 
-              // Add button click event
-              $('#addButtonProcedure').click(function() {
-                var dynamicDiv = $('<div>').addClass('ui-widget').attr('id', 'dynamicDiv' + counter);
-
-                // Add the content to the dynamicDiv
-                dynamicDiv.append(`
-                    <input type="text" class="form-control procedureName" id="procedureName" name="procedureName" value="" placeholder="Procedure Name" style="margin:0px 5px 5px 0px" minlength="4">
-                    <div class="input-group date" id="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-container="#dpk">
-                    <input type="text" class="form-control" name="procedureDate" placeholder="Date of Procedure" style="margin:0px 0px 5px 0px" required>
-                    <div class="input-group-addon" style="margin:0px 0px 5px 0px">
-                      <span class="fa fa-calendar"></span>
-                    </div>
-                  </div>
-                `);
-
-                dynamicDiv.appendTo('#dynamicDivContainerProcedure');
-                counter++;
-
-                return false; // Prevent default link behavior
-              });
-
-              // Remove button click event
-              $('#removeButtonProcedure').click(function() {
-                if (counter > 0) {
-                  $('#dynamicDiv' + (counter - 1)).remove();
-                  counter--;
-                }
-                return false; // Prevent default link behavior
-              });
-            });
-
-            </script>
-
-            <button id="addButtonProcedure">+</button>
-        <button id="removeButtonProcedure">-</button>
-        <div id="dynamicDivContainerProcedure"></div>
-
-         <button type="submit" class="btn btn-success btn-block has-spinner" name='procedure'>
-      <span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>Update Procedures</button>
-        </form>
-        </div>
-        </div>
-      </div>
-    </div>
-<div class="col-sm" id="profile_column">
+ </div>
+    <div class="col-sm" id="profile_column">
 </div>
 </div>
 

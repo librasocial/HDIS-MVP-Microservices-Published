@@ -1,11 +1,11 @@
+from .views import *
 from django.urls import path
-from . import views
-from .views import QueueViewSet
-from django.views.decorators.csrf import csrf_exempt
-urlpatterns = [
 
-    path('getToken/', QueueViewSet.as_view({
-            'post': 'getToken',
-    })),
-   
-] 
+urlpatterns = [
+    path('queues/', QueueViewSet.as_view({
+        'post': 'join_queue',
+    }), name='queue-post'),
+    path('queues/search', QueueViewSet.as_view({
+        'get': 'search',
+    }), name='queue-search'),
+]

@@ -1,421 +1,292 @@
+from datetime import datetime
+import uuid
 from django.db import models
 from django.core.validators import MaxValueValidator
-import uuid
 
-# Create your models here.
+class EncounterProvider(models.Model):
+    """ Tracks the Provider(s) associated with a Consultation Encounter. """
 
-class Facility(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    uniqueFacilityIdentificationNumber = models.CharField(max_length=64, blank=True, null=True)
-    facilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityServiceCode = models.CharField(max_length=18, blank=True, null=True)
-    departmentName = models.CharField(max_length=99, blank=True, null=True)
-    referralFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    referralFromFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFromFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityGlobalUniqueIdentifier = models.BinaryField(blank=True, null=True)
-    facilitySpecialtyCode = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    wardName = models.CharField(max_length=99, blank=True, null=True)
-
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    encounter_id = models.UUIDField()
+    provider_id = models.UUIDField()
+    
     class Meta:
-        verbose_name_plural = 'Facility'
-        db_table = 'Facility'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Provider(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    uniqueIndividualHealthCareProviderNumber = models.CharField(max_length=64, blank=True, null=True)
-    careProviderMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    careProviderEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    careProviderName = models.CharField(max_length=99, blank=True, null=True)
-    healthServiceProviderRoleCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    healthServiceProviderRoleFreeText = models.CharField(max_length=99, blank=True, null=True)
-    healthServiceProviderType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    careProviderLandlineTelephoneNumber = models.CharField(max_length=10, blank=True, null=True)
-    registrationAuthorityNumber =models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    class Meta:
-        verbose_name_plural = 'Provider'
-        db_table = 'Provider'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Person(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    UniqueHealthIdentificationNumber = models.CharField(max_length=64)
-    UniqueHealthIdentificationID = models.CharField(max_length=64)
-    AlternateUniqueIdentificationNumberType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AlternateUniqueIdentificationNumber = models.CharField(max_length=18, null=True)
-    NationalityCode = models.IntegerField(default=0)
-    class Meta:
-        verbose_name_plural = 'Person'
-        db_table = 'Person'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Patient(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    personId = models.OneToOneField(Person, on_delete=models.CASCADE)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    localFacilityPatientId = models.CharField(max_length=18, blank=True, null=True)
-    PatientName = models.CharField(max_length=99, blank=True, null=True)
-    PatientAge = models.CharField(max_length=9, blank=True, null=True)
-    PatientDOB = models.DateTimeField(null=True)
-    PatientGenderCode = models.CharField(max_length=1, blank=True, null=True)
-    patientArrivalDateTime = models.DateTimeField(null=True)
-    patientLandlineNumber = models.CharField(max_length=8, blank=True, null=True)
-    patientMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    patientEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    reasonForVisit = models.CharField(max_length=99, blank=True, null=True)
-    birthOrder = models.IntegerField(default=0)
-    parity = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    gravida = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    pregnancyIndicator = models.BooleanField(default=0)
-    durationOfPregnancy = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-
-    # patient_address
-    # patient_address_type
-
-    class Meta:
-        verbose_name_plural = 'Patient'
-        db_table = 'Patient'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-class Employee(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    EmployeeID = models.CharField(max_length=18, blank=True, null=True)
-    EmployerID = models.CharField(max_length=18, blank=True, null=True)
-    PatientID = models.ManyToManyField(Patient)
-    EmployeeTelephoneNumber = models.CharField(max_length=8, blank=True, null=True)
-    EmployeeMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    EmployeeEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    EmployeeDesignationCode = models.CharField(max_length=2, blank=True, null=True)
-    EmployeeOrganizationName = models.CharField(max_length=254, blank=True, null=True)
-    EmployeeGenderCode = models.CharField(max_length=2, blank=True, null=True)
-    EmployeeName = models.CharField(max_length=255, blank=True, null=True)
-    AcademicQualificationLevelCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AcademicQualificationTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AcademicQualification = models.TextField(null=True, blank=True)
-    class Meta:
-        verbose_name_plural = 'Employee'
-        db_table = 'Employee'
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-class Billing(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    providerId = models.ManyToManyField(Provider, related_name='bills')
-    serviceType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    serviceItemName = models.CharField(max_length=99, blank=True, null=True)
-    quantityOfService = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        verbose_name_plural = 'Billing'
-        db_table = 'Billing'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Episode(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    providerId = models.ManyToManyField(Provider, related_name='episodes')
-    EpisodeId = models.CharField(max_length=64, blank=True, null=True)
-    EpisodeType = models.IntegerField(default=1, validators=[MaxValueValidator(4)])
-
-    class Meta:
-        verbose_name_plural = 'Episode'
-        db_table = 'Episode'
+        verbose_name = 'Encounter Provider'
+        verbose_name_plural = 'Encounter Providers'
+        db_table = 'encounter_provider'
+        unique_together = ('encounter_id', 'provider_id',)
 
     def _str_(self):
-        return str(self.PrimaryKey)
-
-class Encounter(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    episodeId = models.ForeignKey(Episode, on_delete=models.CASCADE)
-    encounterID = models.CharField(max_length=64, blank=True, null=True)
-    encounterType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    encounterTypeDescription = models.CharField(max_length=254, blank=True, null=True)
-    encounterTime = models.DateTimeField(null=True)
-    # ideally should not be blank an encounter shoudl always have a status
-    encounterStatusCode = models.CharField(max_length=20, default='planned')
-    encounterStatusDisplay = models.CharField(max_length=35, default='Planned')
-    encounterStatusDefinition = models.CharField(max_length=350, default='The Encounter has not yet started')
-    class Meta:
-        verbose_name_plural = 'Encounter'
-        db_table = 'Encounter'
-
-    def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
 
-class Emergency(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    episodeId = models.ForeignKey(Episode, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    encounterId = models.OneToOneField(Encounter, on_delete=models.CASCADE)
-    providerId = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    patientArrivalDateTime = models.DateTimeField(null=True)
-    patientStatus = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    ambulatoryStatus = models.CharField(max_length=2, blank=True, null=True)
-    mlcIndicator = models.BooleanField(default=0)
-    massInjuryIndicator = models.BooleanField(default=0)
-    casueOfMassInjury = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    accidentLocation = models.CharField(max_length=254, blank=True, null=True)
-    referralCategory = models.CharField(max_length=1, blank=True, null=True)
-    dateOfReferral = models.DateTimeField(null=True)
-    reasonForReferral = models.CharField(max_length=254, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'Emergency'
-        db_table = 'Emergency'
-    def _str_(self):
-        return str(self.PrimaryKey)
-
-class clinicalNotes(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    encounterId = models.ForeignKey(Encounter, on_delete=models.CASCADE)
-    authorDateTime = models.DateTimeField(null=True)
-    clinicalNotesID = models.CharField(max_length=64, unique=True)
+class ClinicalNote(models.Model):
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    encounter_id = models.UUIDField()
+    author_datetime = models.DateTimeField(auto_now_add=True)
     reference = models.CharField(max_length=99, blank=True, null=True)
-    informationSourceName = models.CharField(max_length=99, blank=True, null=True)
-    clinicalDocument = models.TextField(blank=True, null=True)
-    clinicalDocumentType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
+    information_source_name = models.CharField(max_length=99, blank=True, null=True)
+    clinical_document = models.TextField(blank=True, null=True)
+    clinical_document_type = models.PositiveSmallIntegerField(blank=True, default=18, validators=[MaxValueValidator(99)])
 
     class Meta:
-        verbose_name_plural = 'clinicalNotes'
-        db_table = 'clinicalNotes'
+        verbose_name = 'Clinical Note'
+        verbose_name_plural = 'Clinical Notes'
+        db_table = 'clinical_note'
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class clinicalOrders(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.OneToOneField(clinicalNotes, on_delete=models.CASCADE)
-    clinicalOrderDescription = models.CharField(max_length=254, blank=True, null=True)
-    orderId = models.CharField(max_length=12, blank=True, null=True)
-    parentOrderId = models.CharField(max_length=10, blank=True, null=True)
-    orderVerifyingCareProviderId = models.CharField(max_length=18, blank=True, null=True)
-    orderStatus = models.CharField(max_length=2, blank=True, null=True)
-    orderPriority = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    placerOrderId = models.CharField(max_length=10, blank=True, null=True)
-    fillerOrderId = models.CharField(max_length=10, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'clinicalOrders'
-        db_table = 'clinicalOrders'
-    def _str_(self):
-        return str(self.PrimaryKey)
 
-class lab(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalOrderId = models.ForeignKey(clinicalOrders, on_delete=models.CASCADE)
-    labOrderCode = models.CharField(max_length=10, blank=True, null=True)
-    labOrderName = models.CharField(max_length=256, blank=True, null=True)
-    labId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-    labType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
+class ClinicalOrder(models.Model):
+    """Abstract Base Class for various types of specialized Clinical Orders specified in a Plan stage Clinical Note."""
+
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    clinical_note = models.ForeignKey(ClinicalNote, on_delete=models.CASCADE, related_name='clinical_orders')
+    description = models.CharField(max_length=254, blank=True, null=True)
+    order_id = models.CharField(max_length=12, blank=True, null=True)
+    parent_order_id = models.CharField(max_length=10, blank=True, null=True)
+    verifying_care_provider_id = models.CharField(max_length=18, blank=True, null=True)
+    status = models.CharField(max_length=2, blank=True, null=True)
+    priority = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+    placer_order_id = models.CharField(max_length=10, blank=True, null=True)
+    filler_order_id = models.CharField(max_length=10, blank=True, null=True)
+
     class Meta:
-        verbose_name_plural = 'lab'
-        db_table = 'lab'
+        verbose_name = 'Clinical Order'
+        verbose_name_plural = 'Clinical Orders'
+        db_table = 'clinical_order'
+    
     def _str_(self):
-        return str(self.PrimaryKey)
-class radiology(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalOrderId = models.ForeignKey(clinicalOrders, on_delete=models.CASCADE)
-    radiologyCenterId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-    radiologyCenterType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    radiologyProcedureName = models.CharField(max_length=255, blank=True, null=True)
-    radiologyProcedureCode = models.CharField(max_length=18, blank=True, null=True)
+        return str(self.primary_key)
+
+
+class LabOrder(ClinicalOrder):
+    """Specialized Clinical Order specified in a Plan stage Clinical Note."""
+    
+    code = models.CharField(max_length=10, blank=True, null=True)
+    lab_id = models.IntegerField(blank=True, default=0)
+    lab_type = models.PositiveSmallIntegerField(blank=True, default=9, validators=[MaxValueValidator(9)])
+
     class Meta:
-        verbose_name_plural = 'radiology'
-        db_table = 'radiology'
+        verbose_name = 'Lab Order'
+        verbose_name_plural = 'Lab Orders'
+        db_table = 'lab_order'
+    
+    def _str_(self):
+        return str(self.primary_key)
+
+
+class RadiologyOrder(ClinicalOrder):
+    """Specialized Clinical Order specified in a Plan stage Clinical Note."""
+
+    radiology_center_id = models.IntegerField(default=0)
+    radiology_center_type = models.PositiveSmallIntegerField(blank=True, default=9, validators=[MaxValueValidator(9)])
+    radiology_procedure_name = models.CharField(max_length=255, blank=True, null=True)
+    radiology_procedure_code = models.CharField(max_length=18, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Radiology Order'
+        verbose_name_plural = 'Radiology Orders'
+        db_table = 'radiology_order'
 
     def _str_(self):
-        return str(self.PrimaryKey)
-class pharmacy(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalOrderId = models.ForeignKey(clinicalOrders, on_delete=models.CASCADE)
-    drugClassificationCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    routeOfAdministration = models.CharField(max_length=6, blank=True, null=True)
-    medicationFrequency = models.CharField(max_length=5, blank=True, null=True)
-    medicationAdministrationInterval = models.CharField(max_length=40, blank=True, null=True)
+        return str(self.primary_key)
+
+
+class PharmacyOrder(ClinicalOrder):
+    """Specialized Clinical Order specified in a Plan stage Clinical Note."""
+
+    drug_classification_code = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+    route_of_administration = models.CharField(max_length=6, blank=True, null=True)
+    medication_frequency = models.CharField(max_length=5, blank=True, null=True)
+    medication_administration_interval = models.CharField(max_length=40, blank=True, null=True)
     dose = models.CharField(max_length=60, blank=True, null=True)
-    medicationStoppedIndicator = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    bodySite = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    medicationStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    patientInstructions = models.CharField(max_length=255, blank=True, null=True)
-    prescriptionId = models.CharField(max_length=20, blank=True, null=True)
-    orderDateTime = models.DateTimeField(null=True)
+    medication_stopped_indicator = models.PositiveSmallIntegerField(blank=True, default=9, validators=[MaxValueValidator(9)])
+    body_site = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    medication_status = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+    patient_instructions = models.CharField(max_length=255, blank=True, null=True)
+    prescription_id = models.CharField(max_length=20, blank=True, null=True)
+    order_datetime = models.DateTimeField(blank=True, default=datetime.now)
     indication = models.CharField(max_length=10, blank=True, null=True)
     contraindication = models.CharField(max_length=10, blank=True, null=True)
-    medicationFills = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    medicationInstructions = models.CharField(max_length=254, blank=True, null=True)
-    fillStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
+    medication_fills = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    medication_instructions = models.CharField(max_length=254, blank=True, null=True)
+    fill_status = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+
     class Meta:
-        verbose_name_plural = 'pharmacy'
-        db_table = 'pharmacy'
+        verbose_name = 'Pharmacy Order'
+        verbose_name_plural = 'Pharmacy Orders'
+        db_table = 'pharmacy_order'
 
     def _str_(self):
-        return str(self.PrimaryKey)
-class immunizationOrder(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalOrderId = models.ForeignKey(clinicalOrders, on_delete=models.CASCADE)
-    immunizationRefusalReason = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    immunizationAdministrationDateTime = models.DateTimeField(null=True)
-    immunizationPerformerIdentificationNumber = models.CharField(max_length=18, blank=True, null=True)
-    immunizationProductCode = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    immunizationProductDescription = models.CharField(max_length=99, blank=True, null=True)
-    medicationSeriesNumber = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    immunizationInformationSource = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
+        return str(self.primary_key)
+
+
+class ImmunizationOrder(ClinicalOrder):
+    """Specialized Clinical Order specified in a Plan stage Clinical Note."""
+
+    immunization_refusal_reason = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+    immunization_administration_datetime = models.DateTimeField(blank=True, null=True)
+    immunization_performer_identification_number = models.CharField(max_length=18, blank=True, null=True)
+    immunization_product_code = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    immunization_product_description = models.CharField(max_length=99, blank=True, null=True)
+    medication_series_number = models.PositiveSmallIntegerField(blank=True, default=99, validators=[MaxValueValidator(99)])
+    immunization_information_source = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+
     class Meta:
-        verbose_name_plural = 'immunizationOrder'
-        db_table = 'immunizationOrder'
+        verbose_name = 'Immunization Order'
+        verbose_name_plural = 'Immunization Orders'
+        db_table = 'immunization_order'
 
     def _str_(self):
-        return str(self.PrimaryKey)
-class procedure(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalOrderId = models.ForeignKey(clinicalOrders, on_delete=models.CASCADE)
-    procedureName = models.CharField(max_length=255, blank=True, null=True)
-    procedureModifier = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    procedureCode = models.CharField(max_length=18, blank=True, null=True)
-    procedureType = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    procedureTypeDescription = models.CharField(max_length=99, blank=True, null=True)
-    procedureDateTime = models.DateTimeField(null=True)
-    multipleProcedureFlag = models.BooleanField(default=0)
+        return str(self.primary_key)
+
+
+class ProcedureOrder(ClinicalOrder):
+    """Specialized Clinical Order specified in a Plan stage Clinical Note."""
+
+    procedure_name = models.CharField(max_length=255, blank=True, null=True)
+    procedure_modifier = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    procedure_code = models.CharField(max_length=18, blank=True, null=True)
+    procedure_type = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    procedure_type_description = models.CharField(max_length=99, blank=True, null=True)
+    procedure_datetime = models.DateTimeField(blank=True, null=True)
+    multiple_procedure_flag = models.BooleanField(blank=True, default=0)
+
     class Meta:
-        verbose_name_plural = 'procedure'
-        db_table = 'procedure'
+        verbose_name = 'Procedure Order'
+        verbose_name_plural = 'Procedure Orders'
+        db_table = 'procedure_order'
 
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class orderSet(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    providerId = models.CharField(max_length=99, blank=True, null=True)
-    orderSetName = models.CharField(max_length=255, blank=True, null=True)
-    orderSetType = models.CharField(max_length=99, blank=True, null=True)
-    diagnosisConditionName = models.CharField(max_length=99, blank=True, null=True)
+
+class OrderSet(models.Model):
+    """A Group of Orders (possibly of multiple types) that is commonly used by a particular Provider at a Facility."""
+
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    provider_id = models.UUIDField()    #Dev Note: A given Provider ID is tied to a single Facility ID 
+    order_set_name = models.CharField(max_length=255, blank=True, null=True)
+    order_set_type = models.CharField(max_length=99, blank=True, null=True)
+    diagnosis_condition_name = models.CharField(max_length=99, blank=True, null=True)
+
     class Meta:
-        verbose_name_plural = 'orderSet'
-        db_table = 'orderSet'
+        verbose_name = 'Order Set'
+        verbose_name_plural = 'Order Sets'
+        db_table = 'order_set'
+    
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class orderSetMedicine(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    orderSetId = models.ForeignKey(orderSet, on_delete=models.CASCADE)
-    drugClassificationCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    routeOfAdministration = models.CharField(max_length=6, blank=True, null=True)
-    medicationFrequency = models.CharField(max_length=5, blank=True, null=True)
-    medicationAdministrationInterval = models.CharField(max_length=40, blank=True, null=True)
+
+class OrderSetLab(models.Model):
+    """Component of an Order Set representing a Lab Order."""
+
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_set = models.ForeignKey(OrderSet, on_delete=models.CASCADE, related_name='lab_order_sets')
+    lab_order_code = models.CharField(max_length=10, blank=True, null=True)
+    lab_id = models.IntegerField(default=0)
+    lab_type = models.PositiveSmallIntegerField(default=9, validators=[MaxValueValidator(9)])
+
+    class Meta:
+        verbose_name = 'Order Set Lab'
+        verbose_name_plural = 'Order Sets Lab'
+        db_table = 'order_set_lab'
+
+    def _str_(self):
+        return str(self.primary_key)
+
+
+class OrderSetRadiology(models.Model):
+    """Component of an Order Set representing a Radiology Order."""
+    
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_set = models.ForeignKey(OrderSet, on_delete=models.CASCADE, related_name='radiology_order_sets')
+    radiology_center_id = models.IntegerField(default=0)
+    radiology_center_type = models.PositiveSmallIntegerField(default=9, validators=[MaxValueValidator(9)])
+    radiology_procedure_name = models.CharField(max_length=255, blank=True, null=True)
+    radiology_procedure_code = models.CharField(max_length=18, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Order Set Radiology'
+        verbose_name_plural = 'Order Sets Radiology'
+        db_table = 'order_set_radiology'
+
+    def _str_(self):
+        return str(self.primary_key)
+
+
+class OrderSetPharmacy(models.Model):
+    """Component of an Order Set representing a Pharmacy Order."""
+    
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_set = models.ForeignKey(OrderSet, on_delete=models.CASCADE, related_name='pharmacy_order_sets')
+    drug_classification_code = models.PositiveSmallIntegerField(default=99, validators=[MaxValueValidator(99)])
+    route_of_administration = models.CharField(max_length=6, blank=True, null=True)
+    medication_frequency = models.CharField(max_length=5, blank=True, null=True)
+    medication_administration_interval = models.CharField(max_length=40, blank=True, null=True)
     dose = models.CharField(max_length=60, blank=True, null=True)
-    medicationStoppedIndicator = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    bodySite = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    medicationStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    patientInstructions = models.CharField(max_length=255, blank=True, null=True)
-    prescriptionId = models.CharField(max_length=20, blank=True, null=True)
-    orderDateTime = models.DateTimeField(null=True)
+    medication_stopped_indicator = models.PositiveSmallIntegerField(blank=True, default=9, validators=[MaxValueValidator(9)])
+    body_site = models.PositiveSmallIntegerField(blank=True, default=999, validators=[MaxValueValidator(999)])
+    medication_status = models.PositiveSmallIntegerField(default=99, validators=[MaxValueValidator(99)])
+    patient_instructions = models.CharField(max_length=255, blank=True, null=True)
+    prescription_id = models.CharField(max_length=20, blank=True, null=True)
+    order_datetime = models.DateTimeField(null=True)
     indication = models.CharField(max_length=10, blank=True, null=True)
     contraindication = models.CharField(max_length=10, blank=True, null=True)
-    medicationFills = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    medicationInstructions = models.CharField(max_length=254, blank=True, null=True)
-    fillStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
+    medication_fills = models.PositiveSmallIntegerField(default=999, validators=[MaxValueValidator(999)])
+    medication_instructions = models.CharField(max_length=254, blank=True, null=True)
+    fill_status = models.PositiveSmallIntegerField(default=99, validators=[MaxValueValidator(99)])
 
     class Meta:
-        verbose_name_plural = 'orderSetMedicine'
-        db_table = 'orderSetMedicine'
+        verbose_name = 'Order Set Pharmacy'
+        verbose_name_plural = 'Order Sets Pharmacy'
+        db_table = 'order_set_pharmacy'
 
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class orderSetLab(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    orderSetId = models.ForeignKey(orderSet, on_delete=models.CASCADE)
-    labOrderCode = models.CharField(max_length=10, blank=True, null=True)
-    labId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-    labType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
+
+class OrderSetImmunization(models.Model):
+    """Component of an Order Set representing a Immunization Order."""
+    
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_set = models.ForeignKey(OrderSet, on_delete=models.CASCADE, related_name='immunization_order_sets')
+    immunization_refusal_reason = models.PositiveSmallIntegerField(default=99, validators=[MaxValueValidator(99)])
+    immunization_administration_datetime = models.DateTimeField(null=True)
+    immunization_performer_identification_number = models.CharField(max_length=18, blank=True, null=True)
+    immunization_product_code = models.PositiveSmallIntegerField(default=999, validators=[MaxValueValidator(999)])
+    immunization_product_description = models.CharField(max_length=99, blank=True, null=True)
+    medication_series_number = models.PositiveSmallIntegerField(default=99, validators=[MaxValueValidator(99)])
+    immunization_information_source = models.PositiveSmallIntegerField(default=999, validators=[MaxValueValidator(999)])
 
     class Meta:
-        verbose_name_plural = 'orderSetLab'
-        db_table = 'orderSetLab'
+        verbose_name = 'Order Set Immunization'
+        verbose_name_plural = 'Order Sets Immunization'
+        db_table = 'order_set_immunization'
 
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class orderSetRadiology(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    orderSetId = models.ForeignKey(orderSet, on_delete=models.CASCADE)
-    radiologyCenterId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-    radiologyCenterType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    radiologyProcedureName = models.CharField(max_length=255, blank=True, null=True)
-    radiologyProcedureCode = models.CharField(max_length=18, blank=True, null=True)
+
+class OrderSetProcedure(models.Model):
+    """Component of an Order Set representing a Procedure Order."""
+    
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_set = models.ForeignKey(OrderSet, on_delete=models.CASCADE, related_name='procedure_order_sets')
+    procedure_name = models.CharField(max_length=255, blank=True, null=True)
+    procedure_modifier = models.PositiveSmallIntegerField(default=999, validators=[MaxValueValidator(999)])
+    procedure_code = models.CharField(max_length=18, blank=True, null=True)
+    procedure_type = models.PositiveSmallIntegerField(default=999, validators=[MaxValueValidator(999)])
+    procedure_type_description = models.CharField(max_length=99, blank=True, null=True)
+    procedure_datetime = models.DateTimeField(null=True)
+    multiple_procedure_flag = models.BooleanField(default=0)
 
     class Meta:
-        verbose_name_plural = 'orderSetRadiology'
-        db_table = 'radiorderSetRadiologyology'
-
+        verbose_name = 'Order Set Procedure'
+        verbose_name_plural = 'Order Sets Procedure'
+        db_table = 'order_set_procedure'
+    
     def _str_(self):
-        return str(self.PrimaryKey)
-
-class orderSetImmunizationOrder(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    orderSetId = models.ForeignKey(orderSet, on_delete=models.CASCADE)
-    immunizationRefusalReason = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    immunizationAdministrationDateTime = models.DateTimeField(null=True)
-    immunizationPerformerIdentificationNumber = models.CharField(max_length=18, blank=True, null=True)
-    immunizationProductCode = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    immunizationProductDescription = models.CharField(max_length=99, blank=True, null=True)
-    medicationSeriesNumber = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    immunizationInformationSource = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-
-    class Meta:
-        verbose_name_plural = 'orderSetImmunizationOrder'
-        db_table = 'orderSetImmunizationOrder'
-
-    def _str_(self):
-        return str(self.PrimaryKey)
-
-class orderSetProcedure(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    orderSetId = models.ForeignKey(orderSet, on_delete=models.CASCADE)
-    procedureName = models.CharField(max_length=255, blank=True, null=True)
-    procedureModifier = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    procedureCode = models.CharField(max_length=18, blank=True, null=True)
-    procedureType = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    procedureTypeDescription = models.CharField(max_length=99, blank=True, null=True)
-    procedureDateTime = models.DateTimeField(null=True)
-    multipleProcedureFlag = models.BooleanField(default=0)
-    class Meta:
-        verbose_name_plural = 'orderSetProcedure'
-        db_table = 'orderSetProcedure'
-    def _str_(self):
-        return str(self.PrimaryKey)
-class outreach(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    encounterId = models.ForeignKey(Encounter, on_delete=models.CASCADE)
-    outreachServiceDeliveryPlaceName = models.CharField(max_length=99, blank=True, null=True)
-    outreachServiceDeliveryPlaceAddress = models.CharField(max_length=255, blank=True, null=True)
-    outreachServiceDeliveryPlaceType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServicePurpose = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServiceProviderName = models.CharField(max_length=99, blank=True, null=True)
-    outreachServiceProviderType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServiceProviderIdentificationNumber = models.CharField(max_length=20, blank=True, null=True)
-    referralSupportIndicator = models.BooleanField(default=0)
-    class Meta:
-        verbose_name_plural = 'outreach'
-        db_table = 'outreach'
-    def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'rest_framework.authtoken',
+    'oauth2_provider',
     'doctor_administration',
     'appointment_booking',
     'consultation',
@@ -51,12 +52,28 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+    # Uncomment the following if you want to access the admin
+    #'django.contrib.auth.backends.ModelBackend',
+]
+# The following OAuth2 configurations must be updated for each environment. Note that the Client Secret is unhashed.
+HDIS_AUTH_SERVER="http://docker.for.mac.localhost:8080/api/v1"
+#HDIS_AUTH_SERVER="http://host.docker.internal:8080"
+OAUTH2_CLIENT_ID = 'xouGo988NvlK7l5i1fiGwCOyMoixcw5zjckPEshp'
+OAUTH2_CLIENT_SECRET = 'HMe6mYBFIyzhihwi3OwclAEpNZi05sauIGRQxDdqCakfHtVo2E96ZZn3UXootWjRyBhV2FGYKXyt6EVxBprd2CpUiMEix26yGcoGJGR3vOksVV04VN7r6w6I7pS56vbf'
+PASSWORD_OAUTH2_CLIENT_ID = 'RxwS0ggZEICdWcuBSUri2ofdsN67iNtsceQV3kan'
+PASSWORD_OAUTH2_CLIENT_SECRET = 'IXc0lsrxARIZIzb6apwMvHn9bE77aszI9rQ4wRtt7rwtVPABlUhkq6aJwbOk7n7TG1wpboWGUoMr19unuSM3wAta6rP1jjUrkdQ1KYK9TDRydqQB44KcqDQwEhOKqrwM'
+OAUTH2_TOKEN_URL = HDIS_AUTH_SERVER + '/o/token/'
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
    # "hdis_frontend.jwt_middleware.JWTMiddleware",
@@ -142,27 +159,63 @@ SESSION_COOKIE_AGE = 7200 # 3 minutes. "1209600(2 weeks)" by default
 
 SESSION_SAVE_EVERY_REQUEST = True # "False" by default
 
-HDIS_AUTH_SERVER=AUTH_SERVER
+#HDIS_AUTH_SERVER="http://docker.for.mac.localhost:8080"
+#HDIS_AUTH_SERVER="http://accessmanagement.openhdis.com:8080"
 
-HDIS_ORG_MASTER=ORG_MASTER
+HDIS_ORG_MASTER="http://docker.for.mac.localhost:8081"
+#HDIS_ORG_MASTER="http://facility.openhdis.com:8081"
+
+#HDIS_PATIENT_MANAGEMENT="http://docker.for.mac.localhost:8003"
+#HDIS_PATIENT_MANAGEMENT="http://patman.openhdis.com:8003"
 
 
-HDIS_PATIENT_REGISTRATION=PATIENT_REGISTRATION
+HDIS_PATIENT_REGISTRATION="http://docker.for.mac.localhost:8003/api/v1"
+#HDIS_PATIENT_REGISTRATION="http://patreg.openhdis.com:8002"
 
-HDIS_DOCTOR_ADMINISTRATION=DOCTOR_ADMINISTRATION
-HDIS_SLOT_MASTER=SLOT_MASTER
 
-HDIS_APPOINTMENT_MANAGEMENT=APPOINTMENT_MANAGEMENT
+HDIS_DOCTOR_ADMINISTRATION="http://docker.for.mac.localhost:8005"
+#HDIS_DOCTOR_ADMINISTRATION="http://docadmin.openhdis.com:8005"
 
-HDIS_VISIT_MANAGEMENT=VISIT_MANAGEMENT
+HDIS_SLOT_MASTER="http://docker.for.mac.localhost:8004"
+#HDIS_SLOT_MASTER="http://slotmaster.openhdis.com:8004"
 
-HDIS_CONSULTATION_SUBJECTIVE=CONSULTATION_SUBJECTIVE
 
-HDIS_CONSULTATION_OBJECTIVE=CONSULTATION_OBJECTIVE
+HDIS_APPOINTMENT_MANAGEMENT="http://docker.for.mac.localhost:8007"
+#HDIS_APPOINTMENT_MANAGEMENT="http://appointment.openhdis.com:8007"
 
-HDIS_CONSULTATION_ASSESSMENT=CONSULTATION_ASSESSMENT
+#SOAP
+#HDIS_CONSULTATION_SUBJECTIVE="http://appointment.openhdis.com:8010"
+#HDIS_CONSULTATION_OBJECTIVE="http://appointment.openhdis.com:8012"
+#HDIS_CONSULTATION_ASSESSMENT="http://appointment.openhdis.com:8013"
+#HDIS_CONSULTATION_PLAN="http://appointment.openhdis.com:8014"
 
-HDIS_CONSULTATION_PLAN=CONSULTATION_PLAN
+HDIS_CONSULTATION_SUBJECTIVE="http://docker.for.mac.localhost:8010"
+HDIS_CONSULTATION_OBJECTIVE="http://docker.for.mac.localhost:8012"
+HDIS_CONSULTATION_ASSESSMENT="http://docker.for.mac.localhost:8013"
+HDIS_CONSULTATION_PLAN="http://docker.for.mac.localhost:8014"
 
-HDIS_CONSULTATION_BILLING=CONSULTATION_BILLING
+HDIS_VISIT_MANAGEMENT="http://docker.for.mac.localhost:8009"
+#HDIS_VISIT_MANAGEMENT="http://visit.openhdis.com:8009"
+
+HDIS_QUEUE_MANAGEMENT="http://docker.for.mac.localhost:8008"
+#HDIS_QUEUE_MANAGEMENT="http://queue.openhdis.com:8009"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+}
+
+OAUTH2_PROVIDER = {
+    'OAUTH2_VALIDATOR_CLASS': 'oauth2_provider.oauth2_validators.OAuth2Validator',    #Handles Access Token validation
+    'RESOURCE_SERVER_INTROSPECTION_URL': HDIS_AUTH_SERVER + '/o/introspect/',
+    #'RESOURCE_SERVER_AUTH_TOKEN': ''
+    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': ('xouGo988NvlK7l5i1fiGwCOyMoixcw5zjckPEshp', 'HMe6mYBFIyzhihwi3OwclAEpNZi05sauIGRQxDdqCakfHtVo2E96ZZn3UXootWjRyBhV2FGYKXyt6EVxBprd2CpUiMEix26yGcoGJGR3vOksVV04VN7r6w6I7pS56vbf'),
+}
+
 

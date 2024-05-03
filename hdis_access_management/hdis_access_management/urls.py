@@ -15,13 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import path,include
-
-
-
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('access/',include('access_management.urls'))
+    path('api/v1/', include('access_management.urls'))
 ]
+
+handler400 = 'rest_framework.exceptions.bad_request'
+handler500 = 'rest_framework.exceptions.server_error'

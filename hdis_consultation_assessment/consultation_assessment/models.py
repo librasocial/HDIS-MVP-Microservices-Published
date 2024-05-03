@@ -2,374 +2,58 @@ from django.db import models
 from django.core.validators import MaxValueValidator
 import uuid
 
-# Create your models here.
+class EncounterProvider(models.Model):
+    """ Tracks the Provider(s) associated with a Consultation Encounter. """
 
-class Facility(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    uniqueFacilityIdentificationNumber = models.CharField(max_length=64, blank=True, null=True)
-    facilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityServiceCode = models.CharField(max_length=18, blank=True, null=True)
-    departmentName = models.CharField(max_length=99, blank=True, null=True)
-    referralFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    referralFromFacilityIdentificationNumber = models.CharField(max_length=10, blank=True, null=True)
-    referralFromFacilityTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    facilityGlobalUniqueIdentifier = models.BinaryField(blank=True, null=True)
-    facilitySpecialtyCode = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    wardName = models.CharField(max_length=99, blank=True, null=True)
-
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    encounter_id = models.UUIDField()
+    provider_id = models.UUIDField()
+    
     class Meta:
-        verbose_name_plural = 'Facility'
-        db_table = 'Facility'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Provider(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    uniqueIndividualHealthCareProviderNumber = models.CharField(max_length=64, blank=True, null=True)
-    careProviderMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    careProviderEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    careProviderName = models.CharField(max_length=99, blank=True, null=True)
-    healthServiceProviderRoleCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    healthServiceProviderRoleFreeText = models.CharField(max_length=99, blank=True, null=True)
-    healthServiceProviderType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    careProviderLandlineTelephoneNumber = models.CharField(max_length=10, blank=True, null=True)
-    registrationAuthorityNumber =models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    class Meta:
-        verbose_name_plural = 'Provider'
-        db_table = 'Provider'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Person(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    UniqueHealthIdentificationNumber = models.CharField(max_length=64)
-    UniqueHealthIdentificationID = models.CharField(max_length=64)
-    AlternateUniqueIdentificationNumberType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AlternateUniqueIdentificationNumber = models.CharField(max_length=18, null=True)
-    NationalityCode = models.IntegerField(default=0)
-    class Meta:
-        verbose_name_plural = 'Person'
-        db_table = 'Person'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Patient(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    personId = models.OneToOneField(Person, on_delete=models.CASCADE)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    localFacilityPatientId = models.CharField(max_length=18, blank=True, null=True)
-    PatientName = models.CharField(max_length=99, blank=True, null=True)
-    PatientAge = models.CharField(max_length=9, blank=True, null=True)
-    PatientDOB = models.DateTimeField(null=True)
-    PatientGenderCode = models.CharField(max_length=1, blank=True, null=True)
-    patientArrivalDateTime = models.DateTimeField(null=True)
-    patientLandlineNumber = models.CharField(max_length=8, blank=True, null=True)
-    patientMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    patientEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    reasonForVisit = models.CharField(max_length=99, blank=True, null=True)
-    birthOrder = models.IntegerField(default=0)
-    parity = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    gravida = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    pregnancyIndicator = models.BooleanField(default=0)
-    durationOfPregnancy = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-
-    # patient_address
-    # patient_address_type
-
-    class Meta:
-        verbose_name_plural = 'Patient'
-        db_table = 'Patient'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-class Employee(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    EmployeeID = models.CharField(max_length=18, blank=True, null=True)
-    EmployerID = models.CharField(max_length=18, blank=True, null=True)
-    PatientID = models.ManyToManyField(Patient)
-    EmployeeTelephoneNumber = models.CharField(max_length=8, blank=True, null=True)
-    EmployeeMobileNumber = models.CharField(max_length=10, blank=True, null=True)
-    EmployeeEmailAddress = models.CharField(max_length=254, blank=True, null=True)
-    EmployeeDesignationCode = models.CharField(max_length=2, blank=True, null=True)
-    EmployeeOrganizationName = models.CharField(max_length=254, blank=True, null=True)
-    EmployeeGenderCode = models.CharField(max_length=2, blank=True, null=True)
-    EmployeeName = models.CharField(max_length=255, blank=True, null=True)
-    AcademicQualificationLevelCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AcademicQualificationTypeCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    AcademicQualification = models.TextField(null=True, blank=True)
-    class Meta:
-        verbose_name_plural = 'Employee'
-        db_table = 'Employee'
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-class Billing(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    providerId = models.ManyToManyField(Provider, related_name='bills')
-    serviceType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    serviceItemName = models.CharField(max_length=99, blank=True, null=True)
-    quantityOfService = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        verbose_name_plural = 'Billing'
-        db_table = 'Billing'
-
-    def __str__(self):
-        return str(self.PrimaryKey)
-
-
-class Episode(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    facilityId = models.ForeignKey(Facility, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    providerId = models.ManyToManyField(Provider, related_name='episodes')
-    EpisodeId = models.CharField(max_length=64, blank=True, null=True)
-    EpisodeType = models.IntegerField(default=1, validators=[MaxValueValidator(4)])
-
-    class Meta:
-        verbose_name_plural = 'Episode'
-        db_table = 'Episode'
+        verbose_name = 'Encounter Provider'
+        verbose_name_plural = 'Encounter Providers'
+        db_table = 'encounter_provider'
+        unique_together = ('encounter_id', 'provider_id',)
 
     def _str_(self):
-        return str(self.PrimaryKey)
-
-class Encounter(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    episodeId = models.ForeignKey(Episode, on_delete=models.CASCADE)
-    encounterID = models.CharField(max_length=64, blank=True, null=True)
-    encounterType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    encounterTypeDescription = models.CharField(max_length=254, blank=True, null=True)
-    encounterTime = models.DateTimeField(null=True)
-    # ideally should not be blank an encounter shoudl always have a status
-    encounterStatusCode = models.CharField(max_length=20, default='planned')
-    encounterStatusDisplay = models.CharField(max_length=35, default='Planned')
-    encounterStatusDefinition = models.CharField(max_length=350, default='The Encounter has not yet started')
-    class Meta:
-        verbose_name_plural = 'Encounter'
-        db_table = 'Encounter'
-
-    def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
 
-class Emergency(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    episodeId = models.ForeignKey(Episode, on_delete=models.CASCADE)
-    patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    encounterId = models.OneToOneField(Encounter, on_delete=models.CASCADE)
-    providerId = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    patientArrivalDateTime = models.DateTimeField(null=True)
-    patientStatus = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-    ambulatoryStatus = models.CharField(max_length=2, blank=True, null=True)
-    mlcIndicator = models.BooleanField(default=0)
-    massInjuryIndicator = models.BooleanField(default=0)
-    casueOfMassInjury = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    accidentLocation = models.CharField(max_length=254, blank=True, null=True)
-    referralCategory = models.CharField(max_length=1, blank=True, null=True)
-    dateOfReferral = models.DateTimeField(null=True)
-    reasonForReferral = models.CharField(max_length=254, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'Emergency'
-        db_table = 'Emergency'
-    def _str_(self):
-        return str(self.PrimaryKey)
-
-class clinicalNotes(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    encounterId = models.ForeignKey(Encounter, on_delete=models.CASCADE)
-    authorDateTime = models.DateTimeField(null=True)
-    #clinicalNotesID = models.CharField(max_length=64, unique=True)
+class ClinicalNote(models.Model):
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    encounter_id = models.UUIDField()
+    author_datetime = models.DateTimeField(auto_now_add=True)
     reference = models.CharField(max_length=99, blank=True, null=True)
-    informationSourceName = models.CharField(max_length=99, blank=True, null=True)
-    clinicalDocument = models.TextField(blank=True, null=True)
-    clinicalDocumentType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
+    information_source_name = models.CharField(max_length=99, blank=True, null=True)
+    clinical_document = models.TextField(blank=True, null=True)
+    clinical_document_type = models.PositiveSmallIntegerField(default=18, validators=[MaxValueValidator(99)])
 
     class Meta:
-        verbose_name_plural = 'clinicalNotes'
-        db_table = 'clinicalNotes'
+        verbose_name = 'Clinical Note'
+        verbose_name_plural = 'Clinical Notes'
+        db_table = 'clinical_note'
     def _str_(self):
-        return str(self.PrimaryKey)
-class complications(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    complicationDate = models.DateTimeField(null=True)
-    complicationType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    complicationCode = models.CharField(max_length=10, blank=True, null=True)
-    complicationName = models.CharField(max_length=99, blank=True, null=True)
-    complicationDescription = models.CharField(max_length=20, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'complications'
-        db_table = 'complications'
-    def _str_(self):
-        return str(self.PrimaryKey)
-class disability(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    disabilityDate = models.DateTimeField(null=True)
-    disabilityType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    disabilityCode = models.CharField(max_length=10, blank=True, null=True)
-    disabilityName = models.CharField(max_length=99, blank=True, null=True)
-    disabilityDescription = models.CharField(max_length=20, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'disability'
-        db_table = 'disability'
-    def _str_(self):
-        return str(self.PrimaryKey)
-class relapse(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    relapseDate = models.DateTimeField(null=True)
-    relapseType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    relapseCode = models.CharField(max_length=10, blank=True, null=True)
-    relapseName = models.CharField(max_length=99, blank=True, null=True)
-    relapseDescription = models.CharField(max_length=20, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'relapse'
-        db_table = 'relapse'
-    def _str_(self):
-        return str(self.PrimaryKey)
-class remission(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    remissionDate = models.DateTimeField(null=True)
-    remissionType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    remissionCode = models.CharField(max_length=10, blank=True, null=True)
-    remissionName = models.CharField(max_length=99, blank=True, null=True)
-    remissionDescription = models.CharField(max_length=20, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'remission'
-        db_table = 'remission'
-    def _str_(self):
-        return str(self.PrimaryKey)
-class allergy(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    allergyProductCode = models.IntegerField(default=99999, validators=[MaxValueValidator(99999)])
-    allergyProduceDescription = models.CharField(max_length=99, blank=True, null=True)
-    allergyReactionCode = models.CharField(max_length=10, blank=True, null=True)
-    allergyReactionName = models.CharField(max_length=99, blank=True, null=True)
-    allergyRectionDescription = models.CharField(max_length=99, blank=True, null=True)
-    allergySeverityCode = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    allergySeverityDescription = models.CharField(max_length=10, blank=True, null=True)
-    allergyStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    allergyHistory = models.TextField(blank=True, null=True)
-    allergyEventType = models.CharField(max_length=10, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'allergy'
-        db_table = 'allergy'
-    def _str_(self):
-        return str(self.PrimaryKey)
-#class lab(models.Model):
-#    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-#    resultDateTime = models.DateTimeField(null=True)
-#    resultType = models.CharField(max_length=10, blank=True, null=True)
-#    resultStatus = models.CharField(max_length=2, blank=True, null=True)
-#    resultValue = models.CharField(max_length=20, blank=True, null=True)
-#    resultInterpretation = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-#    resultReferenceRangeLowerLimit = models.IntegerField(default=9999999, validators=[MaxValueValidator(9999999)])
-#    resultReferenceRangeUpperLimit = models.IntegerField(default=9999999, validators=[MaxValueValidator(9999999)])
-#    resultCategory = models.CharField(max_length=10, blank=True, null=True)
-#    specimenType = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-#    labOrderCode = models.CharField(max_length=10, blank=True, null=True)
-#    labId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-#    labType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-#    labResultId = models.CharField(max_length=20, blank=True, null=True)
-#    class Meta:
-#        verbose_name_plural = 'lab'
-#        db_table = 'lab'
-#    def _str_(self):
-#        return self.clinicalNotesId
-#class radiology(models.Model):
-#    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-#    radiologyCenterId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-#    radiologyCenterType = models.IntegerField(default=9, validators=[MaxValueValidator(9)])
-#    radiologyProcedureDateTime = models.DateTimeField(null=True)
-#    radiologyTechnicianComments = models.CharField(max_length=99, blank=True, null=True)
-#    radiologistImpression = models.CharField(max_length=254, blank=True, null=True)
-#    radiologyProcedureName = models.CharField(max_length=255, blank=True, null=True)
-#    radiologyProcedureCode = models.CharField(max_length=18, blank=True, null=True)
-#    radiologyResultStatus = models.CharField(max_length=3, blank=True, null=True)
-#    radiologyResultId = models.CharField(max_length=10, blank=True, null=True)
-#    class Meta:
-#        verbose_name_plural = 'radiology'
-#        db_table = 'radiology'
-#    def _str_(self):
-#        return self.clinicalNotesId
-class examination(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    examinationType = models.CharField(max_length=20, blank=True, null=True)
-    examinationFinding = models.TextField(blank=True, null=True)
-    examinationSystem = models.CharField(max_length=20, blank=True, null=True)
-    bodySiteName = models.CharField(max_length=60, blank=True, null=True)
-    class Meta:
-        verbose_name_plural = 'examination'
-        db_table = 'examination'
-    def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)
 
-class vitalSigns(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    vitalSignResultTime = models.DateTimeField(null=True)
-    vitalSignResultType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    vitalSignResultStatus = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    vitalSignResultValue = models.CharField(max_length=20, blank=True, null=True)
-    vitalSignResultUnit = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    vitalSignResultInterpretation = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    vitalSignResultReferenceRangeLowerLimit = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    vitalSignResultReferenceRangeUpperLimit = models.IntegerField(default=999, validators=[MaxValueValidator(999)])
-    vitalSignResultDate = models.DateTimeField(null=True)
-    vitalSignResultId = models.IntegerField(default=9999999999, validators=[MaxValueValidator(9999999999)])
-    class Meta:
-        verbose_name_plural = 'vitalSigns'
-        db_table = 'vitalSigns'
-    def _str_(self):
-        return str(self.PrimaryKey)
 
-class diagnosis(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    clinicalNotesId = models.ForeignKey(clinicalNotes, on_delete=models.CASCADE)
-    healthConditionType = models.CharField(max_length=20, blank=True, null=True)
-    healthConditionName = models.CharField(max_length=99, blank=True, null=True)
-    #healthConditionCode = models.CharField(max_length=10, blank=True, null=True)
-    healthConditionDescription = models.CharField(max_length=254, blank=True, null=True)
-    healthConditionCategory = models.CharField(max_length=20, blank=True, null=True)
-    healthConditionStatus = models.CharField(max_length=20, blank=True, null=True)
-    diagnosisPriority = models.CharField(max_length=20, blank=True, null=True)
+class Diagnosis(models.Model):
+    primary_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    clinical_note = models.ForeignKey(ClinicalNote, on_delete=models.CASCADE, related_name='diagnoses')
+    health_condition_type = models.CharField(max_length=20, blank=True, null=True) #MDDS CD05.022
+    health_condition_name = models.CharField(max_length=99, blank=True, null=True) #MDDS CD05.019
+    health_condition_code = models.CharField(max_length=10, blank=True, null=True) #MDDS CD05.019 (ICD-10 Codes)
+    health_condition_description = models.CharField(max_length=254, blank=True, null=True)
+    health_condition_category = models.CharField(max_length=20, blank=True, null=True)
+    health_condition_status = models.CharField(max_length=20, blank=True, null=True) #MDDS CD05.021
+    diagnosis_priority = models.CharField(max_length=20, blank=True, null=True)
     #comorbidityIndicator = models.BooleanField(default=0)
     #comorbidityCode = models.CharField(max_length=10, blank=True, null=True)
-    presentHealthConditionOnsetDate = models.DateTimeField(null=True)
-    class Meta:
-        verbose_name_plural = 'diagnosis'
-        db_table = 'diagnosis'
-    def _str_(self):
-        return str(self.PrimaryKey)
+    present_health_condition_onset_date = models.DateField(null=True)
 
-class outreach(models.Model):
-    PrimaryKey = models.UUIDField(primary_key=True)
-    encounterId = models.ForeignKey(Encounter, on_delete=models.CASCADE)
-    outreachServiceDeliveryPlaceName = models.CharField(max_length=99, blank=True, null=True)
-    outreachServiceDeliveryPlaceAddress = models.CharField(max_length=255, blank=True, null=True)
-    outreachServiceDeliveryPlaceType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServicePurpose = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServiceProviderName = models.CharField(max_length=99, blank=True, null=True)
-    outreachServiceProviderType = models.IntegerField(default=99, validators=[MaxValueValidator(99)])
-    outreachServiceProviderIdentificationNumber = models.CharField(max_length=20, blank=True, null=True)
-    referralSupportIndicator = models.BooleanField(default=0)
     class Meta:
-        verbose_name_plural = 'outreach'
-        db_table = 'outreach'
+        verbose_name = 'Diagnosis'
+        verbose_name_plural = 'Diagnoses'
+        db_table = 'diagnosis'
+    
     def _str_(self):
-        return str(self.PrimaryKey)
+        return str(self.primary_key)

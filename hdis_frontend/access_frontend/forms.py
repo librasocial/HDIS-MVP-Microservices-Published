@@ -12,15 +12,15 @@ def validate_mobile_number(value):
 
 
 class FacilityRegisterForm(forms.Form):
-     facilityApplicantName=forms.CharField(label="Name",max_length=64)
-     facilityApplicantEmail=forms.CharField(label="Email",validators=[validate_email],max_length=128)
-     facilityApplicantMobile=forms.CharField(label="Mobile",validators=[validate_mobile_number])
-     facilityApplicantCountry=forms.CharField(label="Country",max_length=64,initial="India")
-     facilityApplicantCity=forms.CharField(label="City",max_length=64)
-     facilityName=forms.CharField(label="Facility Name",max_length=128)
-     facilityTypeCode=forms.ChoiceField(label="Facility Type", widget=forms.Select(attrs={'class': 'form-control'}))
-     facilityInternalClass=forms.IntegerField(widget=forms.HiddenInput)
-     facilityApplicantRemarks=forms.CharField(required=False,label="Remarks",max_length=128,widget=forms.Textarea(attrs={'rows': 5, 'cols': 30}))
+     applicant_name=forms.CharField(label="Name",max_length=64)
+     applicant_email=forms.CharField(label="Email",validators=[validate_email],max_length=128)
+     applicant_mobile=forms.CharField(label="Mobile",validators=[validate_mobile_number])
+     applicant_country=forms.CharField(label="Country",max_length=64,initial="India")
+     applicant_city=forms.CharField(label="City",max_length=64)
+     facility_name=forms.CharField(label="Facility Name",max_length=128)
+     facility_type_code=forms.ChoiceField(label="Facility Type", widget=forms.Select(attrs={'class': 'form-control'}))
+     facility_internal_class=forms.IntegerField(widget=forms.HiddenInput)
+     facility_applicant_remarks=forms.CharField(required=False,label="Remarks",max_length=128,widget=forms.Textarea(attrs={'rows': 5, 'cols': 30}))
    
      def clean_facilityTypeCode(self):
         value = self.cleaned_data['facilityTypeCode']

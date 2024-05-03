@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "62f58de3-3571-4264-9a05-1d9e6aefe1b6",
+		"name": "Consultation - Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3195893"
+	},
+	"item": [
+		{
+			"name": "Create a Clinical Note",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"provider_ids\": [\"6932daebfe5b43538f5cda02b5b374fd\"],\r\n    \"clinical_note\": {\r\n        \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\", \r\n        \"author_datetime\": null, \r\n        \"reference\": null, \r\n        \"information_source_name\": null, \r\n        \"clinical_document\": \"Test Clinical Note\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_consultation_assessment}}/",
+					"host": [
+						"{{base_url_consultation_assessment}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"provider_ids\": [\"6932daebfe5b43538f5cda02b5b374fd\"],\r\n    \"clinical_note\": {\r\n        \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\", \r\n        \"author_datetime\": null, \r\n        \"reference\": null, \r\n        \"information_source_name\": null, \r\n        \"clinical_document\": \"Test Clinical Note\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:30:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"a1bfaf2334c045a2a437cc9000d7b2a3\",\n    \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"author_datetime\": \"2024-04-24T21:00:21.610106+05:30\",\n    \"reference\": null,\n    \"information_source_name\": null,\n    \"clinical_document\": \"Test Clinical Note\",\n    \"clinical_document_type\": 18\n}"
+				},
+				{
+					"name": "Sample Response - Diagnosis",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"provider_ids\": [\"6932daebfe5b43538f5cda02b5b374fd\"], \r\n    \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\", \r\n    \"diagnosis\": true, \r\n    \"health_condition_type_list\": [\"Type 1\", \"Type 2\"], \r\n    \"health_condition_name_list\": [\"Condition 1\", \"Condition 2\"], \r\n    \"health_condition_description_list\": [\"Description 1\", \"Description 2\"], \r\n    \"health_condition_category_list\": [\"Category 1\", \"Category 2\"], \r\n    \"health_condition_status_list\": [\"Active\", \"Resolved\"], \r\n    \"diagnosis_priority_list\": [\"Primary\", \"Secondary\"], \r\n    \"present_health_condition_onset_date_list\": [\"2023-01-01\", \"2024-01-01\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:30:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "253"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"3716bf3518154306b160fd96f9d5e43b\",\n    \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"author_datetime\": \"2024-04-24T21:00:49.162083+05:30\",\n    \"reference\": null,\n    \"information_source_name\": null,\n    \"clinical_document\": null,\n    \"clinical_document_type\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrieve details for a Clinical Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_consultation_assessment}}/:clinicalNoteId",
+					"host": [
+						"{{base_url_consultation_assessment}}"
+					],
+					"path": [
+						":clinicalNoteId"
+					],
+					"variable": [
+						{
+							"key": "clinicalNoteId",
+							"value": "a1bfaf2334c045a2a437cc9000d7b2a3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 404 Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/:clinicalNoteId",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								":clinicalNoteId"
+							],
+							"variable": [
+								{
+									"key": "clinicalNoteId",
+									"value": "000faf2334c045a2a437cc9000d7b2a3"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:34:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/:clinicalNoteId",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								":clinicalNoteId"
+							],
+							"variable": [
+								{
+									"key": "clinicalNoteId",
+									"value": "a1bfaf2334c045a2a437cc9000d7b2a3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:32:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primary_key\": \"a1bfaf2334c045a2a437cc9000d7b2a3\",\n    \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"author_datetime\": \"2024-04-24T21:00:21.610106+05:30\",\n    \"reference\": null,\n    \"information_source_name\": null,\n    \"clinical_document\": \"Test Clinical Note\",\n    \"clinical_document_type\": 18\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Clinical Note (disabled)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_consultation_assessment}}/:clinicalNoteId",
+					"host": [
+						"{{base_url_consultation_assessment}}"
+					],
+					"path": [
+						":clinicalNoteId"
+					],
+					"variable": [
+						{
+							"key": "clinicalNoteId",
+							"value": "a1bfaf2334c045a2a437cc9000d7b2a3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 405 Method Not Allowed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/:clinicalNoteId",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								":clinicalNoteId"
+							],
+							"variable": [
+								{
+									"key": "clinicalNoteId",
+									"value": "a1bfaf2334c045a2a437cc9000d7b2a3"
+								}
+							]
+						}
+					},
+					"status": "Method Not Allowed",
+					"code": 405,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:35:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Method \\\"DELETE\\\" not allowed.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrieve Clinical Notes for Encounter ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_consultation_assessment}}/encounter/:encounterId",
+					"host": [
+						"{{base_url_consultation_assessment}}"
+					],
+					"path": [
+						"encounter",
+						":encounterId"
+					],
+					"variable": [
+						{
+							"key": "encounterId",
+							"value": "1da7b24fd249494b82cd5dd4297d3341"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error Response - 400 Encounter ID not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/encounter/:encounterId",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								"encounter",
+								":encounterId"
+							],
+							"variable": [
+								{
+									"key": "encounterId",
+									"value": "0007b24fd249494b82cd5dd4297d3341"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 10:08:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"http://127.0.0.1:8013/errors/bad-request-data\",\n    \"title\": \"No Providers associated with specified Encounter ID.\",\n    \"detail\": \"Encounter ID '0007b24fd249494b82cd5dd4297d3341' is not associated with any Providers.\"\n}"
+				},
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_consultation_assessment}}/encounter/:encounterId",
+							"host": [
+								"{{base_url_consultation_assessment}}"
+							],
+							"path": [
+								"encounter",
+								":encounterId"
+							],
+							"variable": [
+								{
+									"key": "encounterId",
+									"value": "1da7b24fd249494b82cd5dd4297d3341"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 15:36:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.14"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Authorization, Origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1551"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n    \"provider_ids\": [\n        \"6932daebfe5b43538f5cda02b5b374fd\"\n    ],\n    \"patient_id\": \"P510179262\",\n    \"clinical_notes\": [\n        {\n            \"primary_key\": \"3716bf3518154306b160fd96f9d5e43b\",\n            \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n            \"author_datetime\": \"2024-04-24T21:00:49.162083+05:30\",\n            \"reference\": null,\n            \"information_source_name\": null,\n            \"clinical_document\": null,\n            \"clinical_document_type\": 2\n        },\n        {\n            \"primary_key\": \"a1bfaf2334c045a2a437cc9000d7b2a3\",\n            \"encounter_id\": \"1da7b24fd249494b82cd5dd4297d3341\",\n            \"author_datetime\": \"2024-04-24T21:00:21.610106+05:30\",\n            \"reference\": null,\n            \"information_source_name\": null,\n            \"clinical_document\": \"Test Clinical Note\",\n            \"clinical_document_type\": 18\n        }\n    ],\n    \"diagnosis\": [\n        {\n            \"note_date\": \"2024-04-24, 15:30:49\",\n            \"data\": [\n                {\n                    \"primary_key\": \"5cefa09660504151a5051aae03326811\",\n                    \"health_condition_type\": \"Type 1\",\n                    \"health_condition_name\": \"Condition 1\",\n                    \"health_condition_code\": null,\n                    \"health_condition_description\": \"Description 1\",\n                    \"health_condition_category\": \"Category 1\",\n                    \"health_condition_status\": \"Active\",\n                    \"diagnosis_priority\": \"Primary\",\n                    \"present_health_condition_onset_date\": \"2023-01-01\",\n                    \"clinical_note\": \"3716bf3518154306b160fd96f9d5e43b\"\n                },\n                {\n                    \"primary_key\": \"8634aba1dc3940f2ac79d36765b1c83c\",\n                    \"health_condition_type\": \"Type 2\",\n                    \"health_condition_name\": \"Condition 2\",\n                    \"health_condition_code\": null,\n                    \"health_condition_description\": \"Description 2\",\n                    \"health_condition_category\": \"Category 2\",\n                    \"health_condition_status\": \"Resolved\",\n                    \"diagnosis_priority\": \"Secondary\",\n                    \"present_health_condition_onset_date\": \"2024-01-01\",\n                    \"clinical_note\": \"3716bf3518154306b160fd96f9d5e43b\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{internal_service_client_credentials}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

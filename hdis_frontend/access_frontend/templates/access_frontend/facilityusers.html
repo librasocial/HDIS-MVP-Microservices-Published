@@ -16,8 +16,13 @@
 
     <div class="row">
         <div class="col-sm-3 card-title" style="text-align: center">
+        {{ user }}
             <br/><br/>
-            Welcome {{user.userName}}  ( {{facility.departmentName}})
+            {% for users in facility_users %}
+                {% if 'Default' not in users.name %}
+            Welcome admin of {{user.name}}
+                {% endif %}
+            {% endfor %}
             <br/><br/>
           
         
@@ -25,33 +30,22 @@
 
         <div class="row" >
 
-          {% for x in users  %}
+          {% for users in facility_users %}
           <div class="col-sm-4" id="profile_column">
             <div id="inner_column" class="alert-success">
-              <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>{{x.userRole}}
+              <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;&nbsp;</i>{{users.name}}
             </div>
-            <table class="table table-hover">
-        
-              
-              <tr>
-                <td>Name</a></td>
-                <td>{{x.memberName}}</td>
-              </tr>
-              <tr>
-                <td>User ID</a></td>
-                <td>{{x.memberEmail}}</td>
-              </tr>
-              <tr>
-                <td><form method="post" action="{% url 'getuserdetails' uId=x.PrimaryKey%}">      {% csrf_token %}
-                  <input type="text" hidden class="form-control" id="userid" name="userid" placeholder="Name" value="{{x.PrimaryKey}}"><button type="submit" class="btn btn-secondary btn-block">Manage</button></form> </td>
-            
-              </tr>
-        
-              
-        
-            </table>
-        
-        
+              <div id="inner_column" class="alert-success">
+              <form method="post" action="{% url 'changepassword' %}"  onsubmit="submitForm()">
+                    {% csrf_token %}
+                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" style="margin:0px 10px 10px 0px" required>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" style="margin:0px 10px 10px 0px" required>
+                    <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ users.username }}" style="margin:0px 10px 10px 0px" required>
+                    <button type="submit" class="btn btn-secondary btn-block"  value="">
+                    Set Password
+                    </button>
+                </form>
+            </div>
           </div>
           {% endfor %}
 

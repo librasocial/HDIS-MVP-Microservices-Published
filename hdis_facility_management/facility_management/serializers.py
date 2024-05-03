@@ -1,46 +1,35 @@
-from rest_framework import serializers
-
+from rest_framework.serializers import UUIDField, ModelSerializer
 from .models import *
 
-
-
-class FacilitySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    uniqueFacilityIdentificationNumber=serializers.UUIDField(format='hex', read_only=False)
+class FacilitySerializer(ModelSerializer):
+    primary_key = UUIDField(format='hex', read_only=True)
+    facility_id = UUIDField(format='hex', read_only=True)
     class Meta:
         model = Facility
         fields = '__all__'
 
-class MembersSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = Members
-        fields = '__all__'
-
-class FacilityApplicationSerializers(serializers.ModelSerializer):
+class FacilityApplicationSerializer(ModelSerializer):
+    primary_key = UUIDField(format='hex', read_only=True)
     class Meta:
         model = FacilityApplication
         fields = '__all__'
 
-
-class FacilityMemberSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    facilityId=FacilitySerializers()
-    memberId=MembersSerializers(many=True)
+class FacilityTypeSerializer(ModelSerializer):
     class Meta:
-        model = FacilityMembers
+        model = FacilityType
         fields = '__all__'
 
-class FacilityTypeSerializers(serializers.ModelSerializer):
-    facility_type_code = serializers.IntegerField()
-    facility_type_description = serializers.CharField()
-    facility_short_type_name = serializers.CharField()
-
-
+class OrganizationSerializer(ModelSerializer):
     class Meta:
-        model = Facilitytype
+        model = Organization
         fields = '__all__'
-       
 
- 
+class PackageTypeSerializer(ModelSerializer):
+    class Meta:
+        model = PackageType
+        fields = '__all__'
 
+class PackageSerializer(ModelSerializer):
+    class Meta:
+        model = Package
+        fields = '__all__'

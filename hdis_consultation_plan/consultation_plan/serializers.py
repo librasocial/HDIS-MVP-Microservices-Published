@@ -1,108 +1,103 @@
+from .models import *
 from rest_framework import serializers
 
-from .models import *
+class EncounterProviderSerializer(serializers.ModelSerializer):
 
-
-class FacilitySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
     class Meta:
-        model = Facility
+        model = EncounterProvider
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "encounter_id": { "format": "hex" }, "provider_id": { "format": "hex" } }
 
 
-class ProviderSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class ClinicalNoteSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Provider
+        model = ClinicalNote
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "encounter_id": { "format": "hex" } }
 
 
-class PersonSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class ClinicalOrderSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Person
-        fields = '__all__'
+        model = ClinicalOrder
+        exclude = ()
+        extra_kwargs = { "primary_key": { "format": "hex" }, "clinical_note": {"pk_field": serializers.UUIDField(format='hex')} }
 
 
-class PatientSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class LabOrderSerializer(ClinicalOrderSerializer):
+
+    class Meta(ClinicalOrderSerializer.Meta):
+        model = LabOrder
+
+
+class RadiologyOrderSerializer(ClinicalOrderSerializer):
+
+    class Meta(ClinicalOrderSerializer.Meta):
+        model = RadiologyOrder
+
+
+class PharmacyOrderSerializer(ClinicalOrderSerializer):
+
+    class Meta(ClinicalOrderSerializer.Meta):
+        model = PharmacyOrder
+
+
+class ImmunizationOrderSerializer(ClinicalOrderSerializer):
+
+    class Meta(ClinicalOrderSerializer.Meta):
+        model = ImmunizationOrder
+
+
+class ProcedureOrderSerializer(ClinicalOrderSerializer):
+    
+    class Meta(ClinicalOrderSerializer.Meta):
+        model = ProcedureOrder
+
+
+class OrderSetSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Patient
+        model = OrderSet
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "provider_id": { "format": "hex" } }
 
 
-class EmployeeSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class OrderSetLabSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Employee
+        model = OrderSetLab
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "order_set": {"pk_field": serializers.UUIDField(format='hex')} }
 
 
-class EmergencySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=True)
+class OrderSetRadiologySerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Emergency
+        model = OrderSetRadiology
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "order_set": {"pk_field": serializers.UUIDField(format='hex')} }
 
 
-class EpisodeSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class OrderSetPharmacySerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Episode
+        model = OrderSetPharmacy
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "order_set": {"pk_field": serializers.UUIDField(format='hex')} }
 
 
-class EncounterSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class OrderSetImmunizationSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Encounter
+        model = OrderSetImmunization
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "order_set": {"pk_field": serializers.UUIDField(format='hex')} }
 
 
-class outreachSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class OrderSetProcedureSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = outreach
+        model = OrderSetProcedure
         fields = '__all__'
-class clinicalNotesSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = clinicalNotes
-        fields = '__all__'
-
-class clinicalOrdersSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = clinicalOrders
-        fields = '__all__'
-
-class labSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = lab
-        fields = '__all__'
-
-class radiologySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = radiology
-        fields = '__all__'
-
-class pharmacySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = pharmacy
-        fields = '__all__'
-
-class immunizationOrderSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = immunizationOrder
-        fields = '__all__'
-
-
-class procedureSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = procedure
-        fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "order_set": {"pk_field": serializers.UUIDField(format='hex')} }

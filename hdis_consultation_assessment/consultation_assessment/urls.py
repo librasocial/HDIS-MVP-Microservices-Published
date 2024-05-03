@@ -1,19 +1,15 @@
-from django.urls import path
 from .views import ConsultationAssessmentViewSet
+from django.urls import path
 
 urlpatterns = [
-    path('consultationAssessment', ConsultationAssessmentViewSet.as_view({
-        'get': 'list',
+    path('', ConsultationAssessmentViewSet.as_view({
+        #'get': 'list',    #For troubleshooting only
         'post': 'create',
     })),
-    path('consultationAssessment/<str:pId>', ConsultationAssessmentViewSet.as_view({
+    path('<str:cnid>', ConsultationAssessmentViewSet.as_view({
         'get': 'retrieve',
-        'put': 'update',
-        'delete': 'destroy'
     })),
-    path('consultationAssessment/<str:eId>/<str:prId>', ConsultationAssessmentViewSet.as_view({
-        'get': 'retrieve_encounter',
-        'put': 'update_encounter',
-        'delete': 'destroy_encounter'
-    }))
+    path('encounter/<str:eid>', ConsultationAssessmentViewSet.as_view({
+        'get': 'retrieve_for_encounter',
+    })),
 ]

@@ -1,118 +1,25 @@
+from .models import *
 from rest_framework import serializers
 
-from .models import *
+class EncounterProviderSerializer(serializers.ModelSerializer):
 
-
-class FacilitySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
     class Meta:
-        model = Facility
+        model = EncounterProvider
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "encounter_id": { "format": "hex" }, "provider_id": { "format": "hex" } }
 
 
-class ProviderSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class ClinicalNoteSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Provider
+        model = ClinicalNote
         fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "encounter_id": { "format": "hex" } }
 
 
-class PersonSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
+class DiagnosisSerializer(serializers.ModelSerializer):
+    
     class Meta:
-        model = Person
+        model = Diagnosis
         fields = '__all__'
-
-
-class PatientSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = Patient
-        fields = '__all__'
-
-
-class EmployeeSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = Employee
-        fields = '__all__'
-
-
-class EmergencySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=True)
-    class Meta:
-        model = Emergency
-        fields = '__all__'
-
-
-class EpisodeSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = Episode
-        fields = '__all__'
-
-
-class EncounterSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = Encounter
-        fields = '__all__'
-
-
-class outreachSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = outreach
-        fields = '__all__'
-class clinicalNotesSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = clinicalNotes
-        fields = '__all__'
-
-class complicationsSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = complications
-        fields = '__all__'
-
-class disabilitySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = disability
-        fields = '__all__'
-class relapseSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = relapse
-        fields = '__all__'
-
-class remissionSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = remission
-        fields = '__all__'
-
-class allergySerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = allergy
-        fields = '__all__'
-
-class examinationSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = examination
-        fields = '__all__'
-
-class vitalSignsSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = vitalSigns
-        fields = '__all__'
-
-class diagnosisSerializers(serializers.ModelSerializer):
-    PrimaryKey = serializers.UUIDField(format='hex', read_only=False)
-    class Meta:
-        model = diagnosis
-        fields = '__all__'
+        extra_kwargs = { "primary_key": { "format": "hex" }, "clinical_note": {"pk_field": serializers.UUIDField(format='hex')} }

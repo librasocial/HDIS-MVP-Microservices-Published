@@ -18,6 +18,7 @@ services:
     depends_on:
       check-db-started:
         condition: service_completed_successfully
+  
   queue:
     build:
       context: .
@@ -26,10 +27,9 @@ services:
     restart: always
     depends_on:
       - db
+  
   db:
     image: mysql
-    security_opt:
-      - 'seccomp:unconfined'
     restart: always
     environment:
       MYSQL_DATABASE: queue_management

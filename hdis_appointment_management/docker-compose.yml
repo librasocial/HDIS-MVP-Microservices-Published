@@ -7,7 +7,6 @@ services:
       - db
     command: 'dockerize -wait=tcp://db:3306'
 
-
   queue:
     build:
       context: .
@@ -29,16 +28,15 @@ services:
     depends_on:
       check-db-started:
         condition: service_completed_successfully
+  
   db:
     image: mysql
-    security_opt:
-      - 'seccomp:unconfined'
     restart: always
     environment:
-      MYSQL_DATABASE: appointment_administration
-      MYSQL_USER: appointment_administration_admin
-      MYSQL_PASSWORD: appointment_administration_password
-      MYSQL_ROOT_PASSWORD: appointment_administration_password
+      MYSQL_DATABASE: appointment_management
+      MYSQL_USER: appointment_management_admin
+      MYSQL_PASSWORD: appointment_management_password
+      MYSQL_ROOT_PASSWORD: appointment_management_password
     volumes:
       - db2:/var/lib/mysql
     ports:

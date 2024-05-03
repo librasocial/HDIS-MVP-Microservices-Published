@@ -136,7 +136,6 @@ def book_appointment_next_confirm(request,data,status):
                 values['userId']=request.session['userId']
                 values['userGroup']=request.session['userGroup']
                 values['facilityTypeCode']=request.session['facilityTypeCode']
-                values['token_number'] = random.randrange(1, 50, 3)
                 payload = json.dumps(values)
                 r=requests.get(url,data=payload,
                             headers={'Content-type': 'application/json', 'Accept': 'application/json','Authorization': f'Bearer {access_token}'})

@@ -133,12 +133,8 @@
                             $('#tab1 td').removeClass('green'); // Remove green class from all cells
                             $(this).addClass('green'); // Add green class to clicked cell
                             var doctorID = document.getElementById("select_doctor");
-                            $("input[name='lhpn']").val(doctorID.value);
-                            $("input[name='time']").val($(this).text());
-
-                      
-
-
+                            $('#lhpn').val(doctorID.value);
+                            $('#time').val($(this).text());
                            
                             
                           });
@@ -146,10 +142,9 @@
                 onSelect: function (date, datepicker) {
                     if (date != "") {
                       $('#tab1 tbody').empty();
-                      $("input[name='date']").val(date);
-
+                      $('#date').val(date);
                       var doctorID = document.getElementById("select_doctor");
-                      var url='http://demo.openhdis.com:8000/appointment_booking/get_provider_free_slots/?lhpn='+doctorID.value+'&day='+date;
+                      var url='http://localhost:8000/appointment_booking/get_provider_free_slots/?lhpn='+doctorID.value+'&day='+date;
                       console.log(url)
                       $.ajax({
                       url: url,
@@ -201,9 +196,7 @@
   //some code
         var doctorID = document.getElementById("select_doctor");
           console.log(doctorID.value);
-          $("input[name='lhpn']").val(doctorID.value);
-
-
+          $('#lhpn').val(doctorID.value);
 
 
           }

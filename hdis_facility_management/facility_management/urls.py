@@ -14,37 +14,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from facility_management.views import FacilityViewSet,MemberViewSet
+from facility_management.views import *
+from rest_framework.routers import DefaultRouter
+
+# Register URLs for default CRUD operations
+router = DefaultRouter()
+router.register(r'organizations', OrganizationViewSet)
+router.register(r'packagetypes', PackageTypeViewSet)
+router.register(r'packages', PackageViewSet)
+router.register(r'facilitytypes', FacilityTypeViewSet)
+router.register(r'facilities', FacilityViewSet)
 
 urlpatterns = [
-    path('facility/', FacilityViewSet.as_view({
-        'post': 'create',
-        'get':'list',
-    })),
-    path('facilitytype/', FacilityViewSet.as_view({
-        'get':'facilityType',
-    })),
-    path('facility/<str:fId>', FacilityViewSet.as_view({
-        'get': 'retrieve',
-        'put': 'update',
-        'delete': 'destroy'
-    })),
-    path('facilityuser/<str:Upk>', MemberViewSet.as_view({
-        'get':'retrieveUser',
-        'put':'updateUser',
-    
-    
-    })),
-    path('facilityuser/', MemberViewSet.as_view({
-        'post':'addUser',
-    
-    
-    
-    })),
-   path('facilityusertypes/', FacilityViewSet.as_view({
-        'get':'listUserType',
-    
-    
-    
-    }))
+    path('facilitytypes/<int:facility_type_code>/roles', FacilityTypeViewSet.as_view({
+        'get': 'list_roles_for_facility_type',
+    }), name = "list_roles_for_facility_type"),
+    path('facilities/applications/', FacilityViewSet.as_view({
+        'post': 'create_from_application',
+    }), name = "create_from_application"),
+    path('', include(router.urls)),
 ]

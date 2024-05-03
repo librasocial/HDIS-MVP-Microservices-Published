@@ -25,7 +25,7 @@ SECRET_KEY = key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['docker.for.mac.localhost','demo.openhdis.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -142,27 +142,43 @@ SESSION_COOKIE_AGE = 7200 # 3 minutes. "1209600(2 weeks)" by default
 
 SESSION_SAVE_EVERY_REQUEST = True # "False" by default
 
-HDIS_AUTH_SERVER=AUTH_SERVER
+HDIS_AUTH_SERVER="http://docker.for.mac.localhost:8080"
+#HDIS_AUTH_SERVER="http://accessmanagement.openhdis.com:8080"
 
-HDIS_ORG_MASTER=ORG_MASTER
+HDIS_ORG_MASTER="http://docker.for.mac.localhost:8081"
+#HDIS_ORG_MASTER="http://facility.openhdis.com:8081"
+
+#HDIS_PATIENT_MANAGEMENT="http://docker.for.mac.localhost:8003"
+#HDIS_PATIENT_MANAGEMENT="http://patman.openhdis.com:8003"
 
 
-HDIS_PATIENT_REGISTRATION=PATIENT_REGISTRATION
+#HDIS_PATIENT_REGISTRATION="http://docker.for.mac.localhost:8002"
+HDIS_PATIENT_REGISTRATION="http://patreg.openhdis.com:8002"
 
-HDIS_DOCTOR_ADMINISTRATION=DOCTOR_ADMINISTRATION
-HDIS_SLOT_MASTER=SLOT_MASTER
 
-HDIS_APPOINTMENT_MANAGEMENT=APPOINTMENT_MANAGEMENT
+#HDIS_DOCTOR_ADMINISTRATION="http://docker.for.mac.localhost:8005"
+HDIS_DOCTOR_ADMINISTRATION="http://docadmin.openhdis.com:8005"
 
-HDIS_VISIT_MANAGEMENT=VISIT_MANAGEMENT
+#HDIS_SLOT_MASTER="http://docker.for.mac.localhost:8004"
+HDIS_SLOT_MASTER="http://slotmaster.openhdis.com:8004"
 
-HDIS_CONSULTATION_SUBJECTIVE=CONSULTATION_SUBJECTIVE
 
-HDIS_CONSULTATION_OBJECTIVE=CONSULTATION_OBJECTIVE
+HDIS_APPOINTMENT_MANAGEMENT="http://docker.for.mac.localhost:8007"
+#HDIS_APPOINTMENT_MANAGEMENT="http://appointment.openhdis.com:8007"
 
-HDIS_CONSULTATION_ASSESSMENT=CONSULTATION_ASSESSMENT
+#SOAP
+#HDIS_CONSULTATION_SUBJECTIVE="http://appointment.openhdis.com:8010"
+#HDIS_CONSULTATION_OBJECTIVE="http://appointment.openhdis.com:8012"
+#HDIS_CONSULTATION_ASSESSMENT="http://appointment.openhdis.com:8013"
+#HDIS_CONSULTATION_PLAN="http://appointment.openhdis.com:8014"
 
-HDIS_CONSULTATION_PLAN=CONSULTATION_PLAN
+HDIS_CONSULTATION_SUBJECTIVE="http://docker.for.mac.localhost:8010"
+HDIS_CONSULTATION_OBJECTIVE="http://docker.for.mac.localhost:8012"
+HDIS_CONSULTATION_ASSESSMENT="http://docker.for.mac.localhost:8013"
+HDIS_CONSULTATION_PLAN="http://docker.for.mac.localhost:8014"
 
-HDIS_CONSULTATION_BILLING=CONSULTATION_BILLING
+HDIS_VISIT_MANAGEMENT="http://docker.for.mac.localhost:8009"
+#HDIS_VISIT_MANAGEMENT="http://visit.openhdis.com:8009"
 
+HDIS_QUEUE_MANAGEMENT="http://docker.for.mac.localhost:8008"
+#HDIS_QUEUE_MANAGEMENT="http://queue.openhdis.com:8009"

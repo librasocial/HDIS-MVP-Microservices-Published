@@ -113,7 +113,7 @@
                       $('#tab1 tbody').empty();
                       $('#date').val(date);
                       var doctorID = document.getElementById("select_doctor");
-                      var url='http://demo.openhdis.com:8000/appointment_booking/get_provider_free_slots/?lhpn='+doctorID.value+'&day='+date;
+                      var url='http://localhost:8000/appointment_booking/get_provider_free_slots/?lhpn='+doctorID.value+'&day='+date;
                       console.log(url)
                       $.ajax({
                       url: url,

@@ -11,53 +11,7 @@
   {% endblock %}
 
   <!--<h2>Process for consult</h2>-->
-<script>
 
-function Capture( ) 
-       	{
-		var	uri 	= "http://192.168.50.116:11101/rd/capture";
-		// params  += "&PidXML=" + encodeURIComponent(enc_pid_b64);
-		params = '<PidOptions ver="1.0"> <Opts fCount="1"  format="0" pidVer="2.0" timeout="20000" env="P" posh="LEFT_INDEX" />';
-		params += '</PidOptions>';
-		var	xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange=function()
-		{
-			if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		        {
-        console.log(xmlhttp.responseText);  
-        var txt= xmlhttp.responseText;   
-        console.log(txt);  
-
-				//alert( xmlhttp.responseText);
-        document.getElementById("pid").value = txt;
-
-        document.querySelector('input[name="pid"]').value = txt;
-        document.forms['bioform']['pid'].value =txt;
-
-			}
-			else if ( xmlhttp.status == 404 )
-			{
-				failCall(xmlhttp.status)
-			}
-			else if ( xmlhttp.status == 503 )
-			{
-				alert("server Unavailable");
-			}
-		}
-		xmlhttp.onerror=function()
-		{
-			failCall(xmlhttp.status);
-		}
-		xmlhttp.onabort=function()
-		{
-			alert("Aborted");
-		}
-		xmlhttp.open("CAPTURE", uri, true );
-		//xmlhttp.send(encodeURIComponent(params));
-		xmlhttp.send(params);
-	}
-
-</script>
 <div class="row align-middle" style="margin-top:20px">
   <div class="col-sm"></div>
 
@@ -91,12 +45,12 @@ function Capture( )
     <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
       {% csrf_token %}
       <h5>Register with Aadhaar Mobile</h5>
-      <input type="text" class="form-control" id="name" placeholder="Patient Name" name="name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
+      <input type="text" class="form-control" id="patient_name" placeholder="Patient Name" name="patient_name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
       <select class="form-control" id="patient_gender" placeholder="Select Gender" name="patient_gender" style="margin:0px 5px 5px 0px" required><option value="" disabled selected>Gender</option><option>M</option><option>F</option><option>O</option></select>
       <div class="row form-inline">
             <div class="col-sm input-group date" id ="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-container="#dpk">
 
-                <input type="text" class="form-control" name="dob" placeholder="Date of Birth" required>
+                <input type="text" class="form-control" name="patient_dob" placeholder="Date of Birth" required>
 
                 <div class="input-group-addon">
                     <span class="fa fa-calendar"></span>
@@ -175,15 +129,15 @@ function Capture( )
   <div class="row align-middle" style="margin-bottom:50px">
   <div class="col-sm"></div>
   <div class="col-sm-6">
-    <form method="post" action="{% url 'register' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
+    <form method="post" action="{% url 'get_or_create_patient' %}" method='post' enctype="multipart/form-data" onsubmit="submitForm()">
       {% csrf_token %}
       <h5>Direct Registration</h5>
-      <input type="text" class="form-control" id="name" placeholder="Patient Name" name="name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
+      <input type="text" class="form-control" id="patient_name" placeholder="Patient Name" name="patient_name" style="margin:0px 10px 10px 0px" required pattern="[A-Za-z0-9 .]{2,99}" title="Certain special characters like / are not allowed">
       <select class="form-control" id="patient_gender" placeholder="Select Gender" name="patient_gender" style="margin:0px 5px 5px 0px" required><option value="" disabled selected>Gender</option><option>M</option><option>F</option><option>O</option></select>
       <div class="row form-inline">
             <div class="col-sm input-group date" id ="dpk" style="margin-right:10px" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-container="#dpk">
 
-                <input type="text" class="form-control" name="dob" placeholder="Date of Birth" required>
+                <input type="text" class="form-control" name="patient_dob" placeholder="Date of Birth" required>
 
                 <div class="input-group-addon">
                     <span class="fa fa-calendar"></span>
